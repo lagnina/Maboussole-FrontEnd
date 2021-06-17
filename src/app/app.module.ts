@@ -34,6 +34,10 @@ import { PhotoManagementComponent } from './admin/photo-management/photo-managem
 import { RolesModalComponent } from './modals/roles-modal/roles-modal.component';
 import { ConfirmDialogComponent } from './modals/confirm-dialog/confirm-dialog.component';
 import { TestComponent } from './test/test.component';
+import { PostCardComponent } from './post/post-card/post-card.component';
+import { PostEditComponent } from './post/post-edit/post-edit.component';
+import { PostListComponent } from './post/post-list/post-list.component';
+import { PostCreateComponent } from './post/post-create/post-create.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +64,11 @@ import { TestComponent } from './test/test.component';
     PhotoManagementComponent,
     RolesModalComponent,
     ConfirmDialogComponent,
-    TestComponent
+    TestComponent,
+    PostCardComponent,
+    PostEditComponent,
+    PostListComponent,
+    PostCreateComponent
   ],
   imports: [
     BrowserModule,

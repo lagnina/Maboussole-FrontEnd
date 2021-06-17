@@ -15,6 +15,9 @@ import { MemberDetailedResolver } from './_resolvers/member-detailed.resolver';
 import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
 import { AdminGuard } from './_guards/admin.guard';
 import { TestComponent } from './test/test.component';
+import { PostCardComponent } from './post/post-card/post-card.component';
+import {PostEditComponent} from './post/post-edit/post-edit.component';
+import { PostListComponent } from './post/post-list/post-list.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -28,7 +31,9 @@ const routes: Routes = [
       {path: 'member/edit', component: MemberEditComponent, canDeactivate: [PreventUnsavedChangesGuard]},
       {path: 'lists', component: ListsComponent},
       {path: 'messages', component: MessagesComponent},
-       {path: 'test',component: TestComponent},
+      {path: 'test',component: TestComponent},
+      {path:'post/list',component: PostListComponent},
+      {path:'post/edit' ,component:PostEditComponent, canDeactivate:[PreventUnsavedChangesGuard]},
       {path: 'admin', component: AdminPanelComponent, canActivate: [AdminGuard]},
     ]
   },
