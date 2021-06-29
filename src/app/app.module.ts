@@ -38,6 +38,35 @@ import { PostCardComponent } from './post/post-card/post-card.component';
 import { PostEditComponent } from './post/post-edit/post-edit.component';
 import { PostListComponent } from './post/post-list/post-list.component';
 import { PostCreateComponent } from './post/post-create/post-create.component';
+import { MatSelectCountryModule } from '@angular-material-extensions/select-country';
+
+import {
+  MatSliderModule} from "@angular/material/slider";
+  import {
+  MatButtonModule} from "@angular/material/button";
+  import {
+  MatToolbarModule} from "@angular/material/toolbar";
+  import {
+  MatIconModule} from "@angular/material/icon";
+  import {
+  MatSidenavModule} from "@angular/material/sidenav";
+  import {
+  MatListModule} from "@angular/material/list";
+  import {
+  MatDividerModule} from "@angular/material/divider";
+  import {
+  MatInputModule} from "@angular/material/input";
+  import {
+  MatSnackBarModule} from "@angular/material/snack-bar";
+  import {
+  MatGridListModule} from "@angular/material/grid-list";
+  import {
+  MatProgressBarModule} from "@angular/material/progress-bar";
+  import {
+  MatCardModule} from "@angular/material/card";
+  import {
+  MatSelectModule
+} from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -78,7 +107,21 @@ import { PostCreateComponent } from './post/post-create/post-create.component';
     FormsModule,
     ReactiveFormsModule,
     SharedModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatSliderModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatListModule,
+    MatInputModule,
+    MatDividerModule,
+    MatSnackBarModule,
+    MatGridListModule,
+    MatProgressBarModule,
+    MatSelectModule,
+    MatCardModule,
+    MatSelectCountryModule.forRoot('de')
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},

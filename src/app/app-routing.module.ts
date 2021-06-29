@@ -18,6 +18,7 @@ import { TestComponent } from './test/test.component';
 import { PostCardComponent } from './post/post-card/post-card.component';
 import {PostEditComponent} from './post/post-edit/post-edit.component';
 import { PostListComponent } from './post/post-list/post-list.component';
+import { PostCreateComponent } from './post/post-create/post-create.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -26,12 +27,13 @@ const routes: Routes = [
     runGuardsAndResolvers: 'always',
     canActivate: [AuthGuard],
     children: [ 
-      {path: 'members', component: MemberListComponent},
+
       {path: 'members/:username', component: MemberDetailComponent, resolve: {member: MemberDetailedResolver}},
       {path: 'member/edit', component: MemberEditComponent, canDeactivate: [PreventUnsavedChangesGuard]},
       {path: 'lists', component: ListsComponent},
       {path: 'messages', component: MessagesComponent},
       {path: 'test',component: TestComponent},
+      {path: 'post/create',component:PostCreateComponent},
       {path:'post/list',component: PostListComponent},
       {path:'post/edit' ,component:PostEditComponent, canDeactivate:[PreventUnsavedChangesGuard]},
       {path: 'admin', component: AdminPanelComponent, canActivate: [AdminGuard]},

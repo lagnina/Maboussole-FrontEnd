@@ -35,5 +35,19 @@ getAllPosts(){
    return this.http.get<Post[]>(this.baseUrl + 'post/Posts' );
 }
 
+likepost(postId:number){
+
+  return this.http.get
+
+
+}
+dislikePost(){
+
+}
+
+commentPost(){
+
+}
+
 
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Post } from 'src/app/_models/Post';
+import { Router } from '@angular/router';
+
 import { PostService } from 'src/app/_services/post.service';
 
 @Component({
@@ -9,7 +11,8 @@ import { PostService } from 'src/app/_services/post.service';
 })
 export class PostListComponent implements OnInit {
   posts:Post[];
-  constructor(private postService: PostService) { }
+  model:any={};
+  constructor(private postService: PostService,private router:Router) { }
 
   ngOnInit(): void {
 
@@ -19,5 +22,12 @@ export class PostListComponent implements OnInit {
 })
 
   }
+  
+  Post(){
+    // subscribe = moura matawsal response hachno dir
+        this.postService.PostCreate(this.model).subscribe(response => {
+          this.router.navigateByUrl('/post/list');  
+          window.location.reload();      })
+      }
 
 }

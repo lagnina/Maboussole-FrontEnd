@@ -10,7 +10,9 @@ import { PostService } from '../../_services/post.service';
   styleUrls: ['./post-create.component.css']
 })
 export class PostCreateComponent implements OnInit {
-  model:any ={}
+  model:any ={};
+  posts:Post[];
+
 response : any ={}
 
   constructor( public postService : PostService , private router : Router,private toastr: ToastrService) { }
@@ -21,9 +23,19 @@ response : any ={}
   Post(){
 // subscribe = moura matawsal response hachno dir
     this.postService.PostCreate(this.model).subscribe(response => {
-      this.router.navigateByUrl('/accueil');
+      this.router.navigateByUrl('/post/list');
       console.log(response)
     })
   }
 
+  GetPosts() {
+    
+
+      this.postService.getAllPosts().subscribe(response => {
+        console.log(response);
+       this.posts = response;
+     })
+     
+       
+  }
 }

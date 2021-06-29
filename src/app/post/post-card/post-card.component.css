@@ -1,46 +1,37 @@
-.card:hover img {
-    transform: scale(1.2, 1.2);
-    transition-duration: 500ms;
-    transition-timing-function: ease-out;
-    opacity: 0.7;
+.wrapper{
+    margin: 0 auto;
+  }
+.avatar {
+  width: 80px;
+  height: 70px;
+  background-size: cover;
+}
+.side-bar {
+  margin-left: 100px;
+  margin-right: 0;
+}
+.main-content {
+  margin-right: 100px;
 }
 
-.card img {
-    transform: scale(1.0, 1.0);
-    transition-duration: 500ms;
-    transition-timing-function: ease-out;
+.redirect {
+  text-decoration: none;
+  color: #202020;
 }
 
-.card-img-wrapper {
-    overflow: hidden;
-    position: relative;
+.action-btn button {
+  font-weight: bold;
 }
 
-.member-icons {
-    position: absolute;
-    bottom: -30%;
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-    opacity: 0;
-}
-
-.card-img-wrapper:hover .member-icons {
-    bottom: 0;
-    opacity: 1;
-}
-
-.animate {
-    transition: all 0.3s ease-in-out;
-}
-
-@keyframes fa-blink {
-    0% {opacity: 1;}
-    100% {opacity: 0.4;}
-}
-
-.is-online {
-    animation: fa-blink 1.5s linear infinite;
-    color: rgb(1, 189, 42);
+.card {
+  max-width: 600px;
+  margin: 3% 0;
+  border-radius: 0.5em;
+  box-shadow: 0 0 1em gray;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 25px 16px;
+  background:black;
+  opacity: 0.9;
+  
 }

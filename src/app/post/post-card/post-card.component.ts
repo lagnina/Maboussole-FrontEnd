@@ -20,6 +20,21 @@ response : any ={}
     
   }
 
-  
+  deletePost(){
+
+
+  }
+  getDetails(){
+
+
+  }
+  dislikePost(){
+
+
+  }
+  likePost(postId: string){
+
+    
+  }
 
 }
