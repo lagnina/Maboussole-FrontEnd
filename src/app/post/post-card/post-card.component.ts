@@ -32,7 +32,13 @@ response : any ={}
 
 
   }
-  likePost(postId: string){
+  likePost(post: Post){
+
+    this.postService.likepost(post.postId).subscribe(() =>{
+
+        this.toastr.success('you have liked this post');
+    })
+
 
     
   }

@@ -21,14 +21,14 @@
     </mat-card-content>
     <mat-card-actions class="action-btn" fxLayout fxLayoutAlign="space-between">
       <div class="like-dislike-btn">
-        <!-- <button (click)="" mat-button>
+        <button (click)="likePost(post)" mat-button>
           <mat-icon>thumb_up_alt</mat-icon>
-        </button> -->
+        </button>
         <span #like class="likes">
  0
         </span>
   
-        <button (click)="dislikePost()" mat-button>
+        <button (click)="likePost(post)" mat-button>
           <mat-icon>thumb_down_alt</mat-icon>
         </button>
         <span #dislike class="dislikes">

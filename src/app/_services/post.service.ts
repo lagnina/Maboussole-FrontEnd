@@ -35,9 +35,9 @@ getAllPosts(){
    return this.http.get<Post[]>(this.baseUrl + 'post/Posts' );
 }
 
-likepost(postId:number){
+likepost(postId:Number){
 
-  return this.http.get
+  return this.http.post(this.baseUrl + 'likes/' + postId, {} )
 
 
 }
