@@ -67,6 +67,10 @@ import {
   import {
   MatSelectModule
 } from "@angular/material/select";
+import { ActualityListComponent } from './actuality/actuality-list/actuality-list.component';
+import { ActualityCardComponent } from './actuality/actuality-card/actuality-card.component';
+import { ConseilListComponent } from './conseil/conseil-list/conseil-list.component';
+import { ConseilCardComponent } from './conseil/conseil-card/conseil-card.component';
 
 @NgModule({
   declarations: [
@@ -97,7 +101,11 @@ import {
     PostCardComponent,
     PostEditComponent,
     PostListComponent,
-    PostCreateComponent
+    PostCreateComponent,
+    ActualityListComponent,
+    ActualityCardComponent,
+    ConseilListComponent,
+    ConseilCardComponent
   ],
   imports: [
     BrowserModule,

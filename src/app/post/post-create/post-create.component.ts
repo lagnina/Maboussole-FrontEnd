@@ -31,10 +31,10 @@ response : any ={}
   GetPosts() {
     
 
-      this.postService.getAllPosts().subscribe(response => {
-        console.log(response);
-       this.posts = response;
-     })
+    //   this.postService.getAllPosts().subscribe(response => {
+    //     console.log(response);
+    //    this.posts = response;
+    //  })
      
        
   }
