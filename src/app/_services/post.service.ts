@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ReplaySubject } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -18,7 +18,7 @@ export class PostService {
   private currentUserSource = new ReplaySubject<User>(1);
   currentUser$ = this.currentUserSource.asObservable();
 
-  constructor(private http: HttpClient, private presence: PresenceService) { }  
+  constructor(private http: HttpClient, private presence: PresenceService) { }
 
 PostCreate(model: any){
 
@@ -32,8 +32,8 @@ PostCreate(model: any){
   )
 }
 
-getAllPosts(){
-   return this.http.get<Post[]>(this.baseUrl + 'post/Posts' );
+getAllPosts(type:string){
+   return this.http.get<Post[]>(this.baseUrl + 'post/Posts' ,{params:{Type:type}});
 }
 
 likepost(postId:Number){
@@ -42,7 +42,7 @@ likepost(postId:Number){
 }
 
 deletePost(postId:Number){
-  
+
   return this.http.delete(this.baseUrl + 'post/delete-post' + postId);
 }
 dislikePost(){
