@@ -19,6 +19,8 @@ import { PostCardComponent } from './post/post-card/post-card.component';
 import {PostEditComponent} from './post/post-edit/post-edit.component';
 import { PostListComponent } from './post/post-list/post-list.component';
 import { PostCreateComponent } from './post/post-create/post-create.component';
+import { ActualityListComponent } from './actuality/actuality-list/actuality-list.component';
+import { ConseilListComponent } from './conseil/conseil-list/conseil-list.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -35,6 +37,8 @@ const routes: Routes = [
       {path: 'test',component: TestComponent},
       {path: 'post/create',component:PostCreateComponent},
       {path:'post/list',component: PostListComponent},
+      {path:'Actuality',component:ActualityListComponent},
+      {path:'Conseil-orientation',component:ConseilListComponent},
       {path:'post/edit' ,component:PostEditComponent, canDeactivate:[PreventUnsavedChangesGuard]},
       {path: 'admin', component: AdminPanelComponent, canActivate: [AdminGuard]},
     ]
