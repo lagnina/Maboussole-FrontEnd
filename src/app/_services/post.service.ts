@@ -14,6 +14,7 @@ export class PostService {
 
 
   baseUrl = environment.apiUrl;
+  post:Post[]
   private currentUserSource = new ReplaySubject<User>(1);
   currentUser$ = this.currentUserSource.asObservable();
 
@@ -37,9 +38,12 @@ getAllPosts(){
 
 likepost(postId:Number){
 
-  return this.http.post(this.baseUrl + 'likes/' + postId, {} )
+  return this.http.get(this.baseUrl + 'post/like-post/' + postId );
+}
 
-
+deletePost(postId:Number){
+  
+  return this.http.delete(this.baseUrl + 'post/delete-post' + postId);
 }
 dislikePost(){
 
