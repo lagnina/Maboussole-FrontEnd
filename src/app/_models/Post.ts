@@ -8,5 +8,7 @@ export interface Post {
     content:string;
     Type:string;
     photos:Photo[];
+    Likes:Number;
+    isLiked:boolean;
 
 }

@@ -12,7 +12,7 @@
         >
       </mat-card-header>
     </div>
-  
+
     <img mat-card-image src="" alt="Photo of a Shiba Inu" />
     <mat-card-content>
       <p>
@@ -22,12 +22,15 @@
     <mat-card-actions class="action-btn" fxLayout fxLayoutAlign="space-between">
       <div class="like-dislike-btn">
         <button (click)="likePost(post)" mat-button>
-          <mat-icon>thumb_up_alt</mat-icon>
+          <div *ngIf="post.isLiked; then thenBlock else elseBlock"></div>
+<ng-template #thenBlock><mat-icon>check_box</mat-icon></ng-template>
+<ng-template #elseBlock><mat-icon>check_box_outline_blank</mat-icon></ng-template>
+
         </button>
         <span #like class="likes">
- 0
+ {{post.Likes}}
         </span>
-  
+
         <button (click)="likePost(post)" mat-button>
           <mat-icon>thumb_down_alt</mat-icon>
         </button>
@@ -35,18 +38,17 @@
     0
         </span>
       <!-- </div> -->
-  
+
       <button
-        
+
         (click)="deletePost()"
         mat-button
       >
         <mat-icon>delete</mat-icon>
       </button>
-  
+
       <button  (click)="getDetails()" mat-button>
         <mat-icon>more_horiz</mat-icon>
       </button>
     <!-- </mat-card-actions>
   </mat-card> -->
-  
