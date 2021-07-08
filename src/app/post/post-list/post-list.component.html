@@ -4,17 +4,18 @@
 
 <form  #postForm="ngForm" id="postForm" class="form-inline mt-2 mt-md-0" (ngSubmit)="Post()" 
 autocomplete="off">
-<input 
-    name="Content"
-    [(ngModel)]="model.content"
-    class="form-control mr-sm-2" 
-    type="text" 
-    placeholder="Poster ici">
-
-<button class="btn btn-success my-2 my-sm-0" type="submit">Poster</button>
+<input name="Content" [(ngModel)]="model.content"
+    class="form-control mr-sm-2"  type="text" placeholder="Poster ici">
+<br><br>
+  <!-- <form>
+      <mat-form-field>
+          <input type="text" placeholder="Speciality" required matInput/>
+      </mat-form-field>
+      <br></form><br> -->
 </form>
+<button class="btn btn-success my-2 my-sm-0" type="submit">Poster</button>
 
-</div>
+
 
 
 <div class="row">

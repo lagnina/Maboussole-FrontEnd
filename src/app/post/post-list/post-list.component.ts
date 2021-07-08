@@ -22,12 +22,11 @@ export class PostListComponent implements OnInit {
 })
 
   }
-
+  
   Post(){
     // subscribe = moura matawsal response hachno dir
-        this.model.Type = 'post'
         this.postService.PostCreate(this.model).subscribe(response => {
-          this.router.navigateByUrl('/post/list');
+          this.router.navigateByUrl('/post/list');  
           window.location.reload();      })
       }
 

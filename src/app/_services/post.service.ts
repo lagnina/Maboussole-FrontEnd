@@ -38,7 +38,7 @@ getAllPosts(type:string){
 
 likepost(postId:Number){
 
-  return this.http.post(this.baseUrl + 'post/like-post/' + postId ,{});
+  return this.http.post(this.baseUrl + 'postLike/like-post/' + postId ,null);
 }
 
 deletePost(postId:Number){

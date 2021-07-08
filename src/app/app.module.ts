@@ -39,34 +39,49 @@ import { PostEditComponent } from './post/post-edit/post-edit.component';
 import { PostListComponent } from './post/post-list/post-list.component';
 import { PostCreateComponent } from './post/post-create/post-create.component';
 import { MatSelectCountryModule } from '@angular-material-extensions/select-country';
+import { MatChipsModule } from '@angular/material/chips';
 
 import {
-  MatSliderModule} from "@angular/material/slider";
-  import {
-  MatButtonModule} from "@angular/material/button";
-  import {
-  MatToolbarModule} from "@angular/material/toolbar";
-  import {
-  MatIconModule} from "@angular/material/icon";
-  import {
-  MatSidenavModule} from "@angular/material/sidenav";
-  import {
-  MatListModule} from "@angular/material/list";
-  import {
-  MatDividerModule} from "@angular/material/divider";
-  import {
-  MatInputModule} from "@angular/material/input";
-  import {
-  MatSnackBarModule} from "@angular/material/snack-bar";
-  import {
-  MatGridListModule} from "@angular/material/grid-list";
-  import {
-  MatProgressBarModule} from "@angular/material/progress-bar";
-  import {
-  MatCardModule} from "@angular/material/card";
-  import {
+  MatSliderModule
+} from "@angular/material/slider";
+import {
+  MatButtonModule
+} from "@angular/material/button";
+import {
+  MatToolbarModule
+} from "@angular/material/toolbar";
+import {
+  MatIconModule
+} from "@angular/material/icon";
+import {
+  MatSidenavModule
+} from "@angular/material/sidenav";
+import {
+  MatListModule
+} from "@angular/material/list";
+import {
+  MatDividerModule
+} from "@angular/material/divider";
+import {
+  MatInputModule
+} from "@angular/material/input";
+import {
+  MatSnackBarModule
+} from "@angular/material/snack-bar";
+import {
+  MatGridListModule
+} from "@angular/material/grid-list";
+import {
+  MatProgressBarModule
+} from "@angular/material/progress-bar";
+import {
+  MatCardModule
+} from "@angular/material/card";
+import {
   MatSelectModule
 } from "@angular/material/select";
+
+
 import { ActualityListComponent } from './actuality/actuality-list/actuality-list.component';
 import { ActualityCardComponent } from './actuality/actuality-card/actuality-card.component';
 import { ConseilListComponent } from './conseil/conseil-list/conseil-list.component';
@@ -105,7 +120,8 @@ import { ConseilCardComponent } from './conseil/conseil-card/conseil-card.compon
     ActualityListComponent,
     ActualityCardComponent,
     ConseilListComponent,
-    ConseilCardComponent
+    ConseilCardComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -129,12 +145,13 @@ import { ConseilCardComponent } from './conseil/conseil-card/conseil-card.compon
     MatProgressBarModule,
     MatSelectModule,
     MatCardModule,
+    MatChipsModule,
     MatSelectCountryModule.forRoot('de')
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
-    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
-    {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true}
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })

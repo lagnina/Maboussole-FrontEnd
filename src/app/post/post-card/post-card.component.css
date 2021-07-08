@@ -1,37 +1,185 @@
 .wrapper{
     margin: 0 auto;
   }
-.avatar {
-  width: 80px;
-  height: 70px;
-  background-size: cover;
-}
+
 .side-bar {
   margin-left: 100px;
   margin-right: 0;
 }
-.main-content {
-  margin-right: 100px;
-}
+ .liked-icon {
+  background: url("./../../../assets/heart.png") 0px center no-repeat;
+  min-width: 25px;
+  min-height: 25px;
+  cursor: pointer;
+} 
 
-.redirect {
-  text-decoration: none;
-  color: #202020;
-}
 
-.action-btn button {
-  font-weight: bold;
-}
 
-.card {
-  max-width: 600px;
-  margin: 3% 0;
-  border-radius: 0.5em;
-  box-shadow: 0 0 1em gray;
+.espresso-post-card {
+  padding: 20px;
+  display: table !important;
   width: 100%;
-  box-sizing: border-box;
-  padding: 25px 16px;
-  background:black;
-  opacity: 0.9;
-  
+  height: 100%;
+  background: grey;
+  border-radius: 10px;
 }
+
+.espresso-post-card-header {
+  display: table-row;
+  height: 80px;
+  width: 100%;
+  
+
+ 
+}
+.user-picture,
+  .user-picture img {
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      margin-right: 10px;
+  }
+
+  .post-date,
+  .username {
+      white-space: nowrap;
+      margin-top: 10px;
+  }
+
+  .post-date {
+      margin-top: -10px;
+  }
+.espresso-post-card-body {
+  display: table-row;
+  width: 100%;
+}
+
+.espresso-post-card-footer {
+  display: table-row;
+  width: 100%;
+}
+
+.espresso-post-card-user {
+  width: 100%;
+}
+.espresso-post-card-menu {
+  float: right;
+  width: 30px;
+  cursor: pointer;
+}
+
+.espresso-post-card-media {
+  width: 100%;
+  height: 100%;
+  max-height: 250px;
+}
+
+.liked-icon {
+  background: url("./../../../assets/heart.png") 0px center no-repeat;
+  min-width: 25px;
+  min-height: 25px;
+  cursor: pointer;
+}
+
+
+
+.unliked-icon:hover {
+  background: url("./../../../assets/heart.png") 0px center no-repeat;
+}
+
+
+
+.like-comment-count {
+  width: 100%;
+}
+
+.like-comment-icons {
+  float: right;
+  width: 80px;
+}
+
+
+
+
+.comment-section {
+  display: none;
+  overflow: auto;
+  max-height: 350px;
+}
+
+.comment-section-show {
+  display: block;
+}
+
+.card-height {
+  max-height: 500px;
+}
+
+.espresso-card-body-subs {
+  display: table;
+  width: 100%;
+ 
+}
+.post-info {
+  display: table-row;
+}
+
+.espresso-post-card-media {
+  display: table-row;
+}
+.comment-user {
+  width: 60px;
+  margin-right: 10px;
+ 
+}
+.user-picture {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: blue;
+}
+
+.write-comment input,
+.write-comment span {
+  border: none;
+}
+
+.write-comment input {
+  border-top-right-radius: 20px !important;
+  border-bottom-right-radius: 20px !important;
+}
+
+.comment-content {
+  padding: 10px;
+  width: 100%;
+  background-color: whitesmoke;
+  border-radius: 20px;
+}
+.comment-item {
+  padding: 5px;
+}
+
+.espresso-pre-input,
+.espresso-input {
+  background: whitesmoke !important;
+  color: orange !important;
+}
+
+.espresso-input::placeholder {
+  color: gray !important;
+}
+
+.send-comment {
+  color: orange;
+  cursor: pointer;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.chart-container {
+  width: 500px;
+  height: 400px;
+  max-width: 500px;
+  max-height: 400px;
+}
+

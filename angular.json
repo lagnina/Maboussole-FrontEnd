@@ -29,13 +29,21 @@
               }
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
+              "src/custom-theme.scss",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
               "./node_modules/bootswatch/dist/united/bootstrap.css",
               "./node_modules/font-awesome/css/font-awesome.css",
               "./node_modules/ngx-toastr/toastr.css",
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/css/media_query.css",
+              "src/assets/css/bootstrap.css",
+             
+              "src/assets/css/animate.css",
+              "src/assets/css/owl.carousel.css",
+              "src/assets/css/owl.theme.default.css",
+              "src/assets/css/style_1.css",
+             "src/assets/css/media_query.css"
             ],
             "scripts": []
           },
