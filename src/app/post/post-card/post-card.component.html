@@ -3,18 +3,18 @@
 
       <mat-card-header>
         <mat-card-title>{{ post.posterId }}</mat-card-title>
-        
+
         <mat-card-subtitle style="color: black !important;">Created on:
           {{
             post.DateCreated  | date: "dd.MM.yyyy hh:mm:SS"
           }}</mat-card-subtitle>
         <mat-card-subtitle style="color: black !important;">Created by: {{ post.posterName }}</mat-card-subtitle>
-        
+
       </mat-card-header>
       <div class="card">
-         <img src="{{post.photoUrl || './assets/user.png'}}" alt="{{member.knownAs}}" 
-            class="card-img-top img-thumbnail"> 
-       
+         <img src="{{post.photoUrl || './assets/user.png'}}" alt="aa"
+            class="card-img-top img-thumbnail">
+
         <div class="card-footer">
         </div>
     </div>
@@ -24,10 +24,10 @@
         {{ post.content }}
       </p>
 
-     
-          
-        
-      
+
+
+
+
     <mat-card-actions class="action-btn" fxLayout fxLayoutAlign="space-between">
       <div class="like-dislike-btn">
         <div class="navy d-flex flex-row">
@@ -37,10 +37,10 @@
               class="unliked-icon"></div>
               </div>
               </div>
-              
-              
-         
-      
+
+
+
+
         <span #like class="likes" >
  {{post.likes}}
         </span>
