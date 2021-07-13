@@ -2,11 +2,13 @@ import { Photo } from "./photo";
 
 export interface Post {
     postId:Number;
-    Title:string;
+    title:string;
     posterId:Number;
     posterName:string;
-    DateCreated:Date;
+    dateCreated:Date;
+    posterPhotoUrl:string;
     content:string;
+    speciality :string;
     Type:string;
     photos:Photo[];
     likes:Number;

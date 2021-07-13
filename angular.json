@@ -36,7 +36,7 @@
               "./node_modules/font-awesome/css/font-awesome.css",
               "./node_modules/ngx-toastr/toastr.css",
               "src/styles.css",
-              "src/assets/css/media_query.css",
+              
               "src/assets/css/bootstrap.css",
              
               "src/assets/css/animate.css",

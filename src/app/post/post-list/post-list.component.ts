@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Post } from 'src/app/_models/Post';
 import { Router } from '@angular/router';
+import {MatDialog} from '@angular/material/dialog';
 
 import { PostService } from 'src/app/_services/post.service';
 
@@ -12,7 +13,7 @@ import { PostService } from 'src/app/_services/post.service';
 export class PostListComponent implements OnInit {
   posts:Post[];
   model:any={};
-  constructor(private postService: PostService,private router:Router) { }
+  constructor(private postService: PostService,private router:Router,public dialog: MatDialog) { }
 
   ngOnInit(): void {
 
@@ -23,6 +24,14 @@ export class PostListComponent implements OnInit {
 
   }
   
+  openDialog() {
+    const dialogRef = this.dialog.open(DialogContentExampleDialog);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  
   Post(){
     // subscribe = moura matawsal response hachno dir
         this.postService.PostCreate(this.model).subscribe(response => {
@@ -31,3 +40,9 @@ export class PostListComponent implements OnInit {
       }
 
 }
+@Component({
+  selector: 'dialog-content-example-dialog',
+  template: '<div>aaaaaaaaaa</div>',
+
+})
+export class DialogContentExampleDialog {}

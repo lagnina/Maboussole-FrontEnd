@@ -26,8 +26,10 @@ export class ActualityListComponent implements OnInit {
     // subscribe = moura matawsal response hachno dir
         this.model.Type = 'actualite'
         this.postService.PostCreate(this.model).subscribe(response => {
-          this.router.navigateByUrl('/post/list');
+          this.router.navigateByUrl('Actuality');
           window.location.reload();      })
       }
 
 }
+
+

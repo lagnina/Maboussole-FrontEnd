@@ -25,7 +25,7 @@ PostCreate(model: any){
   return this.http.post(this.baseUrl + 'post/create', model).pipe(
     map((response:Post ) =>{
 
-
+      console.log(response);
 
 
     })
