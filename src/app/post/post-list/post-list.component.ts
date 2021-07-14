@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Post } from 'src/app/_models/Post';
 import { Router } from '@angular/router';
-import {MatDialog} from '@angular/material/dialog';
 
 import { PostService } from 'src/app/_services/post.service';
 

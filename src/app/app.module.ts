@@ -147,6 +147,7 @@ import { ActualityDetailComponent } from './actuality/actuality-detail/actuality
     MatProgressBarModule,
     MatSelectModule,
     MatCardModule,
+
     MatChipsModule,
     MatSelectCountryModule.forRoot('de')
   ],
