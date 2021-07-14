@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Post } from 'src/app/_models/Post';
@@ -16,25 +15,15 @@ export class PostCreateComponent implements OnInit {
   closeResult = '';
 response : any ={}
 
-  constructor( public postService : PostService ,public dialog: MatDialog,  private router : Router,private toastr: ToastrService) { }
+  constructor( public postService : PostService ,  private router : Router,private toastr: ToastrService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
   }
-  openDialog() {
-    const dialogRef = this.dialog.open(DialogContentExampleDialog);
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
-  }
+
+
 }
-@Component({
-  selector: 'dialog-content-example-dialog',
-  templateUrl: 'post-create.component.html',
-})
 
-
-export class DialogContentExampleDialog {}
 
 
  
@@ -44,7 +33,6 @@ export class DialogContentExampleDialog {}
   
 
 //   Post(){
-// // subscribe = moura matawsal response hachno dir
 //     this.postService.PostCreate(this.model).subscribe(response => {
 //       this.router.navigateByUrl('/post/list');
 //       console.log(response)
@@ -54,10 +42,11 @@ export class DialogContentExampleDialog {}
 //   GetPosts() {
     
 
-    //   this.postService.getAllPosts().subscribe(response => {
-    //     console.log(response);
-    //    this.posts = response;
-    //  })
+//       this.postService.getAllPosts().subscribe(response => {
+//         console.log(response);
+//        this.posts = response;
+//      })
      
        
   
+    

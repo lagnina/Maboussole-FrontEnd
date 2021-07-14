@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Post } from '../_models/Post';
+import { PostService } from '../_services/post.service';
 
 @Component({
   selector: 'app-home',
@@ -8,18 +10,30 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomeComponent implements OnInit {
   registerMode = false;
-
-  constructor() { }
+  posts:Post[];
+  constructor(private postService: PostService,) { }
 
   ngOnInit(): void {
+    this.getpost();
   }
 
-  registerToggle() {
-    this.registerMode = !this.registerMode;
-  }
+  getpost() {
+    this.postService.getAllPosts('conseil').subscribe(response => {
+      console.log(response);
+     this.posts = response;
+     console.log(this.posts)
+    });
+    this.postService.getAllPosts('actualite').subscribe(response => 
+    {
+        this.posts = this.posts.concat(response);
+    });
 
-  cancelRegisterMode(event: boolean) {
-    this.registerMode = event;
+    }
+      
+  
+  
   }
+    
 
-}
+
+

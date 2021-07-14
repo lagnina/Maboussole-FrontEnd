@@ -86,6 +86,7 @@ import { ActualityListComponent } from './actuality/actuality-list/actuality-lis
 import { ActualityCardComponent } from './actuality/actuality-card/actuality-card.component';
 import { ConseilListComponent } from './conseil/conseil-list/conseil-list.component';
 import { ConseilCardComponent } from './conseil/conseil-card/conseil-card.component';
+import { ActualityDetailComponent } from './actuality/actuality-detail/actuality-detail.component';
 
 @NgModule({
   declarations: [
@@ -121,6 +122,7 @@ import { ConseilCardComponent } from './conseil/conseil-card/conseil-card.compon
     ActualityCardComponent,
     ConseilListComponent,
     ConseilCardComponent,
+    ActualityDetailComponent,
     
   ],
   imports: [

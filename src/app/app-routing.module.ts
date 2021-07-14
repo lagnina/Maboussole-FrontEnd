@@ -22,6 +22,7 @@ import { PostCreateComponent } from './post/post-create/post-create.component';
 import { ActualityListComponent } from './actuality/actuality-list/actuality-list.component';
 import { ConseilListComponent } from './conseil/conseil-list/conseil-list.component';
 import { ConseilCardComponent } from './conseil/conseil-card/conseil-card.component';
+import { ActualityDetailComponent } from './actuality/actuality-detail/actuality-detail.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
