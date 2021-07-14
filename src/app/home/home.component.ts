@@ -11,7 +11,7 @@ import { PostService } from '../_services/post.service';
 export class HomeComponent implements OnInit {
   registerMode = false;
   posts:Post[];
-  constructor(private postService: PostService,) { }
+  constructor(private postService: PostService) { }
 
   ngOnInit(): void {
     this.getpost();
