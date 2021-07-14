@@ -13,7 +13,7 @@ import { PostService } from 'src/app/_services/post.service';
 export class PostListComponent implements OnInit {
   posts:Post[];
   model:any={};
-  constructor(private postService: PostService,private router:Router,public dialog: MatDialog) { }
+  constructor(private postService: PostService,private router:Router) { }
 
   ngOnInit(): void {
 
@@ -24,13 +24,7 @@ export class PostListComponent implements OnInit {
 
   }
   
-  openDialog() {
-    const dialogRef = this.dialog.open(DialogContentExampleDialog);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
-  }
+ 
   
   Post(){
     // subscribe = moura matawsal response hachno dir
@@ -40,9 +34,3 @@ export class PostListComponent implements OnInit {
       }
 
 }
-@Component({
-  selector: 'dialog-content-example-dialog',
-  template: '<div>aaaaaaaaaa</div>',
-
-})
-export class DialogContentExampleDialog {}

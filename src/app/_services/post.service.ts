@@ -35,6 +35,13 @@ PostCreate(model: any){
 getAllPosts(type:string){
    return this.http.get<Post[]>(this.baseUrl + 'post/Posts' ,{params:{Type:type}});
 }
+getPost(postId:Number){
+
+  return this.http.get<Post>(this.baseUrl + 'post/getPost/'+postId );
+}
+
+
+
 
 likepost(postId:Number){
 

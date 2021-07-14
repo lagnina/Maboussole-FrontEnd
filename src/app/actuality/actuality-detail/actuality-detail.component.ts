@@ -9,7 +9,8 @@ import { PostService } from 'src/app/_services/post.service';
 })
 export class ActualityDetailComponent implements OnInit {
 
- posts:Post[];
+ post:Post;
+  
 
 
 
@@ -17,9 +18,10 @@ export class ActualityDetailComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.postService.getpost('actuality').subscribe(response => {
-      this.posts=response;
-    
-  }
 
-}
+    this.postService.getPost(this.post.postId).subscribe(response => {
+      this.post=response;
+    
+  })
+
+}}
