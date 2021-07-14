@@ -19,6 +19,7 @@ export class ConseilListComponent implements OnInit {
  this.postService.getAllPosts('conseil').subscribe(response => {
    console.log(response);
   this.posts = response;
+  console.log(this.posts)
 })
 
   }
