@@ -35,10 +35,10 @@ PostCreate(model: any){
 getAllPosts(type:string){
    return this.http.get<Post[]>(this.baseUrl + 'post/Posts' ,{params:{Type:type}});
 }
-// getPost(postId:Number){
+ getPost(postId:Number){
 
-//   return this.http.get<Post>(this.baseUrl + 'post/getPost/'+postId );
-// }
+  return this.http.get<Post>(this.baseUrl + 'post/Posts/'+postId );
+}
 
 //  setPostPhoto(photoId: number) {
 //   //  return this.http.put(this.baseUrl + 'post/set-post-photo/' + photoId, {});

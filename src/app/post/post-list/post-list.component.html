@@ -35,9 +35,11 @@
         <option value="conseil">conseil</option>
         <option value="actualite">actualite</option>
       </select>
-      <tab heading='Edit Photos'>
-        <!-- <app-photo-editor [member]="post"></app-photo-editor> -->
-      </tab>
+
+        <input type="file"
+        id="file"
+        (change)="handleFileInput($event.target.files)">
+
     </form>
 
     <button class="btn btn-success my-2 my-sm-0" type="submit">Create Post</button>
