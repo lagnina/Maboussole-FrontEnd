@@ -37,12 +37,10 @@ getAllPosts(type:string){
 }
  getPost(postId:Number){
 
-  return this.http.get<Post>(this.baseUrl + 'post/Posts/'+postId );
+  return this.http.get<Post>(this.baseUrl + 'post/Posts/{postId}'+{params:{postId }});
 }
 
-//  setPostPhoto(photoId: number) {
-//   //  return this.http.put(this.baseUrl + 'post/set-post-photo/' + photoId, {});
-//   }
+
 
 
 

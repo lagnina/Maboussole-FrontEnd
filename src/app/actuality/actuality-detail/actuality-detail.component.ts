@@ -16,10 +16,15 @@ export class ActualityDetailComponent implements OnInit {
 
   constructor(private postService :PostService ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
 
 
-    // this.postService.getPost(this.post.postId).subscribe(response => {
-    //   this.post=response;
+    this.postService.getPost(this.post.postId).subscribe(response => {
+    this.post=response;
+    console.log(response);
+    });
+
+
+  }
     
 }
