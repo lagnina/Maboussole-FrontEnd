@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Post } from 'src/app/_models/Post';
 import { PostService } from 'src/app/_services/post.service';
 
@@ -10,21 +11,21 @@ import { PostService } from 'src/app/_services/post.service';
 export class ActualityDetailComponent implements OnInit {
 
  post:Post;
-  
 
 
 
-  constructor(private postService :PostService ) { }
+
+  constructor(private postService :PostService,private route: ActivatedRoute ) { }
 
   ngOnInit(): void {
+console.log(this.route.snapshot.params.id)
 
-
-    this.postService.getPost(this.post.postId).subscribe(response => {
+    this.postService.getPost(this.route.snapshot.params.id).subscribe(response => {
     this.post=response;
     console.log(response);
     });
 
 
   }
-    
+
 }

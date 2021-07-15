@@ -37,7 +37,7 @@ getAllPosts(type:string){
 }
  getPost(postId:Number){
 
-  return this.http.get<Post>(this.baseUrl + 'post/Posts/{postId}'+{params:{postId }});
+  return this.http.get<Post>(this.baseUrl + 'post/Posts/'+postId);
 }
 
 
