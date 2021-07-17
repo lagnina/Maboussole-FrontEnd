@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Post } from 'src/app/_models/Post';
 import { PostService } from '../../_services/post.service';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-post',
@@ -10,21 +11,27 @@ import { PostService } from '../../_services/post.service';
   styleUrls: ['./post-create.component.css']
 })
 export class PostCreateComponent implements OnInit {
-  model:any ={};
-  posts:Post[];
   closeResult = '';
-response : any ={}
 
-  constructor( public postService : PostService ,  private router : Router,private toastr: ToastrService) { }
-
-  ngOnInit(): void { 
+  constructor(private modalService: NgbModal) {}
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
   }
 
+  open() {
+ console.log("monica")
+  }
 
-
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
+  }
 }
-
-
 
  
 
