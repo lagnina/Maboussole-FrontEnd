@@ -1,24 +1,20 @@
-<div class="row">
+
+     <div class="container-fluid pb-4 pt-4 paddding">
+      <div class="container paddding">
+        <div class="row mx-0">
+  
+              <div class="col-md-8 animate-box" data-animate-effect="fadeInLeft" *ngFor="let post of posts" >
+                  
+                  <app-post-card [post]="post"></app-post-card>
+              </div>
+          
 
 
-  <form #postForm="ngForm" id="postForm" class="form-inline mt-2 mt-md-0" (ngSubmit)="Post()" autocomplete="off">
-
-    <form>
-
-
-
-
-    </form>
-
-    <button class="btn btn-success my-2 my-sm-0" type="submit">Create Post</button>
-
-
-
-  </form>
-</div>
-
-
-
+   <div class="col-md-3 animate-box" data-animate-effect="fadeInRight"  style="position: fixed; margin-left: 793px;">
+      <div>
+          
+      <div class="clearfix">
+       
 <div class="row">
 
 
@@ -48,14 +44,46 @@
 
   </form>
 </div>
-
-
-
-
-<div class="row">
-
-  <div *ngFor="let post of posts" class="col-8">
-
-    <app-post-card [post]="post"></app-post-card>
+      </div>
+      
+      <div>
+          <div class="fh5co_heading fh5co_heading_border_bottom pt-3 py-2 mb-4">Most Liked Posts </div>
+      </div>
+      <div class="row pb-3">
+          <div class="col-5 align-self-center">
+              <img src="images/download (1).jpg" alt="img" class="fh5co_most_trading"/>
+          </div>
+          <div class="col-7 paddding">
+              <div class="most_fh5co_treding_font"> Magna aliqua ut enim ad minim veniam quis nostrud.</div>
+              <div class="most_fh5co_treding_font_123"> April 18, 2016</div>
+          </div>
+      </div>
+      <div class="row pb-3">
+          <div class="col-5 align-self-center">
+              <img src="images/allef-vinicius-108153.jpg" alt="img" class="fh5co_most_trading"/>
+          </div>
+          <div class="col-7 paddding">
+              <div class="most_fh5co_treding_font"> Enim ad minim veniam nostrud xercitation ullamco.</div>
+              <div class="most_fh5co_treding_font_123"> April 18, 2016</div>
+          </div>
+      </div>
+      <div class="row pb-3">
+          <div class="col-5 align-self-center">
+              <img src="images/download (2).jpg" alt="img" class="fh5co_most_trading"/>
+          </div>
+          <div class="col-7 paddding">
+              <div class="most_fh5co_treding_font"> Magna aliqua ut enim ad minim veniam quis nostrud.</div>
+              <div class="most_fh5co_treding_font_123"> April 18, 2016</div>
+          </div>
+      </div>
+      <div class="row pb-3">
+          <div class="col-5 align-self-center"><img src="images/seth-doyle-133175.jpg" alt="img"
+                                                    class="fh5co_most_trading"/></div>
+          <div class="col-7 paddding">
+              <div class="most_fh5co_treding_font"> Magna aliqua ut enim ad minim veniam quis nostrud.</div>
+              <div class="most_fh5co_treding_font_123"> April 18, 2016</div>
+          </div>
+      </div>
+  
+  
   </div>
-</div>

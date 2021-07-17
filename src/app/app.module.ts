@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -82,6 +83,7 @@ import {
 } from "@angular/material/select";
 
 
+
 import { ActualityListComponent } from './actuality/actuality-list/actuality-list.component';
 import { ActualityCardComponent } from './actuality/actuality-card/actuality-card.component';
 import { ConseilListComponent } from './conseil/conseil-list/conseil-list.component';
@@ -127,6 +129,7 @@ import { ActualityDetailComponent } from './actuality/actuality-detail/actuality
   ],
   imports: [
     BrowserModule,
+    NgbModal,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
@@ -147,6 +150,7 @@ import { ActualityDetailComponent } from './actuality/actuality-detail/actuality
     MatProgressBarModule,
     MatSelectModule,
     MatCardModule,
+    
 
     MatChipsModule,
     MatSelectCountryModule.forRoot('de')

@@ -29,6 +29,8 @@ export class PostCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  
+
   deletePost() {
 
 
