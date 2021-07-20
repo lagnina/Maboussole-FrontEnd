@@ -32,28 +32,10 @@ padding: 50px">
         id="file"
         (change)="handleFileInput($event.target.files)">
     </div>
-    <div class="form-group">
-        <div class="form-group">
-            <div class="directorist-select directorist-select-multi" id="multiSelect" data-isSearch="true" data-multiSelect='[{value: "abul", key: 0}]' data-max="5">
-                <select name="mySelect" >
-                  <option value="">Select Item</option>
-                  <option value="abul">Abul</option>
-                  <option value="bacco">Bacco</option>
-                  <option value="bodri">Bodri</option>
-                  <option value="canmia">Canmia</option>
-                  <option value="choncol">Choncol</option>
-                  <option value="condon">Condon</option>
-                  <option value="chalek">Chalek</option>
-                  <option value="deloar">Deloar</option>
-                  <option value="dulon">Dulon</option>
-                  <option value="dipu">Dipu</option>
-                  <option value="dulal">Dulal</option>
-                </select>
-              </div>
-        </div>
+    
 
         
-<div class="form-group">
+<!-- <div class="form-group">
 
     
         <button type="button" class="btn btn-secondary btn-sm" (click)="toggleDisabled()">Toggle disabled</button>
@@ -62,9 +44,9 @@ padding: 50px">
     <ng-select [multiple]="true" [(ngModel)]="selectedCar">
         <ng-option *ngFor="let car of cars" [value]="car.id" [disabled]="car.disabled">{{car.name}}</ng-option>
         <ng-option [value]="'custom'">Custom</ng-option>
-    </ng-select>
-    <button class="btn btn-success my-2 my-sm-0" type="submit">Create Post</button>
-</div>
+    </ng-select>-->
+     <button class="btn btn-success my-2 my-sm-0" type="submit" >Create Post</button>
+
 
   </form>
   </span>

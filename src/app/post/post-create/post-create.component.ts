@@ -39,6 +39,10 @@ selectedCar: number;
   Post(){
     var formData = new FormData();
     formData.append("CategoryPicture", this.fileToUpload);
+    this.model.PostTags = [ {
+      Id: 1,
+      name:'tag1'
+    }]
     formData.append("PostForm",JSON.stringify(this.model));
     console.log(this.model)
         this.postService.PostCreate(formData).subscribe(response => {
