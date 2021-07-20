@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -129,7 +128,6 @@ import { ActualityDetailComponent } from './actuality/actuality-detail/actuality
   ],
   imports: [
     BrowserModule,
-    NgbModal,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
