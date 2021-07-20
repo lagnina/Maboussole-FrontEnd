@@ -32,7 +32,6 @@ export class PostListComponent implements OnInit {
     var formData = new FormData();
     formData.append("CategoryPicture", this.fileToUpload);
     formData.append("PostForm",JSON.stringify(this.model));
-    // subscribe = moura matawsal response hachno dir
     console.log(this.model)
         this.postService.PostCreate(formData).subscribe(response => {
           this.router.navigateByUrl('/post/list');

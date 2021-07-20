@@ -88,6 +88,7 @@ import { ActualityCardComponent } from './actuality/actuality-card/actuality-car
 import { ConseilListComponent } from './conseil/conseil-list/conseil-list.component';
 import { ConseilCardComponent } from './conseil/conseil-card/conseil-card.component';
 import { ActualityDetailComponent } from './actuality/actuality-detail/actuality-detail.component';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [
@@ -128,6 +129,7 @@ import { ActualityDetailComponent } from './actuality/actuality-detail/actuality
   ],
   imports: [
     BrowserModule,
+    NgSelectModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,

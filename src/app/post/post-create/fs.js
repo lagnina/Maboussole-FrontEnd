@@ -111,7 +111,7 @@ const {
 const {
   CHAR_FORWARD_SLASH,
   CHAR_BACKWARD_SLASH,
-} = require('internal/constants');
+} = require('internal/constants');   
 const {
   isUint32,
   parseFileMode,

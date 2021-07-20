@@ -18,31 +18,11 @@
 <div class="row">
 
 
-  <form #postForm="ngForm" id="postForm" class="form-inline mt-2 mt-md-0" (ngSubmit)="Post()" autocomplete="off">
-
-    <form>
-      <input type="text" placeholder="Content" [(ngModel)]="model.content" name="content" required />
-
-      <input type="text" placeholder="Titre" [(ngModel)]="model.title" name="titre" required />
-
-      <input type="text" placeholder="Speciality" [(ngModel)]="model.speciality" name="speciality" required />
-      <select id="Type" [(ngModel)]="model.Type" name="Type">
-        <option value="post">post</option>
-        <option value="conseil">conseil</option>
-        <option value="actualite">actualite</option>
-      </select>
-
-        <input type="file"
-        id="file"
-        (change)="handleFileInput($event.target.files)">
-
-    </form>
-
-    <button class="btn btn-success my-2 my-sm-0" type="submit">Create Post</button>
+<a href="post/create" role="button">
+<button  class="btn btn-primary" type="submit">Create Post</button>
+</a>
 
 
-
-  </form>
 </div>
       </div>
       

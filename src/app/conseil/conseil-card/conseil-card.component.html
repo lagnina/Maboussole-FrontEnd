@@ -2,8 +2,7 @@
 
 
   <div>
-    <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">
-</div>
+    
 <div class="row pb-4">
     <div class="col-md-5">
             <div class="fh5co_news_img"><img src="{{post.photoUrl}}" alt=""/></div>
@@ -11,7 +10,8 @@
         </div>
     </div>
     <div class="col-md-7 animate-box">
-        <a href="Conseil-Orientation/{{post.postId}}" class="fh5co_magna py-2"> {{post.title}}  <br>  </a> <a href="Actuality/{{post.postId}}" class="fh5co_mini_time py-3">
+        <a href="Conseil-Orientation/{{post.postId}}" class="fh5co_magna py-2"> {{post.title}}  <br>  </a>
+         <a href="Conseil-Orientation/{{post.postId}}" class="fh5co_mini_time py-3">
       
           {{post.posterName}} 
           {{post.dateCreated | date: 'dd MMM yyyy'}} </a>
@@ -27,6 +27,9 @@
             -webkit-line-clamp: 3;"> {{post.content}}</p>
           <a class="btn btn-primary" href="Conseil-Orientation/{{post.postId}}">ReadMore</a>
         </div>
+        </div>
+    </div>
+    <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">
     </div>
 </div>
 
