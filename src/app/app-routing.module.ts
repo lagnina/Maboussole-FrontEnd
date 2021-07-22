@@ -24,9 +24,12 @@ import { ConseilListComponent } from './conseil/conseil-list/conseil-list.compon
 import { ConseilCardComponent } from './conseil/conseil-card/conseil-card.component';
 import { ActualityDetailComponent } from './actuality/actuality-detail/actuality-detail.component';
 import { ConseilDetailComponent } from './conseil/conseil-detail/conseil-detail.component';
+import { TagComponent } from './tag/tag.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
+  {path: '', component: RegisterComponent},
   {
     path: '',
     runGuardsAndResolvers: 'always',
@@ -37,17 +40,19 @@ const routes: Routes = [
       {path: 'member/edit', component: MemberEditComponent, canDeactivate: [PreventUnsavedChangesGuard]},
       {path: 'lists', component: ListsComponent},
       {path: 'messages', component: MessagesComponent},
-      {path: 'test',component: TestComponent},
-      {path: 'post/create',component:PostCreateComponent},
+      {path: 'Quiz',component: TestComponent},
+      {path: 'post/create',component:PostCreateComponent, canDeactivate:[PreventUnsavedChangesGuard]},
       {path:'post/list',component: PostListComponent},
       {path:'Actuality',component:ActualityListComponent},
       {path:'Actuality/:id',component:ActualityDetailComponent},
       {path:'Conseil-Orientation/:id',component:ConseilDetailComponent},
+      {path:'Register',component:RegisterComponent},
 
       {path:'Conseil-orientation',component:ConseilListComponent},
       {path:'post/edit' ,component:PostEditComponent, canDeactivate:[PreventUnsavedChangesGuard]},
       {path: 'admin', component: AdminPanelComponent, canActivate: [AdminGuard]},
       {path:'Home', component:HomeComponent},
+      {path:'Tags', component:TagComponent},
     ]
   },
   {path: 'errors', component: TestErrorsComponent},

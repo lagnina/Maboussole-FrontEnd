@@ -1,4 +1,5 @@
 import { Photo } from "./photo";
+import { Tag } from "./tag";
 
 export interface Post {
     postId:Number;
@@ -15,5 +16,6 @@ export interface Post {
     likes:Number;
     photoUrl:Photo[];
     isLiked:boolean;
+    postTags:Tag[];
     
 }
