@@ -12,7 +12,7 @@ import { PresenceService } from './presence.service';
   providedIn: 'root'
 })
 export class PostService {
- 
+
 
 
   baseUrl = environment.apiUrl;
@@ -35,8 +35,8 @@ PostCreate(model: any){
 }
 
 getTags() {
-   
-  return this.http.get<Tag[]>(this.baseUrl+ 'tag/GetTags',{})
+
+  return this.http.get<Tag[]>(this.baseUrl+ 'tag/GetAllTags',{})
 }
 
 

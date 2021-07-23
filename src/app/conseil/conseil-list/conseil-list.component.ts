@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Post } from 'src/app/_models/Post';
+import { Tag } from 'src/app/_models/Tag';
 import { PostService } from 'src/app/_services/post.service';
 
 @Component({
@@ -11,6 +12,7 @@ import { PostService } from 'src/app/_services/post.service';
 export class ConseilListComponent implements OnInit {
 
   posts:Post[];
+  tags:Tag[];
   model:any={};
   constructor(private postService: PostService,private router:Router) { }
 
@@ -20,6 +22,11 @@ export class ConseilListComponent implements OnInit {
    console.log(response);
   this.posts = response;
   console.log(this.posts)
+})
+
+this.postService.getTags().subscribe(response=>{
+
+this.tags = response;
 })
 
   }

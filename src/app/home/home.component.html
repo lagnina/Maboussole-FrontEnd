@@ -5,7 +5,7 @@
     <div *ngIf="!registerMode" style='text-align: center;'>
         <h1>Ma Boussole</h1>
         <p class="lead"> Ma boussole est la plateforme leader de l'orientation et l'éducation </p>
-        <div class="text-center">
+        <div  *ngIf="!(accountService.currentUser$ | async) as user" class="text-center">
             <button (click)="registerToggle()" class="btn btn-primary btn-lg mr-2">Register</button>
             <button class="btn btn-info btn-lg">Learn more</button>
         </div>

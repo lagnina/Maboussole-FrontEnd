@@ -14,18 +14,15 @@ export class TagComponent implements OnInit {
 @Input()
 
   tag:Tag;
-  
+
   constructor( private postService :PostService) { }
 
   ngOnInit(): void {}
 
   getTags(){
 
-    this.postService.getTags().subscribe(()=>{
 
-    
-    })
   }
 
-  
+
 }
