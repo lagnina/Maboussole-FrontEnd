@@ -29,13 +29,20 @@ import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: '', component: RegisterComponent},
+  {path: 'Register', component: RegisterComponent},
+  {path:'Actuality',component:ActualityListComponent},
+  {path:'post/list',component: PostListComponent},
+
+  {path:'Conseil-orientation',component:ConseilListComponent},
+
+
+
+
   {
     path: '',
     runGuardsAndResolvers: 'always',
     canActivate: [AuthGuard],
     children: [ 
-
       {path: 'members/:username', component: MemberDetailComponent, resolve: {member: MemberDetailedResolver}},
       {path: 'member/edit', component: MemberEditComponent, canDeactivate: [PreventUnsavedChangesGuard]},
       {path: 'lists', component: ListsComponent},
@@ -43,12 +50,9 @@ const routes: Routes = [
       {path: 'Quiz',component: TestComponent},
       {path: 'post/create',component:PostCreateComponent, canDeactivate:[PreventUnsavedChangesGuard]},
       {path:'post/list',component: PostListComponent},
-      {path:'Actuality',component:ActualityListComponent},
       {path:'Actuality/:id',component:ActualityDetailComponent},
       {path:'Conseil-Orientation/:id',component:ConseilDetailComponent},
-      {path:'Register',component:RegisterComponent},
 
-      {path:'Conseil-orientation',component:ConseilListComponent},
       {path:'post/edit' ,component:PostEditComponent, canDeactivate:[PreventUnsavedChangesGuard]},
       {path: 'admin', component: AdminPanelComponent, canActivate: [AdminGuard]},
       {path:'Home', component:HomeComponent},

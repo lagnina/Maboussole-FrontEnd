@@ -4,6 +4,7 @@ import { ReplaySubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { Post } from '../_models/Post';
+import { Tag } from '../_models/Tag';
 import { User } from '../_models/user';
 import { PresenceService } from './presence.service';
 
@@ -11,6 +12,7 @@ import { PresenceService } from './presence.service';
   providedIn: 'root'
 })
 export class PostService {
+ 
 
 
   baseUrl = environment.apiUrl;
@@ -32,6 +34,12 @@ PostCreate(model: any){
   )
 }
 
+getTags() {
+   
+  return this.http.get<Tag[]>(this.baseUrl+ 'tag/GetTags',{})
+}
+
+
 getAllPosts(type:string){
    return this.http.get<Post[]>(this.baseUrl + 'post/Posts' ,{params:{Type:type}});
 }
@@ -39,10 +47,6 @@ getAllPosts(type:string){
 
   return this.http.get<Post>(this.baseUrl + 'post/Posts/'+postId);
 }
-
-
-
-
 
 
 likepost(postId:Number){

@@ -1,5 +1,5 @@
 import { Photo } from "./photo";
-import { Tag } from "./tag";
+import { Tag } from "./Tag";
 
 export interface Post {
     postId:Number;

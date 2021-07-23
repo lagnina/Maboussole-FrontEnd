@@ -3,7 +3,6 @@
         <a class="navbar-brand" routerLink='/' routerLinkActive='active'>Ma boussoule</a>
 
         <ul class="navbar-nav mr-auto">
-            <ng-container *ngIf="accountService.currentUser$ | async">
                 <li class="nav-item">
                     <a class="nav-link" routerLink='/Home' routerLinkActive='active' >Accueil</a>
                 </li>
@@ -13,7 +12,11 @@
                 <li class="nav-item">
                     <a class="nav-link" routerLink='/Conseil-orientation'routerLinkActive='active' >Conseil & orientation</a>
                 </li>
+                
+                <ng-container *ngIf="accountService.currentUser$ | async">
+           
                 <li class="nav-item">
+
                     <a class="nav-link" routerLink='/post/list'routerLinkActive='active' >Posts </a>
                 </li>
                 <li *appHasRole='["Admin", "Moderator"]' class="nav-item">

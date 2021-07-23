@@ -89,6 +89,7 @@ import { ConseilListComponent } from './conseil/conseil-list/conseil-list.compon
 import { ConseilCardComponent } from './conseil/conseil-card/conseil-card.component';
 import { ActualityDetailComponent } from './actuality/actuality-detail/actuality-detail.component';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { TagComponent } from './tag/tag.component';
 
 @NgModule({
   declarations: [
@@ -125,6 +126,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
     ConseilListComponent,
     ConseilCardComponent,
     ActualityDetailComponent,
+    TagComponent,
     
   ],
   imports: [
