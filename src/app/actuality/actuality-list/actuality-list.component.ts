@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Pagination } from 'src/app/_models/pagination';
 import { Post } from 'src/app/_models/Post';
 import { PostService } from 'src/app/_services/post.service';
 
@@ -11,15 +12,32 @@ import { PostService } from 'src/app/_services/post.service';
 export class ActualityListComponent implements OnInit {
   posts:Post[];
   model:any={};
-  constructor(private postService: PostService,private router:Router) { }
+  postParams: any;
+  pagination: Pagination;
+  constructor(private postService: PostService,private router:Router) {
+    this.postParams = this.postService.getParams();
+   }
 
   ngOnInit(): void {
-
+   this.loadPosts();
  this.postService.getAllPosts('actualite').subscribe(response => {
    console.log(response);
-  this.posts = response;
+  this.posts = response.result;
 })
 
+  }
+  loadPosts() {
+    this.postService.setPostParams(this.postParams);
+    this.postService.getAllPosts('actualite').subscribe(response => {
+      this.posts = response.result;
+      this.pagination = response.pagination;
+    })
+  }
+  
+  pageChanged(event: any) {
+    this.postParams.pageNumber = event.page;
+    this.postService.setPostParams(this.postParams);
+    this.loadPosts();
   }
 
   Post(){

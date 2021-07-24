@@ -8,6 +8,18 @@
                     <app-actuality-card [post]="post"></app-actuality-card>
                 </div>
             
+                 <div class="d-flex justify-content-center" *ngIf="pagination">
+                <pagination 
+                    [boundaryLinks]="true" 
+                    [totalItems]="pagination.totalItems"
+                    [itemsPerPage]="pagination.itemsPerPage"
+                    [(ngModel)]="pagination.currentPage"
+                    (pageChanged)="pageChanged($event)"
+                    previousText="&lsaquo;" 
+                    nextText="&rsaquo;" 
+                    firstText="&laquo;" 
+                    lastText="&raquo;">
+            </pagination></div>
 
 
      <div class="col-md-3 animate-box" data-animate-effect="fadeInRight"  style="position: fixed; margin-left: 793px;">
@@ -17,17 +29,7 @@
         <div class="clearfix"></div>
         <div class="fh5co_tags_all">
             <a href="#" class="fh5co_tagg">Business</a>
-            <a href="#" class="fh5co_tagg">Technology</a>
-            <a href="#" class="fh5co_tagg">Sport</a>
-            <a href="#" class="fh5co_tagg">Art</a>
-            <a href="#" class="fh5co_tagg">Lifestyle</a>
-            <a href="#" class="fh5co_tagg">Three</a>
-            <a href="#" class="fh5co_tagg">Photography</a>
-            <a href="#" class="fh5co_tagg">Lifestyle</a>
-            <a href="#" class="fh5co_tagg">Art</a>
-            <a href="#" class="fh5co_tagg">Education</a>
-            <a href="#" class="fh5co_tagg">Social</a>
-            <a href="#" class="fh5co_tagg">Three</a>
+      
         </div>
         <div>
             <div class="fh5co_heading fh5co_heading_border_bottom pt-3 py-2 mb-4">Most Popular</div>
