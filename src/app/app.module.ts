@@ -90,6 +90,7 @@ import { ConseilCardComponent } from './conseil/conseil-card/conseil-card.compon
 import { ActualityDetailComponent } from './actuality/actuality-detail/actuality-detail.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { TagComponent } from './tag/tag.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -127,6 +128,7 @@ import { TagComponent } from './tag/tag.component';
     ConseilCardComponent,
     ActualityDetailComponent,
     TagComponent,
+    LoginComponent,
     
   ],
   imports: [

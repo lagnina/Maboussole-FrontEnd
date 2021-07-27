@@ -21,10 +21,16 @@ Tag :string[]=['Education','Orientations','Learning','School','Motivation','Stud
 selectedCar: number;
 
     cars = [
-        { id: 1, name: 'Volvo' },
-        { id: 2, name: 'Saab' },
-        { id: 3, name: 'Opel' },
-        { id: 4, name: 'Audi' },
+        { id: 1, name: 'Education' },
+        { id: 2, name: 'Orientations' },
+        { id: 3, name: 'Learning' },
+        { id: 4, name: 'Science' },
+        { id: 5, name: 'Knowledge' },
+
+        { id: 6, name: 'English' },
+
+        { id: 7, name: 'training' },
+
     ];
 
   constructor(private postService: PostService,private config: NgSelectConfig,private router:Router) { }

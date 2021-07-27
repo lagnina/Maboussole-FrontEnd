@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Pagination } from 'src/app/_models/pagination';
 import { Post } from 'src/app/_models/Post';
+import { Tag } from 'src/app/_models/Tag';
 import { PostService } from 'src/app/_services/post.service';
 
 @Component({
@@ -11,6 +12,7 @@ import { PostService } from 'src/app/_services/post.service';
 })
 export class ActualityListComponent implements OnInit {
   posts:Post[];
+  tags:Tag[];
   model:any={};
   postParams: any;
   pagination: Pagination;
@@ -24,6 +26,9 @@ export class ActualityListComponent implements OnInit {
    console.log(response);
   this.posts = response.result;
 })
+this.postService.getTags().subscribe(response=>{
+  this.tags=response;
+ })
 
   }
   loadPosts() {

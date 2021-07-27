@@ -35,6 +35,8 @@ const routes: Routes = [
   {path:'post/list',component: PostListComponent},
   {path:'Conseil-orientation',component:ConseilListComponent},
   {path:'Login',component:LoginComponent},
+  {path:'Home', component:HomeComponent},
+
 
 
 
@@ -58,7 +60,6 @@ const routes: Routes = [
 
       {path:'post/edit' ,component:PostEditComponent, canDeactivate:[PreventUnsavedChangesGuard]},
       {path: 'admin', component: AdminPanelComponent, canActivate: [AdminGuard]},
-      {path:'Home', component:HomeComponent},
       {path:'Tags', component:TagComponent},
     ]
   },
