@@ -1,0 +1,454 @@
+[
+
+
+    {
+                          "type": "rating",
+                           "name" : "Vous êtes du type investigateur, chercheur, pour aller toujours plus loin dans vos découvertes scientifiques",
+                          "domaines":[
+                            {"name":"Genie Mecanique",
+                              "rating": 5
+                              },
+                              {"name":"Informatique",
+                                "rating": 3
+                                },
+                                {"name":"Genie civil",
+                                  "rating": 1},
+                                  {"name":"Genie Industriel",
+                                    "rating": 1},
+                                    {"name":"Biologie et environnement",
+                                      "rating": 5},
+                                      {"name": "Electricite electronique",
+                                        "rating": 5}]}
+                                        ,
+    {
+      "type": "rating", "name": "Vous êtes discipliné et patient pour atteindre vos objectifs"
+      ,
+      "domaines":[
+        {"name":"Genie Mecanique",
+          "rating": 5
+          },
+          {"name":"Informatique",
+            "rating": 5
+            },
+            {"name":"Genie civil",
+              "rating":5},
+              {"name":"Genie Industriel",
+                "rating": 5},
+                {"name":"Biologie et environnement",
+                  "rating": 5},
+                  {"name": "Electricite electronique",
+                    "rating": 5}]
+  
+     
+    },
+    {
+      "type": "rating", "name": "Vous êtes désireux de travailler avec les nouvelles technologies ",
+      "domaines":[
+        {"name":"Genie Mecanique",
+          "rating": 5},
+          
+          {"name":"Informatique",
+            "rating": 5
+            },
+            {"name":"Genie civil",
+              "rating":4},
+              {"name":"Genie Industriel",
+                "rating": 3},
+                {"name":"Biologie et environnement",
+                  "rating": 3},
+                  {"name": "Electricite electronique",
+                    "rating": 5}]
+     
+    },
+    {
+      "type": "rating", "name": "Vous êtes désireux d’acquérir davantage de connaissances et de compétences en sciences, particulièrement ce qui touche la biologie ou la chimie, ainsi que leurs applications    ",
+      "domaines":[
+        {"name":"Genie Mecanique",
+          "rating": 1
+          },
+          {"name":"Informatique",
+            "rating": 0
+            },
+            {"name":"Genie civil",
+              "rating":1},
+              {"name":"Genie Industriel",
+                "rating": 1},
+                {"name":"Biologie et environnement",
+                  "rating": 5},
+                  {"name": "Electricite electronique",
+                    "rating": 1}]
+     
+    },
+    {
+      "type": "rating", "name": "Vous êtes du type investigateur, chercheur, pour aller toujours plus loin dans vos découvertes scientifiques","domaines":[
+        {"name":"Genie Mecanique",
+          "rating": 5
+          },
+          {"name":"Informatique",
+            "rating": 3
+            },
+            {"name":"Genie civil",
+              "rating":3},
+              {"name":"Genie Industriel",
+                "rating": 3},
+                {"name":"Biologie et environnement",
+                  "rating": 5},
+                  {"name": "Electricite electronique",
+                    "rating": 5}]
+     
+    },
+    {
+      "type": "rating", "name": "Vous êtes prêt à réaliser des tâches administratives nécessitant la prise ou l’application de décisions dans le respect des règles établies    ","domaines":[
+        {"name":"Genie Mecanique",
+          "rating": 3
+          },
+          {"name":"Informatique",
+            "rating": 5
+            },
+            {"name":"Genie civil",
+              "rating":5},
+              {"name":"Genie Industriel",
+                "rating": 4},
+                {"name":"Biologie et environnement",
+                  "rating": 3},
+                  {"name": "Electricite electronique",
+                    "rating": 3}]
+    },
+    {
+      "type": "rating", "name": "Vous êtes à l’aise dans les laboratoires, à faire des analyses et des interprétations de données mathématiques, biologiques, chimiques ou physiques    ",
+      "domaines":[
+        {"name":"Genie Mecanique",
+          "rating": 5},
+          
+          {"name":"Informatique",
+            "rating": 2
+            },
+            {"name":"Genie civil",
+              "rating":5},
+              {"name":"Genie Industriel",
+                "rating": 2},
+                {"name":"Biologie et environnement",
+                  "rating": 5},
+                  {"name": "Electricite electronique",
+                    "rating": 5}]
+                  },
+     
+    
+    {
+      "type": "rating", "name": "Vous êtes passionné d’informatique","domaines":[
+        {"name":"Genie Mecanique",
+          "rating": 2
+          },
+          {"name":"Informatique",
+            "rating": 5
+            },
+            {"name":"Genie civil",
+              "rating":1},
+              {"name":"Genie Industriel",
+                "rating": 1},
+                {"name":"Biologie et environnement",
+                  "rating": 2},
+                  {"name": "Electricite electronique",
+                    "rating": 3}]
+     
+    },
+    {
+      "type": "rating", "name": "Vous êtes à l’aise dans l’exercice d’un travail multidisciplinaire, parfois intense    ","domaines":[
+        {"name":"Genie Mecanique",
+          "rating": 4
+          },
+          {"name":"Informatique",
+            "rating": 3
+            },
+            {"name":"Genie civil",
+              "rating":5},
+              {"name":"Genie Industriel",
+                "rating": 4},
+                {"name":"Biologie et environnement",
+                  "rating": 3},
+                  {"name": "Electricite electronique",
+                    "rating": 4}
+      ]
+     
+    },
+    {
+      "type": "rating", "name": "Vous êtes désireux de trouver des applications pratiques des sciences dans des laboratoires ou des entreprises de haute technologie","domaines":[
+        {"name":"Genie Mecanique",
+          "rating": 5
+          },
+          {"name":"Informatique",
+            "rating": 5
+            },
+            {"name":"Genie civil",
+              "rating":3},
+              {"name":"Genie Industriel",
+                "rating": 3},
+                {"name":"Biologie et environnement",
+                  "rating": 3},
+                  {"name": "Electricite electronique",
+                    "rating": 5}]}
+    ,
+    {
+      "type": "rating", "name": "Vous êtes inspiré par les matériaux, les formes, les couleurs et les textures qui vous entourent    ",
+      "domaines":[
+        {"name":"Genie Mecanique",
+          "rating": 5
+          },
+          {"name":"Informatique",
+            "rating": 1
+            },
+            {"name":"Genie civil",
+              "rating":4},
+              {"name":"Genie Industriel",
+                "rating": 2},
+                {"name":"Biologie et environnement",
+                  "rating": 2},
+                  {"name": "Electricite electronique",
+                    "rating": 2}]
+     
+    },
+    {
+      "type": "rating", "name": "Vous êtes curieux d’en apprendre davantage sur le monde scientifique, ses recherches et ses applications    ","domaines":[
+        {"name":"Genie Mecanique",
+          "rating": 5
+          },
+          {"name":"Informatique",
+            "rating": 2
+            },
+            {"name":"Genie civil",
+              "rating":3},
+              {"name":"Genie Industriel",
+                "rating": 3},
+                {"name":"Biologie et environnement",
+                  "rating": 5},
+                  {"name": "Electricite electronique",
+                    "rating": 5}]
+     
+    },
+    {
+      "type": "rating", "name": "Vous êtes déjà investi dans la planification et l’organisation d’activités variées dans votre milieu    ","domaines":[
+        {"name":"Genie Mecanique",
+          "rating": 4
+          },
+          {"name":"Informatique",
+            "rating": 2
+            },
+            {"name":"Genie civil",
+              "rating":4},
+              {"name":"Genie Industriel",
+                "rating": 4},
+                {"name":"Biologie et environnement",
+                  "rating": 3},
+                  {"name": "Electricite electronique",
+                    "rating": 3}]
+     
+    },
+    {
+      "type": "rating", "name": "Vous êtes préoccupé par la santé des êtres vivants et désireux de l’influencer professionnellement    ",
+      "domaines":[
+        {"name":"Genie Mecanique",
+          "rating": 2
+          },
+          {"name":"Informatique",
+            "rating": 2
+            },
+            {"name":"Genie civil",
+              "rating":2},
+              {"name":"Genie Industriel",
+                "rating": 2},
+                {"name":"Biologie et environnement",
+                  "rating": 5},
+                  {"name": "Electricite electronique",
+                    "rating": 2}]
+     
+    },
+    {
+      "type": "rating", "name": "Vous êtes désireux de développer des compétences dans l’organisation du travail ou la gérance de systèmes informatiques    ",
+      "domaines":[
+        {"name":"Genie Mecanique",
+          "rating": 0
+          },
+          {"name":"Informatique",
+            "rating": 5
+            },
+            {"name":"Genie civil",
+              "rating":0},
+              {"name":"Genie Industriel",
+                "rating": 0},
+                {"name":"Biologie et environnement",
+                  "rating": 0},
+                  {"name": "Electricite electronique",
+                    "rating": 0}]
+     
+    },
+    {
+      "type": "rating", "name": "Je me retrouve bien dans un laboratoire à suivre un protocole détaillé et des normes pour réaliser une expérience    ",
+      "domaines":[
+        {"name":"Genie Mecanique",
+          "rating": 3
+          },
+          {"name":"Informatique",
+            "rating": 0
+            },
+            {"name":"Genie civil",
+              "rating":2},
+              {"name":"Genie Industriel",
+                "rating": 2},
+                {"name":"Biologie et environnement",
+                  "rating": 5},
+                  {"name": "Electricite electronique",
+                    "rating": 3}]
+     
+    },
+    {
+      "type": "rating", "name": "Je rêve de faire un jour des découvertes scientifiques qui contribueront à la progression de la science et à l’amélioration de la qualité de vie des gens    ",
+      "domaines":[
+        {"name":"Genie Mecanique",
+          "rating": 5
+          },
+          {"name":"Informatique",
+            "rating": 2
+            },
+            {"name":"Genie civil",
+              "rating":2},
+              {"name":"Genie Industriel",
+                "rating": 4},
+                {"name":"Biologie et environnement",
+                  "rating": 5},
+                  {"name": "Electricite electronique",
+                    "rating": 5}]
+     
+    },
+    {
+      "type": "rating", "name": "Je suis désireux de contribuer à la protection de notre environnement et dans l’amélioration de la qualité de vie des gens    ",
+      "domaines":[
+        {"name":"Genie Mecanique",
+          "rating": 1
+          },
+          {"name":"Informatique",
+            "rating": 1
+            },
+            {"name":"Genie civil",
+              "rating":3},
+              {"name":"Genie Industriel",
+                "rating": 1},
+                {"name":"Biologie et environnement",
+                  "rating": 5},
+                  {"name": "Electricite electronique",
+                    "rating": 1}]
+     
+    },
+    {
+      "type": "rating", "name": "Je suis attiré par l’esthétisme des paysages et l’architecture des bâtiments   ",
+      "domaines":[
+        {"name":"Genie Mecanique",
+          "rating": 2
+          },
+          {"name":"Informatique",
+            "rating": 0
+            },
+            {"name":"Genie civil",
+              "rating":1},
+              {"name":"Genie Industriel",
+                "rating": 0},
+                {"name":"Biologie et environnement",
+                  "rating": 0},
+                  {"name": "Electricite electronique",
+                    "rating": 0}]
+  
+     
+    },
+    {
+      "type": "rating", "name": "J’accepte avec plaisir de participer à des travaux de construction ou de rénovation    ",
+      "domaines":[
+        {"name":"Genie Mecanique",
+          "rating": 0
+          },
+          {"name":"Informatique",
+            "rating": 0
+            },
+            {"name":"Genie civil",
+              "rating":5},
+              {"name":"Genie Industriel",
+                "rating": 0},
+                {"name":"Biologie et environnement",
+                  "rating": 0},
+                  {"name": "Electricite electronique",
+                    "rating": 0}]
+                  },
+  
+    {
+      "type": "rating", "name": "Je m’intéresse aux questions concernant l’écologie, l’environnement et les biotechnologies    ",
+      "domaines":[
+        {"name":"Genie Mecanique",
+          "rating": 0
+          },
+          {"name":"Informatique",
+            "rating": 0 },
+            {"name":"Genie civil",
+              "rating":5},
+              {"name":"Genie Industriel",
+                "rating": 0},
+                {"name":"Biologie et environnement",
+                  "rating": 5},
+                  {"name": "Electricite electronique",
+                    "rating": 0}]
+     
+    },
+    {
+      "type": "rating", "name": "Je veux toujours en savoir plus sur les expériences réalisées en laboratoire et je consulte souvent les sources accessibles sur le sujet    ",
+      "domaines":[
+        {"name":"Genie Mecanique",
+          "rating": 3
+          },
+          {"name":"Informatique",
+            "rating": 1
+            },
+            {"name":"Genie civil",
+              "rating":0},
+              {"name":"Genie Industriel",
+                "rating": 2},
+                {"name":"Biologie et environnement",
+                  "rating": 5},
+                  {"name": "Electricite electronique",
+                    "rating": 3}]
+                  },
+    {
+      "type": "rating", "name": "J’aime faire des calculs avec ou sans ordinateur    ",
+      "domaines":[
+        {"name":"Genie Mecanique",
+          "rating": 5
+          },
+          {"name":"Informatique",
+            "rating": 5
+            },
+            {"name":"Genie civil",
+              "rating":2},
+              {"name":"Genie Industriel",
+                "rating": 3},
+                {"name":"Biologie et environnement",
+                  "rating": 3},
+                  {"name": "Electricite electronique",
+                    "rating": 5}]
+     
+    },
+    {
+      "type": "rating", "name": "Je suis à l’aise avec des données abstraites et je n’ai pas peur d’avancer, même si la tâche ou le problème à résoudre est compliqué; je vois cela comme un défi    ",
+      "domaines":[
+        {"name":"Genie Mecanique",
+          "rating": 5
+          },
+          {"name":"Informatique",
+            "rating": 3
+            },
+            {"name":"Genie civil",
+              "rating":3},
+              {"name":"Genie Industriel",
+                "rating": 4},
+                {"name":"Biologie et environnement",
+                  "rating": 3},
+                  {"name": "Electricite electronique",
+                    "rating": 5}]
+                  }
+  ]
+  
