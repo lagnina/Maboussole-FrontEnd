@@ -10,22 +10,22 @@ padding: 50px">
     <div class="form-group">
      <input type="text"  class="form-control"  placeholder="Titre" [(ngModel)]="model.title" name="titre" required />
     </div>
-    <div class="form-group">
-        <input type="text"  class="form-control"  placeholder="Content" [(ngModel)]="model.content" name="content" required />
-       </div>
-
-     <div class="form-group">
-     <input type="text"  class="form-control"  placeholder="Speciality" [(ngModel)]="model.speciality" name="speciality" required />
-    </div>
-     <div class="form-group">
-     <select id="Type"  class="form-control"  [(ngModel)]="model.Type" name="Type">
-        <option selected > Type</option>
-        <option value="post">post</option>
-        <option value="conseil">conseil</option>
-        <option value="actualite">actualite</option>
-      </select> </div>
 
       <div class="form-group">
+            <select  class="browser-default custom-select" id="option" name="option" [(ngModel)]="selectedValue">
+                <option value={{option.value}} *ngFor="let option of options">
+                    {{option.name}}
+                </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <ng-select placeholder="Select Tags ..." [multiple]="true"[ngModelOptions]="{standalone: true}" [(ngModel)]="selectedTag">
+              <ng-option *ngFor="let tag of tags" [value]="tag.id" name='tag'  >{{tag.name}}</ng-option>
+              <ng-option [value]="'custom'">Custom</ng-option>
+              </ng-select>
+              </div>
+          <div class="form-group">
+
        <input type="file"  class="form-control" 
         id="file"
         (change)="handleFileInput($event.target.files)">
@@ -42,10 +42,7 @@ padding: 50px">
     </div>
     <br>
     -->
-    <ng-select [multiple]="true" [(ngModel)]="selectedTag">
-        <ng-option *ngFor="let tag of tags" [value]="tag.id" [disabled]="tag.disabled">{{tag.name}}</ng-option>
-        <ng-option [value]="'custom'">Custom</ng-option>
-    </ng-select>
+   
      <button class="btn btn-success my-2 my-sm-0" type="submit" >Create Post</button>
 
 

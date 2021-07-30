@@ -22,6 +22,14 @@ Tags :string[]=['Education','Orientations','Learning','School',
 
 selectedTag: number;
 
+
+
+options =[
+  {name:"post"},
+  {name:"conseil"},
+  {name:"actualite"},
+];
+selectedValue: any = "Type";
     tags = [
         { id: 1, name: 'Education' },
         { id: 2, name: 'Orientations' },
@@ -35,7 +43,9 @@ selectedTag: number;
 
     ];
 
-  constructor(private postService: PostService,private config: NgSelectConfig,private router:Router) { }
+  constructor(private postService: PostService,private config: NgSelectConfig,private router:Router) { 
+
+  }
 
 
   ngOnInit(): void {
