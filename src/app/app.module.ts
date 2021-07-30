@@ -80,6 +80,7 @@ import {
 import {
   MatSelectModule
 } from "@angular/material/select";
+import { QuillModule } from 'ngx-quill'
 
 
 
@@ -134,6 +135,7 @@ import { TestContainerComponent } from './test-container/test-container.componen
 
   ],
   imports: [
+    
     BrowserModule,
     NgSelectModule,
     AppRoutingModule,
@@ -159,7 +161,13 @@ import { TestContainerComponent } from './test-container/test-container.componen
 
 
     MatChipsModule,
-    MatSelectCountryModule.forRoot('de')
+    MatSelectCountryModule.forRoot('de'),
+    QuillModule.forRoot({
+      customOptions: [{
+        import: 'formats/font',
+        whitelist: ['mirza', 'roboto', 'aref', 'serif', 'sansserif', 'monospace']
+      }]
+})
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },

@@ -13,13 +13,11 @@
             <div class="col-md-8 animate-box" data-animate-effect="fadeInLeft">
 
                 <div class="page-title">
-                    <span>{{post.postId}}</span>
-                    <h2>{{post.title}}</h2>
+                    <span>{{post.posterName}}</span>
+                    <h2>{{post.title}} //{{post.postId}}</h2>
                 </div>
-                <p>
-                   {{post.content}}
-                </p>
                 
+                <div [innerHTML]='post.content'></div>
             </div>
             <div class="col-md-3 animate-box" data-animate-effect="fadeInRight"  style="position: fixed; margin-left: 793px;">
                 <div>

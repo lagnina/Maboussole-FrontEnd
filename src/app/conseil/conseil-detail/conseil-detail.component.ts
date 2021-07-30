@@ -1,4 +1,4 @@
-import { Input } from '@angular/core';
+import { AfterViewInit, Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Post } from 'src/app/_models/Post';
@@ -10,12 +10,13 @@ import { PostService } from 'src/app/_services/post.service';
   templateUrl: './conseil-detail.component.html',
   styleUrls: ['./conseil-detail.component.css']
 })
-export class ConseilDetailComponent implements OnInit {
+export class ConseilDetailComponent implements OnInit, AfterViewInit {
   model:any ={}
   tags:Tag[];
 
   response : any ={}
   @Input() post: Post;
+  elementRef: any;
   
   
  
@@ -39,6 +40,10 @@ console.log(this.route.snapshot.params.id)
      })
 
 
+  }
+  ngAfterViewInit(){
+    var d1 = this.elementRef.nativeElement.querySelector('.Content');
+    d1.insertAdjacentHTML('beforeend', this.post.content);
   }
 
 }

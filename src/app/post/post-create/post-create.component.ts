@@ -14,13 +14,15 @@ import { PostService } from '../../_services/post.service';
 })
 export class PostCreateComponent implements OnInit {
   model:any={};
+  posts:Post[];
   fileToUpload: File | null = null;
-Tag :string[]=['Education','Orientations','Learning','School','Motivation','Student'
+Tags :string[]=['Education','Orientations','Learning','School',
+'Motivation','Student'
 ,'Knowledge','English','science','communication','learn','training','Success'];
 
-selectedCar: number;
+selectedTag: number;
 
-    cars = [
+    tags = [
         { id: 1, name: 'Education' },
         { id: 2, name: 'Orientations' },
         { id: 3, name: 'Learning' },
@@ -53,14 +55,25 @@ selectedCar: number;
     console.log(this.model)
         this.postService.PostCreate(formData).subscribe(response => {
           this.router.navigateByUrl('/post/list');
-          window.location.reload();      })
+          window.location.reload();    
+        
+        })
       }
 
       toggleDisabled() {
-        const car: any = this.cars[1];
-        car.disabled = !car.disabled;
+        const tag: any = this.tags[1];
+        tag.disabled = !tag.disabled;
     }
-}
+  
+
+//     TagCreate(){
+//       var formData = new FormData();
+//       formData.getAll()
+
+
+
+//     }
+// }
 
  
 
@@ -68,21 +81,22 @@ selectedCar: number;
 
   
 
-//   Post(){
-//     this.postService.PostCreate(this.model).subscribe(response => {
-//       this.router.navigateByUrl('/post/list');
-//       console.log(response)
-//     })
-//   }
+  PostList(){
+    this.postService.PostCreate(this.model).subscribe(response => {
+      this.router.navigateByUrl('/post/list');
+      console.log(response)
+    })
+  }
 
-//   GetPosts() {
+  GetPosts() {
     
 
-//       this.postService.getAllPosts().subscribe(response => {
-//         console.log(response);
-//        this.posts = response;
-//      })
+      this.postService.getAllPosts(this.model).subscribe(response => {
+        console.log(response);
+       this.posts = response.result;
+     })
      
        
   
-    
+  }
+}

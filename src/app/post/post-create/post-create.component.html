@@ -8,14 +8,12 @@ text-align: left;
 padding: 50px">
     <label>Create post</label>
     <div class="form-group">
-    
-
-    
-         <input type="text"  class="form-control"  placeholder="Content" [(ngModel)]="model.content" name="content" required />
-        </div>
-        <div class="form-group">
      <input type="text"  class="form-control"  placeholder="Titre" [(ngModel)]="model.title" name="titre" required />
     </div>
+    <div class="form-group">
+        <input type="text"  class="form-control"  placeholder="Content" [(ngModel)]="model.content" name="content" required />
+       </div>
+
      <div class="form-group">
      <input type="text"  class="form-control"  placeholder="Speciality" [(ngModel)]="model.speciality" name="speciality" required />
     </div>
@@ -33,6 +31,8 @@ padding: 50px">
         (change)="handleFileInput($event.target.files)">
     </div>
     
+    <quill-editor  [(ngModel)]="model.content" name="content" required [styles]="{height: '200px'}"></quill-editor>
+
 
         
 <!-- <div class="form-group">
@@ -42,8 +42,8 @@ padding: 50px">
     </div>
     <br>
     -->
-    <ng-select [multiple]="true" [(ngModel)]="selectedCar">
-        <ng-option *ngFor="let car of cars" [value]="car.id" [disabled]="car.disabled">{{car.name}}</ng-option>
+    <ng-select [multiple]="true" [(ngModel)]="selectedTag">
+        <ng-option *ngFor="let tag of tags" [value]="tag.id" [disabled]="tag.disabled">{{tag.name}}</ng-option>
         <ng-option [value]="'custom'">Custom</ng-option>
     </ng-select>
      <button class="btn btn-success my-2 my-sm-0" type="submit" >Create Post</button>
