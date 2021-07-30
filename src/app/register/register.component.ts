@@ -3,6 +3,11 @@ import { AccountService } from '../_services/account.service';
 import { ToastrService } from 'ngx-toastr';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
+import { Member } from '../_models/member';
+import { User } from '../_models/user';
+import { ViewChild } from '@angular/core';
+
 
 @Component({
   selector: 'app-register',
@@ -10,27 +15,42 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  @ViewChild('editForm') editForm: NgForm;
+  member: Member;
+  user: User;
   @Output() cancelRegister = new EventEmitter();
   registerForm: FormGroup;
+
   maxDate: Date;
   validationErrors: string[] = [];
+  avatars: { value: string; link: string }[] = [
+    {
+      value: "Man",
+      link: "assets/images/avatar-man.png"
+    },
+    {
+      value: "Women",
+      link: "assets/images/avatar-women.png"
+    }
+  ];
+  store: any;
 
   constructor(private accountService: AccountService, private toastr: ToastrService, 
     private fb: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
     this.intitializeForm();
-    this.maxDate = new Date();
-    this.maxDate.setFullYear(this.maxDate.getFullYear() -18);
+   this.maxDate = new Date();
+   this.maxDate.setFullYear(this.maxDate.getFullYear() -18);
   }
 
   intitializeForm() {
     this.registerForm = this.fb.group({
-      gender: ['male'],
+     gender: ['male'],
       username: ['', Validators.required],
-      knownAs: ['', Validators.required],
-      dateOfBirth: ['', Validators.required],
-      city: ['', Validators.required],
+     email: ['', Validators.required],
+     dateOfBirth: ['', Validators.required],
+     city: ['', Validators.required],
       country: ['', Validators.required],
       password: ['', [Validators.required, 
         Validators.minLength(4), Validators.maxLength(8)]],
@@ -52,6 +72,7 @@ export class RegisterComponent implements OnInit {
       this.validationErrors = error;
     })
   }
+  
 
   cancel() {
     this.cancelRegister.emit(false);

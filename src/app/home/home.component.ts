@@ -22,12 +22,12 @@ export class HomeComponent implements OnInit {
   getpost() {
     this.postService.getAllPosts('conseil').subscribe(response => {
       console.log(response);
-     this.posts = response;
+     this.posts = response.result;
      console.log(this.posts)
     });
     this.postService.getAllPosts('actualite').subscribe(response =>
     {
-        this.posts = this.posts.concat(response);
+        this.posts = this.posts.concat(response.result);
     });
 
     }

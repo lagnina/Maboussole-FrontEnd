@@ -4,8 +4,10 @@ import { ReplaySubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { Post } from '../_models/Post';
+import { PostParams } from '../_models/postParams';
 import { Tag } from '../_models/Tag';
-import { User } from '../_models/user';
+import { UserParams } from '../_models/userParams';
+import { getPaginatedResult, getPaginationHeaders } from './paginationHelper';
 import { PresenceService } from './presence.service';
 
 @Injectable({
@@ -16,12 +18,23 @@ export class PostService {
 
 
   baseUrl = environment.apiUrl;
-  post:Post[]
-  private currentUserSource = new ReplaySubject<User>(1);
+  post:Post;
+
+  private currentUserSource = new ReplaySubject<Post>(1);
   currentUser$ = this.currentUserSource.asObservable();
+  postParams: any;
 
-  constructor(private http: HttpClient, private presence: PresenceService) { }
+  constructor(private http: HttpClient, private presence: PresenceService) {
+    this.postParams = new PostParams();
 
+  }
+
+  getParams() {
+    return this.postParams;
+  }
+  setPostParams(params: PostParams) {
+    this.postParams = params;
+  }
 PostCreate(model: any){
 
   return this.http.post(this.baseUrl + 'post/create', model).pipe(
@@ -40,8 +53,15 @@ getTags() {
 }
 
 
-getAllPosts(type:string){
-   return this.http.get<Post[]>(this.baseUrl + 'post/Posts' ,{params:{Type:type}});
+getAllPosts(type: string){
+  let params = getPaginationHeaders(this.postParams.pageNumber, this.postParams.pageSize);
+  params = params.append('Type',type);
+
+
+   return getPaginatedResult<Post[]>(this.baseUrl + 'post/posts', params, this.http)
+   .pipe(map(response => {
+     return response;
+   }));
 }
  getPost(postId:Number){
 

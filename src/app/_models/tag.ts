@@ -1,4 +1,4 @@
-import * as internal from "events";
+
 
 export interface Tag{
 

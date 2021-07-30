@@ -3,6 +3,9 @@ import { Post } from 'src/app/_models/Post';
 import { Router } from '@angular/router';
 
 import { PostService } from 'src/app/_services/post.service';
+import { Pagination } from 'src/app/_models/pagination';
+import { UserParams } from 'src/app/_models/userParams';
+import { PostParams } from 'src/app/_models/postParams';
 
 @Component({
   selector: 'app-post-list',
@@ -11,23 +14,49 @@ import { PostService } from 'src/app/_services/post.service';
 })
 export class PostListComponent implements OnInit {
   posts:Post[];
+  postParams: PostParams;
+
   model:any={};
+  pagination: Pagination;
+
   fileToUpload: File | null = null;
-  constructor(private postService: PostService,private router:Router) { }
+  constructor(private postService: PostService,private router:Router) { 
+    this.postParams = this.postService.getParams();
+  }
 
   ngOnInit(): void {
 
- this.postService.getAllPosts('post').subscribe(response => {
-   console.log(response);
-  this.posts = response;
-})
+this.loadPosts();
+this.GetAllPosts();
+
 
   }
+
 
   handleFileInput(files: FileList) {
     this.fileToUpload = files.item(0);
 }
 
+GetAllPosts(){
+
+  this.postService.getAllPosts('post').subscribe(response => {
+    console.log(response);
+   this.posts = response.result;
+ })
+}
+loadPosts() {
+  this.postService.setPostParams(this.postParams);
+  this.postService.getAllPosts('post').subscribe(response => {
+    this.posts = response.result;
+    this.pagination = response.pagination;
+  })
+}
+
+pageChanged(event: any) {
+  this.postParams.pageNumber = event.page;
+  this.postService.setPostParams(this.postParams);
+  this.loadPosts();
+}
   Post(){
     var formData = new FormData();
     formData.append("CategoryPicture", this.fileToUpload);

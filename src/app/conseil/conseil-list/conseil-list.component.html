@@ -1,5 +1,6 @@
 
-     <div class="container-fluid pb-4 pt-4 paddding">
+
+   <div class="container-fluid pb-4 pt-4 paddding">
         <div class="container paddding">
           <div class="row mx-0">
 
@@ -8,17 +9,32 @@
                     <app-conseil-card [post]="post"></app-conseil-card>
                 </div>
 
+                <div class="d-flex justify-content-center" *ngIf="pagination">
+                    <pagination
+                        [boundaryLinks]="true"
+                        [totalItems]="pagination.totalItems"
+                        [itemsPerPage]="pagination.itemsPerPage"
+                        [(ngModel)]="pagination.currentPage"
+                        (pageChanged)="pageChanged($event)"
+                        previousText="&lsaquo;"
+                        nextText="&rsaquo;"
+                        firstText="&laquo;"
+                        lastText="&raquo;">
+                </pagination></div>
+
+                <div class="col-md-3 animate-box" data-animate-effect="fadeInRight"  style="position: fixed; margin-left: 793px;">
+                    <div>
+                        <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">Tags</div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="fh5co_tags_all" *ngFor="let tag of tags" >
+                        <app-tag class="fh5co_tagg" [tag]="tag"></app-tag>
+
+                    </div>
+
+</div></div></div>
 
 
-     <div class="col-md-3 animate-box" data-animate-effect="fadeInRight"  style="position: fixed; margin-left: 793px;">
-        <div>
-            <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">Tags</div>
-        </div>
-        <div class="clearfix"></div>
-        <div class="fh5co_tags_all" *ngFor="let tag of tags">
-<app-tag  [tag]="tag"></app-tag>
-            
-        </div>
 
 
 
@@ -26,25 +42,16 @@
 
 
 
-    </div>
 
 
 
 
-    </div></div>
+
+
 </div>
-<div class="row mx-0">
-    <div class="col-12 text-center pb-4 pt-4">
-        <a href="#" class="btn_mange_pagging"><i class="fa fa-long-arrow-left"></i>&nbsp;&nbsp; Previous</a>
-        <a href="#" class="btn_pagging">1</a>
-        <a href="#" class="btn_pagging">2</a>
-        <a href="#" class="btn_pagging">3</a>
-        <a href="#" class="btn_pagging">...</a>
-        <a href="#" class="btn_mange_pagging">Next <i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp; </a>
-     </div>
-</div>
 
-    <div class="container-fluid pb-4 pt-5">
+
+    <!-- <div class="container-fluid pb-4 pt-5">
         <div class="container animate-box">
             <div>
                 <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">Trending</div>
@@ -133,5 +140,11 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
         </div>
 
+=======
+        </div> -->
+     -->
+
+>>>>>>> 565017795fcdc193a69b130116f6fdbacc5712bd

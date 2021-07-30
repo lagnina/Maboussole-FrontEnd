@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { Injector, NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -90,6 +90,8 @@ import { ConseilCardComponent } from './conseil/conseil-card/conseil-card.compon
 import { ActualityDetailComponent } from './actuality/actuality-detail/actuality-detail.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { TagComponent } from './tag/tag.component';
+import { LoginComponent } from './login/login.component';
+import { TestContainerComponent } from './test-container/test-container.component';
 
 @NgModule({
   declarations: [
@@ -127,7 +129,9 @@ import { TagComponent } from './tag/tag.component';
     ConseilCardComponent,
     ActualityDetailComponent,
     TagComponent,
-    
+    LoginComponent,
+    TestContainerComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -152,7 +156,7 @@ import { TagComponent } from './tag/tag.component';
     MatProgressBarModule,
     MatSelectModule,
     MatCardModule,
-    
+
 
     MatChipsModule,
     MatSelectCountryModule.forRoot('de')
@@ -164,4 +168,9 @@ import { TagComponent } from './tag/tag.component';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  static injector: Injector;
+    constructor(injector: Injector) {
+        AppModule.injector = injector;
+    }
+ }

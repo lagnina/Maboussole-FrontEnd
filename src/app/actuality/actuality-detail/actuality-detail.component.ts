@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Post } from 'src/app/_models/Post';
+import { Tag } from 'src/app/_models/Tag';
 import { PostService } from 'src/app/_services/post.service';
 
 @Component({
@@ -11,6 +12,8 @@ import { PostService } from 'src/app/_services/post.service';
 export class ActualityDetailComponent implements OnInit {
 
  post:Post;
+ tags:Tag[];
+
 
 
 
@@ -23,7 +26,11 @@ console.log(this.route.snapshot.params.id)
     this.postService.getPost(this.route.snapshot.params.id).subscribe(response => {
     this.post=response;
     console.log(response);
-    });
+    })
+
+    this.postService.getTags().subscribe(response=>{
+      this.tags=response;
+     })
 
 
   }

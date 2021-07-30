@@ -41,10 +41,11 @@ padding: 50px">
         <button type="button" class="btn btn-secondary btn-sm" (click)="toggleDisabled()">Toggle disabled</button>
     </div>
     <br>
+    -->
     <ng-select [multiple]="true" [(ngModel)]="selectedCar">
         <ng-option *ngFor="let car of cars" [value]="car.id" [disabled]="car.disabled">{{car.name}}</ng-option>
         <ng-option [value]="'custom'">Custom</ng-option>
-    </ng-select>-->
+    </ng-select>
      <button class="btn btn-success my-2 my-sm-0" type="submit" >Create Post</button>
 
 

@@ -26,14 +26,19 @@ import { ActualityDetailComponent } from './actuality/actuality-detail/actuality
 import { ConseilDetailComponent } from './conseil/conseil-detail/conseil-detail.component';
 import { TagComponent } from './tag/tag.component';
 import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'Register', component: RegisterComponent},
   {path:'Actuality',component:ActualityListComponent},
   {path:'post/list',component: PostListComponent},
-
   {path:'Conseil-orientation',component:ConseilListComponent},
+  {path:'Login',component:LoginComponent},
+  {path:'Home', component:HomeComponent},
+
+
+
 
 
 
@@ -55,7 +60,6 @@ const routes: Routes = [
 
       {path:'post/edit' ,component:PostEditComponent, canDeactivate:[PreventUnsavedChangesGuard]},
       {path: 'admin', component: AdminPanelComponent, canActivate: [AdminGuard]},
-      {path:'Home', component:HomeComponent},
       {path:'Tags', component:TagComponent},
     ]
   },
