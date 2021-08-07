@@ -4,6 +4,7 @@ import { Pagination } from 'src/app/_models/pagination';
 import { Post } from 'src/app/_models/Post';
 import { Tag } from 'src/app/_models/Tag';
 import { PostService } from 'src/app/_services/post.service';
+import { TagService } from 'src/app/_services/tag.service';
 
 @Component({
   selector: 'app-actuality-list',
@@ -16,7 +17,7 @@ export class ActualityListComponent implements OnInit {
   model:any={};
   postParams: any;
   pagination: Pagination;
-  constructor(private postService: PostService,private router:Router) {
+  constructor(private postService: PostService,private tagService :TagService,private router:Router) {
     this.postParams = this.postService.getParams();
    }
 
@@ -26,7 +27,7 @@ export class ActualityListComponent implements OnInit {
    console.log(response);
   this.posts = response.result;
 })
-this.postService.getTags().subscribe(response=>{
+this.tagService.getTags().subscribe(response=>{
   this.tags=response;
  })
 
@@ -46,7 +47,6 @@ this.postService.getTags().subscribe(response=>{
   }
 
   Post(){
-    // subscribe = moura matawsal response hachno dir
         this.model.Type = 'actualite'
         this.postService.PostCreate(this.model).subscribe(response => {
           this.router.navigateByUrl('Actuality');

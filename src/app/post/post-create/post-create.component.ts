@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { NgSelectConfig } from '@ng-select/ng-select';
 import { ToastrService } from 'ngx-toastr';
 import { Post } from 'src/app/_models/Post';
+import { Tag } from 'src/app/_models/Tag';
+import { TagService } from 'src/app/_services/tag.service';
 import { PostService } from '../../_services/post.service';
 
 
@@ -13,6 +15,8 @@ import { PostService } from '../../_services/post.service';
   styleUrls: ['./post-create.component.css']
 })
 export class PostCreateComponent implements OnInit {
+
+
   model:any={};
   posts:Post[];
   fileToUpload: File | null = null;
@@ -20,55 +24,50 @@ Tags :string[]=['Education','Orientations','Learning','School',
 'Motivation','Student'
 ,'Knowledge','English','science','communication','learn','training','Success'];
 
-selectedTag: number;
+selectedTag: Tag[];
 
 
 
-options =[
-  {name:"post"},
-  {name:"conseil"},
-  {name:"actualite"},
-];
-selectedValue: any = "Type";
-    tags = [
-        { id: 1, name: 'Education' },
-        { id: 2, name: 'Orientations' },
-        { id: 3, name: 'Learning' },
-        { id: 4, name: 'Science' },
-        { id: 5, name: 'Knowledge' },
+selectedValue: any = "6-8";
+    tags:Tag[];
 
-        { id: 6, name: 'English' },
-
-        { id: 7, name: 'training' },
-
-    ];
-
-  constructor(private postService: PostService,private config: NgSelectConfig,private router:Router) { 
+  constructor(private postService: PostService, private toastr: ToastrService,private config: NgSelectConfig,private router:Router,private tagService:TagService) { 
 
   }
 
 
   ngOnInit(): void {
+    this.getAllTags();
+
+   
   
   }
+getAllTags(){
+  this.tagService.getTags().subscribe(response =>{
+    console.log(response);
+    this.tags=response;
+ });
+}
   handleFileInput(files: FileList) {
     this.fileToUpload = files.item(0);
   }
+
+
   Post(){
     var formData = new FormData();
+
+
     formData.append("CategoryPicture", this.fileToUpload);
-    this.model.PostTags = [ {
-      Id: 1,
-      name:'tag1'
-    }]
+
+
     formData.append("PostForm",JSON.stringify(this.model));
     console.log(this.model)
         this.postService.PostCreate(formData).subscribe(response => {
+          this.toastr.success('Post Created Successfully');
           this.router.navigateByUrl('/post/list');
           window.location.reload();    
         
-        })
-      }
+        })}
 
       toggleDisabled() {
         const tag: any = this.tags[1];
@@ -79,9 +78,6 @@ selectedValue: any = "Type";
 //     TagCreate(){
 //       var formData = new FormData();
 //       formData.getAll()
-
-
-
 //     }
 // }
 

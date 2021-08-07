@@ -13,6 +13,8 @@ import { AccountService } from '../_services/account.service';
 export class HomeComponent implements OnInit {
   registerMode = false;
   posts:Post[];
+  model:any={};
+
   constructor(private router: Router,private postService: PostService, private accountService: AccountService) { }
 
   ngOnInit(): void {
@@ -25,10 +27,7 @@ export class HomeComponent implements OnInit {
      this.posts = response.result;
      console.log(this.posts)
     });
-    this.postService.getAllPosts('actualite').subscribe(response =>
-    {
-        this.posts = this.posts.concat(response.result);
-    });
+    
 
     }
 
@@ -39,6 +38,14 @@ export class HomeComponent implements OnInit {
     cancelRegisterMode(event: boolean) {
       this.registerMode = event;
     }
+    
+  Post(){
+    this.model.Type = 'actualite'
+    this.postService.PostCreate(this.model).subscribe(response => {
+      this.router.navigateByUrl('Actuality');
+      window.location.reload();      })
+  }
+
 
   }
 

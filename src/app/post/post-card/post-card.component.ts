@@ -48,7 +48,6 @@ export class PostCardComponent implements OnInit {
     this.postService.likepost(post.postId).subscribe(() => {
 
       this.toastr.success('you have liked this post');
-      window.location.reload();
     })
 
 

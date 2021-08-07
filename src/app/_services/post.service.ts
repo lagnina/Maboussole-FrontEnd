@@ -47,10 +47,7 @@ PostCreate(model: any){
   )
 }
 
-getTags() {
 
-  return this.http.get<Tag[]>(this.baseUrl+ 'tag/GetAllTags',{})
-}
 
 
 getAllPosts(type: string){

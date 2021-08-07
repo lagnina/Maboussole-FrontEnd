@@ -14,14 +14,22 @@ export class TagComponent implements OnInit {
 @Input()
 
   tag:Tag;
+  posts:Post[];
 
   constructor( private postService :PostService) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.GetAllPosts();
+  }
 
-  getTags(){
+  GetAllPosts(){
 
-
+    this.postService.getAllPosts('post').subscribe(response => {
+    
+     this.posts = response.result;
+     console.log(response.result);
+  
+   })
   }
 
 

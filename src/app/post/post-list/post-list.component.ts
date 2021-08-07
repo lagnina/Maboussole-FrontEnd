@@ -40,8 +40,10 @@ this.GetAllPosts();
 GetAllPosts(){
 
   this.postService.getAllPosts('post').subscribe(response => {
-    console.log(response);
+  
    this.posts = response.result;
+   console.log(response.result);
+
  })
 }
 loadPosts() {

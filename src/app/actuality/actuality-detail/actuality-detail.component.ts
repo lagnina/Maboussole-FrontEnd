@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Post } from 'src/app/_models/Post';
 import { Tag } from 'src/app/_models/Tag';
 import { PostService } from 'src/app/_services/post.service';
+import { TagService } from 'src/app/_services/tag.service';
 
 @Component({
   selector: 'app-actuality-detail',
@@ -18,7 +19,7 @@ export class ActualityDetailComponent implements OnInit {
 
 
 
-  constructor(private postService :PostService,private route: ActivatedRoute ) { }
+  constructor(private tagService :TagService,private postService :PostService,private route: ActivatedRoute ) { }
 
   ngOnInit(): void {
 console.log(this.route.snapshot.params.id)
@@ -28,7 +29,7 @@ console.log(this.route.snapshot.params.id)
     console.log(response);
     })
 
-    this.postService.getTags().subscribe(response=>{
+    this.tagService.getTags().subscribe(response=>{
       this.tags=response;
      })
 

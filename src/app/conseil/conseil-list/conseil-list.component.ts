@@ -4,6 +4,7 @@ import { Pagination } from 'src/app/_models/pagination';
 import { Post } from 'src/app/_models/Post';
 import { Tag } from 'src/app/_models/Tag';
 import { PostService } from 'src/app/_services/post.service';
+import { TagService } from 'src/app/_services/tag.service';
 
 @Component({
   selector: 'app-conseil-list',
@@ -17,7 +18,7 @@ export class ConseilListComponent implements OnInit {
   model:any={};
   postParams: any;
   pagination: Pagination;
-  constructor(private postService: PostService,private router:Router) {
+  constructor(private postService: PostService,private tagService :TagService,private router:Router) {
     this.postParams = this.postService.getParams();
 
    }
@@ -30,16 +31,12 @@ export class ConseilListComponent implements OnInit {
   this.posts = response.result;
   console.log(this.posts)
 })
-  this.postService.getTags().subscribe(response=>{
+  this.tagService.getTags().subscribe(response=>{
     this.tags=response;
    })
 
 
 
-this.postService.getTags().subscribe(response=>{
-
-this.tags = response;
-})
 
   }
   loadPosts() {

@@ -13,23 +13,28 @@
             <div class="col-md-8 animate-box" data-animate-effect="fadeInLeft">
 
                 <div class="page-title">
-                    <span>{{post.posterName}}</span>
-                    <h2>{{post.title}} //{{post.postId}}</h2>
+                        <span> Created On : {{post.dateCreated |date}}</span>
+                        <span>By {{post.posterName}} </span> <br>  
+
+                    <h2>{{post.title}}</h2>
                 </div>
                 
-                <div [innerHTML]='post.content'></div>
+                <div [innerHTML]='post.content'>
+                    
+                </div>
             </div>
-            <div class="col-md-3 animate-box" data-animate-effect="fadeInRight"  style="position: fixed; margin-left: 793px;">
+           
+            <div class="col-md-3 animate-box" data-animate-effect="fadeInRight">
                 <div>
                     <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">Tags</div>
-                </div> 
+                </div>
                 <div class="clearfix"></div>
-                <div class="fh5co_tags_all" *ngFor="let tag of tags" >
-                    <app-tag class="fh5co_tagg" [tag]="tag"></app-tag>
-                  
-                </div> 
-                
-                <div>
+                <div class="fh5co_tags_all"  *ngFor="let tag of post.postTags">
+                    
+                    <app-tag  [tag]="tag" class="fh5co_tagg"></app-tag>
+
+                </div>
+                <!-- <div>
                     <div class="fh5co_heading fh5co_heading_border_bottom pt-3 py-2 mb-4">Most Popular</div>
                 </div>
                 <div class="row pb-3">
@@ -67,10 +72,8 @@
                         <div class="most_fh5co_treding_font_123"> April 18, 2016</div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
 </div>
-
-

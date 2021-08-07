@@ -53,7 +53,7 @@ const routes: Routes = [
       {path: 'lists', component: ListsComponent},
       {path: 'messages', component: MessagesComponent},
       {path: 'Quiz',component: TestComponent},
-      {path: 'post/create',component:PostCreateComponent, canDeactivate:[PreventUnsavedChangesGuard]},
+      {path: 'post/create',component:PostCreateComponent},
       {path:'post/list',component: PostListComponent},
       {path:'Actuality/:id',component:ActualityDetailComponent},
       {path:'Conseil-Orientation/:id',component:ConseilDetailComponent},

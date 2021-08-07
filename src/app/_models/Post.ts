@@ -17,5 +17,6 @@ export interface Post {
     photoUrl:Photo[];
     isLiked:boolean;
     postTags:Tag[];
+    postTagsNames:string[];
     
 }
