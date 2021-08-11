@@ -5,8 +5,6 @@ import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { Post } from '../_models/Post';
 import { PostParams } from '../_models/postParams';
-import { Tag } from '../_models/Tag';
-import { UserParams } from '../_models/userParams';
 import { getPaginatedResult, getPaginationHeaders } from './paginationHelper';
 import { PresenceService } from './presence.service';
 
