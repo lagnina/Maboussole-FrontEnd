@@ -13,9 +13,13 @@
                     <a class="nav-link" routerLink='/Conseil-orientation' routerLinkActive='active' >Conseil & orientation</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" routerLink='/Formation' routerLinkActive='active' >Formation</a>
+                </li>
+                <li class="nav-item">
 
                     <a class="nav-link" routerLink='/post/list'routerLinkActive='active' >Posts </a>
                 </li>
+                
                 <ng-container *ngIf="accountService.currentUser$ | async">
            
                
