@@ -3,6 +3,7 @@ import { TestService } from '../_services/test.service';
 import { environment } from 'src/environments/environment';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import * as Survey from 'survey-angular';
+import { Results, Value } from '../_models/Result';
 
 
 var surveyJSON ={
@@ -462,27 +463,27 @@ var surveyJSON ={
                   }]
                   }]};
 
-var results  = {
-                    "Genie Mecanique":{
+var results  = [
+                    {"name":"Genie Mecanique",
                       "ratingSum": 0,
                       "note":0
                       },
-                      "Informatique":{
+                      {"name":"Informatique",
                         "ratingSum": 0,
                         "note":0
                         },
-                        "Genie civil":{
+                        {"name": "Genie civil",
                           "ratingSum": 0,
                           "note":0},
-                          "Genie Industriel":{
+                          {"name": "Genie Industriel",
                             "ratingSum": 0,
                             "note":0},
-                            "Biologie et environnement":{
+                            {"name": "Biologie et environnement",
                               "ratingSum": 0,
                               "note":0},
-                               "Electricite electronique":{
+                              {"name":  "Electricite electronique",
                                 "ratingSum": 0,
-                                "note":0}};
+                                "note":0}];
 
 function sendDataToServer(survey) {
     //send Ajax request to your web server.
@@ -510,8 +511,10 @@ function sendDataToServer(survey) {
   }
 
   document
-  .querySelector('#surveyResult')
+  .querySelector('#surveyResult2')
   .textContent = "Result JSON:\n" + JSON.stringify(results);
+  const confirm = document.getElementById("confirm");
+  confirm.removeAttribute('Disabled');
 
 }
 function randomArrayShuffle(array) {
@@ -533,9 +536,13 @@ function findElement(arr, propName, propValue) {
 }
 function addToResult(values){
   values.forEach(value=>{
-    results[value.name].note += value.note
-    results[value.name].ratingSum += value.rating
-  })
+    results.forEach(res=>{
+      if(res.name == value.name){
+        res.ratingSum += value.rating;
+        res.note += value.note;
+      }
+    });
+  });
 }
 
 
@@ -545,27 +552,63 @@ function addToResult(values){
   templateUrl: './test.component.html',
   styleUrls: ['./test.component.css']
 })
-export class TestComponent implements OnInit , OnChanges{
+export class TestComponent implements OnInit {
+  QuizResults: Value[] =[
 
+  ];
+  resultsVis=false;
+  testNote:number;
+  filtersLoaded: Promise<boolean>;
   constructor(private testService:TestService) { }
 
 
-    ngOnInit() {
-      surveyJSON.pages[0].elements = randomArrayShuffle(surveyJSON.pages[0].elements)
-      var survey = new Survey.Model(surveyJSON);
-      survey.onComplete.add(sendDataToServer);
-     Survey.SurveyNG.render("surveyElement", { model: survey });
-     
-  }
-  ngOnChanges(changes: SimpleChanges) {
-    for (let propName in changes) {
-      let chng = changes[propName];
-      let cur  = JSON.stringify(chng.currentValue);
-      let prev = JSON.stringify(chng.previousValue);
-      console.log(`${propName}: currentValue = ${cur}, previousValue = ${prev}`);
-    }
-  }
+ngOnInit() {
+  this.testService.CheckResults().subscribe(response=>{
 
+
+    response["$values"].map(item=>{
+      const a= {
+        "domaine" : item.domaine,
+        "note":item.note*20
+      };
+    this.QuizResults.push(a);
+    });
+console.log(this.QuizResults);
+      if(this.QuizResults.length != 0){
+        this.resultsVis=true;
+
+      }
+      else{
+        console.log("bb")
+        surveyJSON.pages[0].elements = randomArrayShuffle(surveyJSON.pages[0].elements)
+        var survey = new Survey.Model(surveyJSON);
+        survey.onComplete.add(sendDataToServer);
+       Survey.SurveyNG.render("surveyElement", { model: survey });
+      }
+      this.filtersLoaded = Promise.resolve(true);
+  });
+
+
+  }
+onSave(){
+
+ this.testService.TestResult(results).subscribe(response=>{
+   console.log(response);
+
+ });
+ window.location.reload();
+}
+onRetake(){
+
+  surveyJSON.pages[0].elements = randomArrayShuffle(surveyJSON.pages[0].elements)
+        var survey = new Survey.Model(surveyJSON);
+        survey.onComplete.add(sendDataToServer);
+       Survey.SurveyNG.render("surveyElement", { model: survey });
+       this.resultsVis=false;
+
+
+ }
 
 
 }
+

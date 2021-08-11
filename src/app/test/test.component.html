@@ -1,2 +1,16 @@
-<div id='surveyElement'></div>
-<div id = 'surveyResult'></div>
+<div  id='surveyElement'></div>
+<div *ngIf="resultsVis && (filtersLoaded | async)" id ='surveyResult'>
+    {{QuizResults[0][domaine]}}
+    <tr *ngFor = "let QuizResult of QuizResults">
+        <td class="col-sm-2">
+          {{QuizResult.domaine}}
+        </td>
+        <td class="col-sm-6">
+            <ngb-progressbar type="success" [value]='QuizResult.note' [showValue]="true"></ngb-progressbar>
+
+          </td>
+      </tr>
+</div>
+<div id ='surveyResult2' style="display: none;"></div>
+<button disabled id="confirm" (click)="onSave()">confirm</button>
+<button (click)="onRetake()">retake</button>

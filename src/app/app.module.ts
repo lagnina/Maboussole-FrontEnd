@@ -93,6 +93,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { TagComponent } from './tag/tag.component';
 import { LoginComponent } from './login/login.component';
 import { TestContainerComponent } from './test-container/test-container.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -167,7 +168,8 @@ import { TestContainerComponent } from './test-container/test-container.componen
         import: 'formats/font',
         whitelist: ['mirza', 'roboto', 'aref', 'serif', 'sansserif', 'monospace']
       }]
-})
+}),
+    NgbModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
