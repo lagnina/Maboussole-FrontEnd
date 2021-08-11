@@ -1,7 +1,5 @@
 import { Component, Injector, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { TestService } from '../_services/test.service';
-import { environment } from 'src/environments/environment';
-import { HttpClient, HttpParams } from '@angular/common/http';
 import * as Survey from 'survey-angular';
 import { Results, Value } from '../_models/Result';
 
@@ -494,8 +492,8 @@ function sendDataToServer(survey) {
       var arr = findElement(surveyJSON.pages[0].elements,"name",key);
       arr.domaines.forEach(el=>{
         var res = {name : "",
-      rating: 0,
-    note : 0};
+        rating: 0,
+        note : 0};
         res.name = el.name;
         res.rating = el.rating;
         res.note =value * el.rating;
@@ -544,9 +542,6 @@ function addToResult(values){
     });
   });
 }
-
-
-
 @Component({
   selector: 'app-test',
   templateUrl: './test.component.html',
