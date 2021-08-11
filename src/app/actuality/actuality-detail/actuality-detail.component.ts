@@ -24,7 +24,8 @@ export class ActualityDetailComponent implements OnInit {
   ngOnInit(): void {
 console.log(this.route.snapshot.params.id)
 
-    this.postService.getPost(this.route.snapshot.params.id).subscribe(response => {
+    this.postService.getPost(this.route.snapshot.params.id)
+    .subscribe(response => {
     this.post=response;
     console.log(response);
     })
