@@ -27,6 +27,9 @@ import { ConseilDetailComponent } from './conseil/conseil-detail/conseil-detail.
 import { TagComponent } from './tag/tag.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { FormationComponent } from './formation/formation.component';
+import { FormationDetailComponent } from './formation-detail/formation-detail.component';
+import { FormationCardComponent } from './formation-card/formation-card.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -36,6 +39,12 @@ const routes: Routes = [
   {path:'Conseil-orientation',component:ConseilListComponent},
   {path:'Login',component:LoginComponent},
   {path:'Home', component:HomeComponent},
+  {path:'Formation', component:FormationComponent},
+
+
+
+
+
 
 
 
@@ -57,6 +66,9 @@ const routes: Routes = [
       {path:'post/list',component: PostListComponent},
       {path:'Actuality/:id',component:ActualityDetailComponent},
       {path:'Conseil-Orientation/:id',component:ConseilDetailComponent},
+      {path:'Formation/detail', component:FormationDetailComponent},
+      {path:'Formation/card', component:FormationCardComponent},
+    
 
       {path:'post/edit' ,component:PostEditComponent, canDeactivate:[PreventUnsavedChangesGuard]},
       {path: 'admin', component: AdminPanelComponent, canActivate: [AdminGuard]},

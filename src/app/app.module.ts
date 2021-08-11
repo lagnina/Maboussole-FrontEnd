@@ -94,6 +94,10 @@ import { TagComponent } from './tag/tag.component';
 import { LoginComponent } from './login/login.component';
 import { TestContainerComponent } from './test-container/test-container.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormationComponent } from './formation/formation.component';
+import { FormationListComponent } from './formation-list/formation-list.component';
+import { FormationDetailComponent } from './formation-detail/formation-detail.component';
+import { FormationCardComponent } from './formation-card/formation-card.component';
 
 @NgModule({
   declarations: [
@@ -133,6 +137,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     TagComponent,
     LoginComponent,
     TestContainerComponent,
+    FormationComponent,
+    FormationListComponent,
+    FormationDetailComponent,
+    FormationCardComponent,
 
   ],
   imports: [
@@ -159,7 +167,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatProgressBarModule,
     MatSelectModule,
     MatCardModule,
-
+    FormsModule,
 
     MatChipsModule,
     MatSelectCountryModule.forRoot('de'),
