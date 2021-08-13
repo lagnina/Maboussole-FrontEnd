@@ -12,13 +12,39 @@ import { FormationService } from '../_services/formation.service';
 })
 export class FormationComponent implements OnInit {
 
+  villes:string[]=[
+    "Agadir",
+    "Fès",
+    "El Jadida",
+    "Casablanca",
+    "Safi",
+    "Khouribga",
+    "Salé",
+    "Oujda",
+    "Meknès",
+    "Laayoune",
+    "Kénitra",
+    "Settat",
+    "Mohammedia",
+    "Marrakech",
+    "Errachidia",
+    "Béni",
+    "Tétouan",
+    "Rabat",
+    "Al",
+    "Berrechid",
+    "Tanger"
+  ];
+
 
   formation:any={};
   formations:Formation[];
   pagination: Pagination;
   formationParams:FormationParams;
 
-  constructor(private formationService:FormationService,private router:Router) { }
+  constructor(private formationService:FormationService,private router:Router) {
+    this.formationParams = this.formationService.getParams();
+   }
 
   ngOnInit(): void {
     this.getAllFormations();
@@ -28,21 +54,32 @@ export class FormationComponent implements OnInit {
     this.formationService.getAllFormations("").subscribe(
       response => {
         this.formations= response.result;
+        this.pagination = response.pagination;
         console.log(response.result)
       })
   }
 
   Rechercher(){
-
-    this.formationService.getAllFormations(this.formation.Domaine,this.formation.Secteur,this.formation.Etablissment)
+    this.formationService.getAllFormations(this.formation.Domaine,this.formation.Secteur,this.formation.Etablissment,this.formation.ville).subscribe(
+      response => {
+        this.formations= response.result;
+        this.pagination = response.pagination;
+        
+      })
   }
 
   LoadFormation(){
     this.formationService.setFormationParams(this.formationParams);
-    this.formationService.getAllFormations('').subscribe(response => {
-      this.formation = response.result;
+    this.formationService.getAllFormations(this.formation.Domaine,this.formation.Secteur,this.formation.Etablissment,this.formation.ville).subscribe(response => {
+      this.formations = response.result;
 
     this.pagination = response.pagination;
+    console.log(this.pagination)
     })
+  }
+  pageChanged(event: any) {
+    this.formationParams.pageNumber = event.page;
+    this.formationService.setFormationParams(this.formationParams);
+    this.LoadFormation();
   }
 }

@@ -28,13 +28,15 @@ export class FormationService {
      this.formationParams=params;
    }
 
-   getAllFormations(Domaine:string="",Secteur:string="",Etablissement:string=""){
+   getAllFormations(Domaine:string="",Secteur:string="",Etablissement:string="",Ville:string=""){
 
     let params = getPaginationHeaders(this.formationParams.pageNumber, this.formationParams.pageSize);
     params = params.append('Domaine',Domaine);
     params = params.append('Secteur',Secteur);
     params = params.append('Etablissement',Etablissement);
+    params = params.append('Ville',Ville);
 
+console.log(params)
     return getPaginatedResult<Formation[]>(this.baseUrl + 'formation/FormationsByDomaine', params, this.http)
     .pipe(map(response => {
       return response;

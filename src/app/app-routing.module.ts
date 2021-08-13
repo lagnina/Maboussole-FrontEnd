@@ -30,6 +30,8 @@ import { LoginComponent } from './login/login.component';
 import { FormationComponent } from './formation/formation.component';
 import { FormationDetailComponent } from './formation-detail/formation-detail.component';
 import { FormationCardComponent } from './formation-card/formation-card.component';
+import { TestContainerComponent } from './test-container/test-container.component';
+import { FooterComponent } from './footer/footer.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -40,6 +42,11 @@ const routes: Routes = [
   {path:'Login',component:LoginComponent},
   {path:'Home', component:HomeComponent},
   {path:'Formation', component:FormationComponent},
+  {path:'Test/1', component:TestContainerComponent},
+  {path:'footer', component:FooterComponent},
+
+
+
 
 
 
@@ -68,6 +75,9 @@ const routes: Routes = [
       {path:'Conseil-Orientation/:id',component:ConseilDetailComponent},
       {path:'Formation/detail', component:FormationDetailComponent},
       {path:'Formation/card', component:FormationCardComponent},
+
+
+
     
 
       {path:'post/edit' ,component:PostEditComponent, canDeactivate:[PreventUnsavedChangesGuard]},

@@ -82,24 +82,7 @@
                     "rating": 1}]
 
     },
-    {
-      "type": "rating", "name": "Vous êtes du type investigateur, chercheur, pour aller toujours plus loin dans vos découvertes scientifiques","domaines":[
-        {"name":"Genie Mecanique",
-          "rating": 5
-          },
-          {"name":"Informatique",
-            "rating": 3
-            },
-            {"name":"Genie civil",
-              "rating":3},
-              {"name":"Genie Industriel",
-                "rating": 3},
-                {"name":"Biologie et environnement",
-                  "rating": 5},
-                  {"name": "Electricite electronique",
-                    "rating": 5}]
-
-    },
+    
     {
       "type": "rating", "name": "Vous êtes prêt à réaliser des tâches administratives nécessitant la prise ou l’application de décisions dans le respect des règles établies    ","domaines":[
         {"name":"Genie Mecanique",

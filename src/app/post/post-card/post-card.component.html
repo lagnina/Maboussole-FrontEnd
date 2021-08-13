@@ -43,6 +43,43 @@
         <mat-icon>more_horiz</mat-icon>
       </button>
       </div>
+
+      <!-- <div id="comment-section" [ngClass]="{'comment-section-show': expanded}"
+            (scroll)="onTableScroll($event, post.postId)" class="comment-section">
+            <div *ngFor="let comment of commentResult?.results" class="comment-item">
+                <div class="d-flex flex-row">
+                    <div class="comment-user">
+                        <div *ngIf="comment.creator.userIdentity.userPictureId" class="profile-picture">
+                        </div>
+                        <div *ngIf="!comment.creator.userIdentity.userPictureId"
+                            class="d-flex justify-content-center align-items-center profile-avatar">
+                            <div><span class="user-avatar z-depth-0" alt="avatar image white">{{
+                                    comment.creator.userIdentity.snom.charAt(0).toUpperCase() +
+                                    comment.creator.userIdentity.sprenom.charAt(0).toUpperCase() }}</span></div>
+                        </div>
+                    </div>
+                    <div style="width: 100%;" class="d-flex flex-column">
+                        <div class="comment-content">
+
+                            <p class="navy"><b>{{comment.creator.userIdentity.snom + ' ' +
+                                    comment.creator.userIdentity.sprenom}}</b> - {{comment.dtcreation | date:
+                                'dd MMMM yyyy hh:mm a'}}</p>
+                            <p>{{comment.comment}}</p>
+                        </div>
+                        <div class="comment-react">
+                            <div class="d-flex flex-row">
+
+                                <!--<p class="navy" style="margin-right: 20px"><span class="fas fa-heart"></span>Like - 34
+                                    Likes</p>
+                                <p class="navy"><span class="fas fa-share"></span>Reply - 2 Replies</p>-->
+                            <!-- </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div> --> -->
     </mat-card-actions>
   </mat-card>
 

@@ -98,6 +98,7 @@ import { FormationComponent } from './formation/formation.component';
 import { FormationListComponent } from './formation-list/formation-list.component';
 import { FormationDetailComponent } from './formation-detail/formation-detail.component';
 import { FormationCardComponent } from './formation-card/formation-card.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -141,6 +142,7 @@ import { FormationCardComponent } from './formation-card/formation-card.componen
     FormationListComponent,
     FormationDetailComponent,
     FormationCardComponent,
+    FooterComponent,
 
   ],
   imports: [

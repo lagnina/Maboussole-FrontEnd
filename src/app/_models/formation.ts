@@ -4,10 +4,10 @@ export interface Formation {
     name :String ;
     ville :String;
     Site :String;
-    Secteur :String;
-    Etablissement :String;
-    Adresse :String;
-    Domaine :String;
-    Phone :Number;
+    secteur :String;
+    etablissement :String;
+    adresse :String;
+    domaine :String;
+    phone :Number;
     
 }

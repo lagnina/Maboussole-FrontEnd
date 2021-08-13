@@ -34,3 +34,83 @@ padding: 25px 16px;
 background: white;
 opacity: 0.9;
 }
+
+.comment-section {
+    display: none;
+    overflow: auto;
+    max-height: 350px;
+}
+
+.comment-section-show {
+    display: block;
+}
+
+.card-height {
+    max-height: 500px;
+}
+
+.espresso-card-body-subs {
+    display: table;
+    width: 100%;}
+    .post-info {
+        display: table-row;
+    }
+
+    .espresso-post-card-media {
+        display: table-row;
+    
+}
+.tilestyle
+{
+    text-align: center;
+    padding: 10px;
+}
+.comment-user {
+    width: 60px;
+    margin-right: 10px;
+   
+}
+
+.write-comment input,
+.write-comment span {
+    border: none;
+}
+
+.write-comment input {
+    border-top-right-radius: 20px !important;
+    border-bottom-right-radius: 20px !important;
+}
+
+.comment-content {
+    padding: 10px;
+    width: 100%;
+    background-color: whitesmoke;
+    border-radius: 20px;
+}
+.comment-item {
+    padding: 5px;
+}
+
+.espresso-pre-input,
+.espresso-input {
+    background: whitesmoke !important;
+    color: navy !important;
+}
+
+.espresso-input::placeholder {
+    color: gray !important;
+}
+
+.send-comment {
+    color: navy;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.chart-container {
+    width: 500px;
+    height: 400px;
+    max-width: 500px;
+    max-height: 400px;
+}

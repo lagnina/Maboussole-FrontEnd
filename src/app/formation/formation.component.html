@@ -1,46 +1,39 @@
-<div class="col-sm-12 col-lg-12" style="
-    size: ledger;
-    background: #0275d8;
-    border-radius: 20px;
-    margin-top: 100px;
-"> 
-    <div class="filtres-container formations"> <form  (ngSubmit)="Rechercher()" autocomplete="on"action="" method="post" id="ecoles_search_form" novalidate="true" data-toggle="validator"> 
-        <div class="row form-group">
-            
-            <div class="col-sm-4 mb-20">
-<ul style=" 
-    list-style-type: none; 
-    padding: 0;
-    margin: 0; 
-  ">
-
-           <span class="select2-selection select2-selection--single" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-ecole_search_form_ville-container"><span class="select2-selection__rendered" id="select2-ecole_search_form_ville-container" title="Choisir une ville"></span>
-                <span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span>
-            
-            <span class="dropdown-wrapper" aria-hidden="true"></span>
-         
-                    
-                    
-                  <li>  <label for="secteur">Secteur  </label>  </li>
-                 <li>   <select [(ngModel)]="formation.Secteur" id="ecole_search_form_secteur" name="ecole_search_form[secteur]" class="selecter form-control">
-                   
-                   
-                   
-                    <option value="">Choisir le secteur</option><option value="prive">Privé</option>
-                    <option value="public">Public</option></select></li>
+    
+<div class="col-sm-4" style="width: 600px;height: 318px;left: 101%;top: 10%;margin-left: -300px;position: fixed;" > 
+    <div class="filtres-container formations"  > 
+        <label>Filter de recherche</label>
+        
+        
+<form  (ngSubmit)="Rechercher()" autocomplete="on"action="" method="post" id="ecoles_search_form" novalidate="true" data-toggle="validator"> 
+<div class="row form-group" style="margin-right: -400px;">
+<div class="col-sm-4 mb-20" style=" background-color: #0275d8">
+<span class="select2-selection select2-selection--single" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-ecole_search_form_ville-container"><span class="select2-selection__rendered" id="select2-ecole_search_form_ville-container" title="Choisir une ville"></span>
+<span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span>
+<span class="dropdown-wrapper" aria-hidden="true"></span>
+<label for="secteur">Secteur  </label>  
+<select [(ngModel)]="formation.Secteur" id="ecole_search_form_secteur" name="ecole_search_form[secteur]" class="selecter form-control">
+<option value="a">Choisir le secteur</option><option value="privé">Privé</option>
+<option value="public">Public</option></select>
                     
                     
                         
-<span class="select2 select2-container select2-container--default" dir="ltr" style="width: 156px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-ecole_search_form_type_ecole-container">
-<span class="select2-selection__rendered" id="select2-ecole_search_form_type_ecole-container" title="Choisir le type d'école"></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>   <div class="clearfix">
-    <li> <label for="type_formation">
+
+<div class="clearfix">
                                 
                                 
-                                
+                      
+        <label for="secteur">Ville  </label>  
+<select [(ngModel)]="formation.ville" id="ecole_search_form_secteur" name="ecole_search_form[secteur]" class="selecter form-control">
+          
+          
+          
+           <option *ngFor = "let ville of villes" [value]='ville'>{{ville}}</option>
+        
+        </select>                      
 Type de formation
-</label></li><li>
-<select [(ngModel)]="formation.Etablissement" id="ecole_search_form_type_formation" name="ecole_search_form[type_formation]" class="selecter form-control select2-hidden-accessible" tabindex="-1" aria-hidden="true">
-                                     <option value="">Choisir le type de formation</option>
+
+<select [(ngModel)]="formation.etablissement" value="a" id="ecole_search_form_type_formation" name="ecole_search_form[type_formation]" class="selecter form-control select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                                     <option value="a" selected disabled hidden>Choisir le type de formation</option>
                                     <option value="BBA">BBA</option>
                                     <option value="BTS">BTS</option>
                                     <option value="Baccalauréat">Baccalauréat</option>
@@ -67,12 +60,12 @@ Type de formation
                                         <option value="Maîtrise Sciences et Techniques">Maîtrise Sciences et Techniques</option>
                                         <option value="Technicien">Technicien</option>
                                         <option value="Technicien Spécialisé">Technicien Spécialisé</option>
-</select> </li><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 248px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-ecole_search_form_type_formation-container">
+</select> <span class="select2 select2-container select2-container--default" dir="ltr" style="width: 248px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-ecole_search_form_type_formation-container">
 <span class="select2-selection__rendered" id="select2-ecole_search_form_type_formation-container" title="Choisir le type de formation"></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span> 
                                             
                                             
-<li><label for="type_formation">Secteur de formation</label></li>
- <li><select [(ngModel)]="formation.Domaine" id="ecole_search_form_secteur_formation" name="ecole_search_form[secteur_formation]" class="selecter form-control select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+<label for="type_formation">Domaine de formation</label>
+ <select [(ngModel)]="formation.domaine" id="ecole_search_form_secteur_formation" name="ecole_search_form[secteur_formation]" class="selecter form-control select2-hidden-accessible" tabindex="-1" aria-hidden="true">
                                         
                                            
                                            
@@ -96,35 +89,116 @@ Type de formation
     <option value="Ressources humaines">Ressources humaines</option><option value="Sciences humaines">Sciences humaines</option>
     <option value="Sciences politiques">Sciences politiques</option><option value="Social">Social</option><option value="Sociologie">Sociologie</option>
     <option value="Sport">Sport</option><option value="Tourisme">Tourisme</option>
-</select> </li><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 248px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-ecole_search_form_secteur_formation-container"><span class="select2-selection__rendered" id="select2-ecole_search_form_secteur_formation-container" title="Choisir le secteur de formation"></span>
-<span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>  </div><div class="clearfix"></div> <div class="row form-group"> 
-    
+</select> 
 
-     <div class="col-sm-4"> <button type="submit" class="btn btn-light">Rechercher</button>  </div> </div>
 
-</ul>
+
 </div>
-<div class="d-flex justify-content-center" *ngIf="pagination">
-    lmlm
-    
-    <pagination 
-        [boundaryLinks]="true" 
-        [totalItems]="pagination.totalItems"
-        [itemsPerPage]="pagination.itemsPerPage"
-        [(ngModel)]="pagination.currentPage"
-        (pageChanged)="pageChanged($event)"
-        previousText="&lsaquo;" 
-        nextText="&rsaquo;" 
-        firstText="&laquo;" 
-        lastText="&raquo;">
-</pagination>
-</div></div></form></div></div>
+<br>
+<div class="d-flex justify-content-end">
 
-    <div class="col-md-6" *ngFor="let formation of formations"> 
-<app-formation-card [formation]="formation"></app-formation-card>
-<br>
-<br>
+    <button type="submit" class="btn btn-light">Rechercher</button> 
     </div>
+    <br><br>
+       
 
-     
-  
+   
+</div>
+
+
+
+</div>
+
+</form>
+
+
+
+
+</div>
+
+</div >
+
+<div class="container">
+    <div class="row">
+    <div  *ngFor="let formation of formations">
+<app-formation-card  class="col-sm-3" style="width: 25%;"  [formation]="formation"></app-formation-card>
+<br>
+<br>
+
+    </div>
+</div>
+</div>
+
+
+
+    <div class="d-flex justify-content-center" *ngIf="pagination">
+        <pagination 
+            [boundaryLinks]="true" 
+            [totalItems]="pagination.totalItems"
+            [itemsPerPage]="pagination.itemsPerPage"
+            [(ngModel)]="pagination.currentPage"
+            (pageChanged)="pageChanged($event)"
+            previousText="&lsaquo;" 
+            nextText="&rsaquo;" 
+            firstText="&laquo;" 
+            lastText="&raquo;">
+    </pagination></div>
+
+
+
+
+    <div _ngcontent-qwr-c80="" class="container-fluid fh5co_footer_bg pb-3">
+        <div _ngcontent-qwr-c80="" class="container animate-box fadeInUp animated-fast">
+           <div _ngcontent-qwr-c80="" class="row">
+              <div _ngcontent-qwr-c80="" class="col-12 spdp_right py-5"></div>
+              <div _ngcontent-qwr-c80="" class="clearfix"></div>
+              <div _ngcontent-qwr-c80="" class="col-12 col-md-4 col-lg-3">
+                 <div _ngcontent-qwr-c80="" class="footer_main_title py-3"> About</div>
+                 <div _ngcontent-qwr-c80="" class="footer_sub_about pb-3"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </div>
+                 <div _ngcontent-qwr-c80="" class="footer_mediya_icon">
+                    <div _ngcontent-qwr-c80="" class="text-center d-inline-block">
+                       <a _ngcontent-qwr-c80="" class="fh5co_display_table_footer">
+                          <div _ngcontent-qwr-c80="" class="fh5co_verticle_middle"><i _ngcontent-qwr-c80="" class="fa fa-linkedin"></i></div>
+                       </a>
+                    </div>
+                    <div _ngcontent-qwr-c80="" class="text-center d-inline-block">
+                       <a _ngcontent-qwr-c80="" class="fh5co_display_table_footer">
+                          <div _ngcontent-qwr-c80="" class="fh5co_verticle_middle"><i _ngcontent-qwr-c80="" class="fa fa-google-plus"></i></div>
+                       </a>
+                    </div>
+                    <div _ngcontent-qwr-c80="" class="text-center d-inline-block">
+                       <a _ngcontent-qwr-c80="" class="fh5co_display_table_footer">
+                          <div _ngcontent-qwr-c80="" class="fh5co_verticle_middle"><i _ngcontent-qwr-c80="" class="fa fa-twitter"></i></div>
+                       </a>
+                    </div>
+                    <div _ngcontent-qwr-c80="" class="text-center d-inline-block">
+                       <a _ngcontent-qwr-c80="" class="fh5co_display_table_footer">
+                          <div _ngcontent-qwr-c80="" class="fh5co_verticle_middle"><i _ngcontent-qwr-c80="" class="fa fa-facebook"></i></div>
+                       </a>
+                    </div>
+                 </div>
+              </div>
+              <div _ngcontent-qwr-c80="" class="col-12 col-md-3 col-lg-2">
+                 <div _ngcontent-qwr-c80="" class="footer_main_title py-3"> Category</div>
+                 <ul _ngcontent-qwr-c80="" class="footer_menu">
+                    <li _ngcontent-qwr-c80=""><a _ngcontent-qwr-c80="" href="/Home"><i _ngcontent-qwr-c80="" class="fa fa-angle-right"></i>&nbsp;&nbsp; Home</a></li>
+                    <li _ngcontent-qwr-c80=""><a _ngcontent-qwr-c80="" href="/Actuality"><i _ngcontent-qwr-c80="" class="fa fa-angle-right"></i>&nbsp;&nbsp; Actuality</a></li>
+                    <li _ngcontent-qwr-c80=""><a _ngcontent-qwr-c80="" href="Conseil-orientation"><i _ngcontent-qwr-c80="" class="fa fa-angle-right"></i>&nbsp;&nbsp; Conseil</a></li>
+                    <li _ngcontent-qwr-c80=""><a _ngcontent-qwr-c80="" href="post/list"><i _ngcontent-qwr-c80="" class="fa fa-angle-right"></i>&nbsp;&nbsp; Posts</a></li>
+                    <li _ngcontent-qwr-c80=""><a _ngcontent-qwr-c80="" href="Quiz"><i _ngcontent-qwr-c80="" class="fa fa-angle-right"></i>&nbsp;&nbsp; Quiz</a></li>
+                    <li _ngcontent-qwr-c80=""><a _ngcontent-qwr-c80="" href="members/:username"><i _ngcontent-qwr-c80="" class="fa fa-angle-right"></i>&nbsp;&nbsp; Member</a></li>
+                 </ul>
+              </div>
+              <div _ngcontent-qwr-c80="" class="col-12 col-md-5 col-lg-3 position_footer_relative">
+                 <div _ngcontent-qwr-c80="" class="footer_main_title py-3"> Most Viewed Posts</div>
+                 <div _ngcontent-qwr-c80="" class="footer_makes_sub_font"> Dec 31, 2016</div>
+                 <a _ngcontent-qwr-c80="" href="#" class="footer_post pb-4"> Success is not a good teacher failure makes you humble </a>
+                 <div _ngcontent-qwr-c80="" class="footer_makes_sub_font"> Dec 31, 2016</div>
+                 <a _ngcontent-qwr-c80="" href="#" class="footer_post pb-4"> Success is not a good teacher failure makes you humble </a>
+                 <div _ngcontent-qwr-c80="" class="footer_makes_sub_font"> Dec 31, 2016</div>
+                 <a _ngcontent-qwr-c80="" href="#" class="footer_post pb-4"> Success is not a good teacher failure makes you humble </a>
+                 <div _ngcontent-qwr-c80="" class="footer_position_absolute"></div>
+              </div>
+           </div>
+        </div>
+     </div>
