@@ -559,9 +559,9 @@ export class TestComponent implements OnInit {
 
 ngOnInit() {
   this.testService.CheckResults().subscribe(response=>{
+console.log(response);
 
-
-    response["$values"].map(item=>{
+    response.map(item=>{
       const a= {
         "domaine" : item.domaine,
         "note":item.note*20
