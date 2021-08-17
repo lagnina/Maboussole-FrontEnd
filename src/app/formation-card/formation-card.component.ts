@@ -30,6 +30,7 @@ export class FormationCardComponent implements OnInit {
   //   this.formation=response;
   //   console.log(response);
   //   })
+  console.log(this.formation);
   
  }
 

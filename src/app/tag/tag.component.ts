@@ -24,13 +24,9 @@ export class TagComponent implements OnInit {
 
   GetAllPosts(){
 
-    this.postService.getAllPosts('post').subscribe(response => {
-    
-     this.posts = response.result;
-     console.log(response.result);
-  
-   })
+   
   }
+
 
 
 }

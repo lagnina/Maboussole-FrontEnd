@@ -38,27 +38,15 @@ const routes: Routes = [
   {path: 'Register', component: RegisterComponent},
   {path:'Actuality',component:ActualityListComponent},
   {path:'post/list',component: PostListComponent},
-  {path:'Conseil-orientation',component:ConseilListComponent},
+  {path:'Conseil-orientation',component:ConseilListComponent,children: [ 
+    {path: 'tag/:id',component:ConseilListComponent},
+  
+  ]},
   {path:'Login',component:LoginComponent},
   {path:'Home', component:HomeComponent},
   {path:'Formation', component:FormationComponent},
   {path:'Test/1', component:TestContainerComponent},
   {path:'footer', component:FooterComponent},
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   {
     path: '',
     runGuardsAndResolvers: 'always',

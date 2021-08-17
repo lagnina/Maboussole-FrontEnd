@@ -58,6 +58,17 @@ getAllPosts(type: string){
      return response;
    }));
 }
+
+getAllPostsByTag( tagId:string){
+  let params = getPaginationHeaders(this.postParams.pageNumber, this.postParams.pageSize);
+  params = params.append('tagId',tagId);
+
+
+   return getPaginatedResult<Post[]>(this.baseUrl + 'post/postsByTag', params, this.http)
+   .pipe(map(response => {
+     return response;
+   }));
+}
  getPost(postId:Number){
 
   return this.http.get<Post>(this.baseUrl + 'post/Posts/'+postId);

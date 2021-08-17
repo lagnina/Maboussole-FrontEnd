@@ -24,17 +24,32 @@ export class ConseilListComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.loadPosts();
 
- this.postService.getAllPosts('conseil').subscribe(response => {
-   console.log(response);
-  this.posts = response.result;
-  console.log(this.posts)
-})
-  this.tagService.getTags().subscribe(response=>{
-    this.tags=response;
-   })
+    if(this.router.url.includes('tag')){
+      this.postService.getAllPostsByTag( this.router.url.split('/').pop() ).subscribe(response => {
+       this.posts = response.result;
+       console.log(this.posts)
+     })
+     this.tagService.getTags().subscribe(response=>{
+      console.log(response);
+      this.tags=response;
+     })
+    }else{
+      this.loadPosts();
+      this.postService.getAllPosts('conseil').subscribe(response => {
+        console.log(response);
+       this.posts = response.result;
+       console.log(this.posts)
+     })
+       this.tagService.getTags().subscribe(response=>{
+         console.log(response);
+         this.tags=response;
+        })
+     
 
+    }
+    
+ 
 
 
 
@@ -59,6 +74,14 @@ export class ConseilListComponent implements OnInit {
         this.postService.PostCreate(this.model).subscribe(response => {
           this.router.navigateByUrl('/post/list');
           window.location.reload();      })
+      }
+
+      reload(id:number){
+        console.log(id);
+        this.router.navigate(['Conseil-orientation/tag/'+id])
+  .then(() => {
+    window.location.reload();
+  });   
       }
 
 }

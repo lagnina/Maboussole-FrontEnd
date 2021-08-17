@@ -1,7 +1,9 @@
 <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
-    <div class="card-header">{{formation.name}}</div>
+    <div *ngIf="formation.secteur?.includes('Public') " class="card-header" style="background-color: #556fff;"> {{formation.name}}</div>
+    <div *ngIf="formation.secteur?.includes('Privé')  " class="card-header" style="background-color: #ff6055;">{{formation.name}}</div>
     <div class="card-body">
-      <h5 class="card-title">{{formation}}</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <p class="card-title"><b>Secteur : </b>{{formation.secteur}}  </p>
+      <p class="card-text"><b>Etablissement :</b>{{formation.etablissement}}</p>
+      <p class="card-text"><b>Domaine :</b><br>{{formation.domaine}}</p>
     </div>
   </div>
