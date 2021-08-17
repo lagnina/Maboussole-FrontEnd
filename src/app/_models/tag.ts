@@ -2,7 +2,7 @@
 
 export interface Tag{
 
-    Id:Number;
+    id:Number;
     name:string;
     
     
