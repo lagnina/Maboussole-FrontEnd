@@ -31,7 +31,7 @@ export class FormationComponent implements OnInit {
     "Béni",
     "Tétouan",
     "Rabat",
-    "Al",
+    "Al Hoceima",
     "Berrechid",
     "Tanger"
   ];
@@ -60,7 +60,7 @@ export class FormationComponent implements OnInit {
   }
 
   Rechercher(){
-    this.formationService.getAllFormations(this.formation.Domaine,this.formation.Secteur,this.formation.Etablissment,this.formation.ville).subscribe(
+    this.formationService.getAllFormations(this.formation.Domaine,this.formation.Secteur,this.formation.Etablissment,this.formation.Ville).subscribe(
       response => {
         this.formations= response.result;
         this.pagination = response.pagination;
