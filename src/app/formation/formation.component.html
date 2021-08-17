@@ -1,17 +1,23 @@
     
-<div class="col-sm-4" style="width: 600px;height: 318px;left: 101%;top: 10%;margin-left: -300px;position: fixed;" > 
+<div class="col-sm-4" style="position: absolute;    left: -30px;
+" > 
     <div class="filtres-container formations"  > 
-        <label>Filter de recherche</label>
+        
+        <br>
+        <label style="margin-left: 50px;
+        ">Filter de recherche</label>
         
         
 <form  (ngSubmit)="Rechercher()" autocomplete="on"action="" method="post" id="ecoles_search_form" novalidate="true" data-toggle="validator"> 
 <div class="row form-group" style="margin-right: -400px;">
-<div class="col-sm-4 mb-20" style=" background-color: #0275d8">
+<div class="col-sm-4 mb-20" style=" background-color: #0275d8 ;border-radius: 25% 10%;" >
 <span class="select2-selection select2-selection--single" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-ecole_search_form_ville-container"><span class="select2-selection__rendered" id="select2-ecole_search_form_ville-container" title="Choisir une ville"></span>
 <span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span>
 <span class="dropdown-wrapper" aria-hidden="true"></span>
+<br>
+<br>
 <label for="secteur">Secteur  </label>  
-<select [(ngModel)]="formation.Secteur" id="ecole_search_form_secteur" name="ecole_search_form[secteur]" class="selecter form-control">
+<select [(ngModel)]="formation.Secteur" style="width: 225px;" id="ecole_search_form_secteur" name="ecole_search_form[secteur]" class="selecter form-control">
 <option value="a">Choisir le secteur</option><option value="privé">Privé</option>
 <option value="public">Public</option></select>
                     
@@ -22,17 +28,18 @@
                                 
                                 
                       
-        <label for="secteur">Ville  </label>  
-<select [(ngModel)]="formation.ville" id="ecole_search_form_secteur" name="ecole_search_form[secteur]" class="selecter form-control">
+    <label for="secteur" >Ville  </label>  
+<select [(ngModel)]="formation.ville"  id="ecole_search_form_secteur" name="ecole_search_form[secteur]" class="selecter form-control"style="width: 225px;">
           
           
           
            <option *ngFor = "let ville of villes" [value]='ville'>{{ville}}</option>
         
         </select>                      
-Type de formation
 
-<select [(ngModel)]="formation.etablissement" value="a" id="ecole_search_form_type_formation" name="ecole_search_form[type_formation]" class="selecter form-control select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+<label for="formation">Type de formation  </label>  
+
+<select [(ngModel)]="formation.etablissement" style="width: 225px;" value="a" id="ecole_search_form_type_formation" name="ecole_search_form[type_formation]"style="width: 225px;" class="selecter form-control select2-hidden-accessible" tabindex="-1" aria-hidden="true">
                                      <option value="a" selected disabled hidden>Choisir le type de formation</option>
                                     <option value="BBA">BBA</option>
                                     <option value="BTS">BTS</option>
@@ -64,8 +71,8 @@ Type de formation
 <span class="select2-selection__rendered" id="select2-ecole_search_form_type_formation-container" title="Choisir le type de formation"></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span> 
                                             
                                             
-<label for="type_formation">Domaine de formation</label>
- <select [(ngModel)]="formation.domaine" id="ecole_search_form_secteur_formation" name="ecole_search_form[secteur_formation]" class="selecter form-control select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+<label for="type_formation"style="width: 225px;">Domaine de formation</label>
+ <select [(ngModel)]="formation.domaine" id="ecole_search_form_secteur_formation" name="ecole_search_form[secteur_formation]"style="width: 225px;" class="selecter form-control select2-hidden-accessible" tabindex="-1" aria-hidden="true">
                                         
                                            
                                            
@@ -92,7 +99,7 @@ Type de formation
 </select> 
 </div>
 <br>
-<div class="d-flex justify-content-end">
+<div class="d-flex justify-content-center">
 
     <button type="submit" class="btn btn-light">Rechercher</button> 
     </div>
@@ -100,10 +107,10 @@ Type de formation
    
 </div></div></form></div></div >
 
-<div class="container">
+<div class="container" style="left: 230px;">
     <div class="row">
     <div  *ngFor="let formation of formations">
-<app-formation-card  class="col-sm-3" style="width: 25%;"  [formation]="formation"></app-formation-card>
+<app-formation-card  class="col-sm-2" style="width: 25%;"  [formation]="formation"></app-formation-card>
 <br>
 <br>
 

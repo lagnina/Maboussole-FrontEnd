@@ -32,6 +32,7 @@ import { FormationDetailComponent } from './formation-detail/formation-detail.co
 import { FormationCardComponent } from './formation-card/formation-card.component';
 import { TestContainerComponent } from './test-container/test-container.component';
 import { FooterComponent } from './footer/footer.component';
+import { MemberCardComponent } from './members/member-card/member-card.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -54,6 +55,7 @@ const routes: Routes = [
     children: [ 
       {path: 'members/:username', component: MemberDetailComponent, resolve: {member: MemberDetailedResolver}},
       {path: 'member/edit', component: MemberEditComponent, canDeactivate: [PreventUnsavedChangesGuard]},
+      {path: 'member/Card', component: MemberCardComponent},
       {path: 'lists', component: ListsComponent},
       {path: 'messages', component: MessagesComponent},
       {path: 'Quiz',component: TestComponent},
