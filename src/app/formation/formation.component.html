@@ -29,7 +29,7 @@
                                 
                       
     <label for="secteur" >Ville  </label>  
-<select [(ngModel)]="formation.ville"  id="ecole_search_form_secteur" name="ecole_search_form[secteur]" class="selecter form-control"style="width: 225px;">
+<select [(ngModel)]="formation.Ville"  id="ecole_search_form_secteur" name="ecole_search_form[secteur]" class="selecter form-control"style="width: 225px;">
           
           
           
@@ -37,42 +37,28 @@
         
         </select>                      
 
-<label for="formation">Type de formation  </label>  
+<label for="formation">Type d'école</label>  
 
-<select [(ngModel)]="formation.etablissement" style="width: 225px;" value="a" id="ecole_search_form_type_formation" name="ecole_search_form[type_formation]"style="width: 225px;" class="selecter form-control select2-hidden-accessible" tabindex="-1" aria-hidden="true">
-                                     <option value="a" selected disabled hidden>Choisir le type de formation</option>
-                                    <option value="BBA">BBA</option>
-                                    <option value="BTS">BTS</option>
-                                    <option value="Baccalauréat">Baccalauréat</option>
-                                    <option value="Bachelor">Bachelor</option>
-                                    <option value="Bachelor/Master (combinés)">Bachelor/Master (combinés)</option>
-                                    <option value="CPGE - CNC">CPGE - CNC</option>
-                                    <option value="DEUG">DEUG</option>
-                                    <option value="DEUST">DEUST</option>
-                                    <option value="Diplôme ENCG">Diplôme ENCG</option>
-                                    <option value="Diplôme Universitaire de Technologie - DUT">Diplôme Universitaire de Technologie - DUT</option>
-                                    <option value="Diplôme d'Etudes Supérieures Approfondies">Diplôme d'Etudes Supérieures Approfondies</option>
-                                    <option value="Diplôme d'Études Supérieures Spécialisées">Diplôme d'Études Supérieures Spécialisées</option>
-                                    <option value="Doctorat">Doctorat</option><option value="11305">Ingénieur</option>
-                                    <option value="Ingénieur d'État">Ingénieur d'État</option>
-                                    <option value="International Master">International Master</option>
-                                    <option value="Licence d'études fondamentales">Licence d'études fondamentales</option>
-                                        <option value="Licence professionnelle">Licence professionnelle</option>
-                                        <option value="Licences Sciences et techniques">Licences Sciences et techniques</option>
-                                        <option value="MBA">MBA</option>
-                                        <option value="Master">Master</option>
-                                        <option value="Master Spécialisé">Master Spécialisé</option>
-                                        <option value="Mastère Spécialisé">Mastère Spécialisé</option>
-                                        <option value="Maîtrise Sciences Spécialisées">Maîtrise Sciences Spécialisées</option>
-                                        <option value="Maîtrise Sciences et Techniques">Maîtrise Sciences et Techniques</option>
-                                        <option value="Technicien">Technicien</option>
-                                        <option value="Technicien Spécialisé">Technicien Spécialisé</option>
-</select> <span class="select2 select2-container select2-container--default" dir="ltr" style="width: 248px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-ecole_search_form_type_formation-container">
-<span class="select2-selection__rendered" id="select2-ecole_search_form_type_formation-container" title="Choisir le type de formation"></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span> 
-                                            
+<select [(ngModel)]="formation.Etablissement" style="width: 225px;" value="a" id="ecole_search_form_type_formation" name="ecole_search_form[type_formation]"style="width: 225px;" class="selecter form-control select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+    
+        
+                       
+                       
+                       
+        <option value="">Choisir le type </option>
+        
+        <option value="BTS">BTS</option><option value="Business School">Business School</option><option value="1117">Classes Prépa MP</option><option value="11252">Classes prépa BCPST</option><option value="11253">Classes prépa ECS</option><option value="1116">Classes prépa ECT</option><option value="1115">Classes prépa HEC</option>
+        <option value="Classes prépa LSH">Classes prépa LSH</option><option value="11250">Classes prépa PSI</option><option value="11251">Classes prépa TSI</option><option value="1111">Classes préparatoires</option><option value="1391">Commerce, Gestion, Communication</option><option value="1404">Ecole d'Architecture</option><option value="1397">Ecoles Agroalimentaire</option>
+        <option value="Ecoles Art Design">Ecoles Art Design</option><option value="1403">Ecoles Environnement &amp; Qualité</option><option value="1401">Ecoles Informatique &amp; Web</option><option value="1400">Ecoles Journalisme &amp; Média</option><option value="1402">Ecoles Paramédicales</option><option value="1389">Ecoles Spécialisées</option><option value="1394">Ecoles d'Ingenieur Informatique</option>
+        <option value="Ecoles d'Optique">Ecoles d'Optique</option><option value="11327">Ecoles d'audiovisuel et de cinéma</option><option value="11284">Ecoles d'infographie</option><option value="1107">Ecoles d'ingénieurs</option><option value="1104">Ecoles de Communication</option><option value="1399">Ecoles de Kinésithérapie</option><option value="1103">Ecoles de Management</option><option value="1396">Ecoles de Tourisme</option>
+        <option value="Ecoles de Télécommunication">Ecoles de Télécommunication</option><option value="1101">Ecoles de commerce</option><option value="1114">Ecoles de gestion</option><option value="1102">Ecoles de marketing</option><option value="11283">Ecoles de photographie</option><option value="1407">Ecoles Électronique</option><option value="1388">Enseignement militaire</option><option value="1390">Facultés</option>
+        <option value="Facultés d'économie">Facultés d'économie</option><option value="1108">Facultés de droit</option><option value="1121">Facultés de médecine</option><option value="1122">Facultés de médecine dentaire</option><option value="1110">Facultés de sciences juridiques</option><option value="11328">Facultés des langues et cultures</option><option value="1392">Facultés des lettres et des sciences humaines</option>
+        <option value="Facultés des sciences appliquées">Facultés des sciences appliquées</option><option value="11325">Facultés des sciences de l'éducation</option><option value="11330">Facultés des sciences de la religion</option><option value="1412">Instituts Formation Administration</option><option value="1408">Instituts Maritimes</option><option value="1411">Instituts Techniques</option><option value="1413">Instituts de formation à l'enseignement</option>
+        <option value="Instituts des études religieuses">Instituts des études religieuses</option><option value="11303">faculté polydisciplinaire</option></select>
+
                                             
 <label for="type_formation"style="width: 225px;">Domaine de formation</label>
- <select [(ngModel)]="formation.domaine" id="ecole_search_form_secteur_formation" name="ecole_search_form[secteur_formation]"style="width: 225px;" class="selecter form-control select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+ <select [(ngModel)]="formation.Domaine" id="ecole_search_form_secteur_formation" name="ecole_search_form[secteur_formation]"style="width: 225px;" class="selecter form-control select2-hidden-accessible" tabindex="-1" aria-hidden="true">
                                         
                                            
                                            

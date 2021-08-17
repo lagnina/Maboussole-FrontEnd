@@ -1,4 +1,9 @@
+
+
+
 <div  id='surveyElement'></div>
+
+
 <div *ngIf="resultsVis && (filtersLoaded | async)" id ='surveyResult'>
     {{QuizResults[0][domaine]}}
     <tr *ngFor = "let QuizResult of QuizResults">

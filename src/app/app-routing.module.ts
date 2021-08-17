@@ -58,7 +58,9 @@ const routes: Routes = [
       {path: 'member/Card', component: MemberCardComponent},
       {path: 'lists', component: ListsComponent},
       {path: 'messages', component: MessagesComponent},
-      {path: 'Quiz',component: TestComponent},
+      {path: 'Quiz',component: TestContainerComponent},
+      {path: 'Quiz/Metier',component: TestComponent},
+
       {path: 'post/create',component:PostCreateComponent},
       {path:'post/list',component: PostListComponent},
       {path:'Actuality/:id',component:ActualityDetailComponent},

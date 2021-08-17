@@ -1,0 +1,8 @@
+body.page-template-tpl_orientation-php .the_content #qsSelector {
+    margin: 0;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    border-bottom: 5px solid #42484c;
+    display: table;
+    width: 100%;
+}
