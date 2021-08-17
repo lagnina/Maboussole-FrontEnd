@@ -1,93 +1,27 @@
-import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { Member } from 'src/app/_models/member';
 import { MembersService } from 'src/app/_services/members.service';
-import { ActivatedRoute, Router } from '@angular/router';
-import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from '@kolkov/ngx-gallery';
-import { TabDirective, TabsetComponent } from 'ngx-bootstrap/tabs';
-import { Message } from 'src/app/_models/message';
-import { MessageService } from 'src/app/_services/message.service';
 import { PresenceService } from 'src/app/_services/presence.service';
-import { AccountService } from 'src/app/_services/account.service';
-import { User } from 'src/app/_models/user';
-import { take } from 'rxjs/operators';
+
 @Component({
   selector: 'app-member-card',
   templateUrl: './member-card.component.html',
   styleUrls: ['./member-card.component.css'],
 })
+export class MemberCardComponent implements OnInit {
+  @Input() member: Member;
 
-export class MemberCardComponent implements OnInit, OnDestroy {
-  @ViewChild('memberTabs', {static: true}) memberTabs: TabsetComponent;
-  member: Member;
-  galleryOptions: NgxGalleryOptions[];
-  galleryImages: NgxGalleryImage[];
-  activeTab: TabDirective;
-  messages: Message[] = [];
-  user: User;
-
-  constructor(public presence: PresenceService, private route: ActivatedRoute, 
-    private messageService: MessageService, private accountService: AccountService,
-    private router: Router) { 
-      this.accountService.currentUser$.pipe(take(1)).subscribe(user => this.user = user);
-      this.router.routeReuseStrategy.shouldReuseRoute = () => false;
-    }
+  constructor(private memberService: MembersService, private toastr: ToastrService, 
+    public presence: PresenceService) { }
 
   ngOnInit(): void {
-    this.route.data.subscribe(data => {
-      this.member = data.member;
+  }
+
+  addLike(member: Member) {
+    this.memberService.addLike(member.username).subscribe(() => {
+      this.toastr.success('You have liked ' + member.username );
     })
-
-    this.route.queryParams.subscribe(params => {
-      params.tab ? this.selectTab(params.tab) : this.selectTab(0);
-    })
-
-    this.galleryOptions = [
-      {
-        width: '500px',
-        height: '500px',
-        imagePercent: 100,
-        thumbnailsColumns: 4,
-        imageAnimation: NgxGalleryAnimation.Slide,
-        preview: false
-      }
-    ]
-
-    this.galleryImages = this.getImages();
-  }
-
-  getImages(): NgxGalleryImage[] {
-    const imageUrls = [];
-    for (const photo of this.member.photos) {
-      imageUrls.push({
-        small: photo?.url,
-        medium: photo?.url,
-        big: photo?.url
-      })
-    }
-    return imageUrls;
-  }
-
-  loadMessages() {
-    this.messageService.getMessageThread(this.member.username).subscribe(messages => {
-      this.messages = messages;
-    })
-  }
-
-  selectTab(tabId: number) {
-    this.memberTabs.tabs[tabId].active = true;
-  }
-
-  onTabActivated(data: TabDirective) {
-    this.activeTab = data;
-    if (this.activeTab.heading === 'Messages' && this.messages.length === 0) {
-      this.messageService.createHubConnection(this.user, this.member.username);
-    } else {
-      this.messageService.stopHubConnection();
-    }
-  }
-
-  ngOnDestroy(): void {
-    this.messageService.stopHubConnection();
   }
 
 }

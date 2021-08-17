@@ -56,6 +56,9 @@ const routes: Routes = [
       {path: 'members/:username', component: MemberDetailComponent, resolve: {member: MemberDetailedResolver}},
       {path: 'member/edit', component: MemberEditComponent, canDeactivate: [PreventUnsavedChangesGuard]},
       {path: 'member/Card', component: MemberCardComponent},
+      {path: 'member/detail', component: MemberDetailComponent},
+
+
       {path: 'lists', component: ListsComponent},
       {path: 'messages', component: MessagesComponent},
       {path: 'Quiz',component: TestContainerComponent},
