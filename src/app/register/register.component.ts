@@ -23,16 +23,7 @@ export class RegisterComponent implements OnInit {
 
   maxDate: Date;
   validationErrors: string[] = [];
-  avatars: { value: string; link: string }[] = [
-    {
-      value: "Man",
-      link: "assets/images/avatar-man.png"
-    },
-    {
-      value: "Women",
-      link: "assets/images/avatar-women.png"
-    }
-  ];
+  
   store: any;
 
   constructor(private accountService: AccountService, private toastr: ToastrService, 
@@ -67,7 +58,8 @@ export class RegisterComponent implements OnInit {
 
   register() {
     this.accountService.register(this.registerForm.value).subscribe(response => {
-      this.router.navigateByUrl('member/Card');
+      console.log(response)
+      this.router.navigateByUrl('Acceuil');
     }, error => {
       this.validationErrors = error;
     })

@@ -12,34 +12,30 @@ import { TagService } from 'src/app/_services/tag.service';
   styleUrls: ['./conseil-detail.component.css']
 })
 export class ConseilDetailComponent implements OnInit {
-  model:any ={}
-  tags:Tag[];
-  post:Post;
-
-
   
-  
-  
+ post:Post;
+ tags:Tag[];
 
 
-constructor(private postService :PostService,private tagService:TagService,private route: ActivatedRoute ) { }
+
+
+
+  constructor(private tagService :TagService,private postService :PostService,private route: ActivatedRoute ) { }
 
   ngOnInit(): void {
 console.log(this.route.snapshot.params.id)
 
-    this.postService.getPost(this.route.snapshot.params.id).subscribe(response => {
+    this.postService.getPost(this.route.snapshot.params.id)
+    .subscribe(response => {
     this.post=response;
     console.log(response);
-
     })
+
     this.tagService.getTags().subscribe(response=>{
       this.tags=response;
      })
-    
-    
 
 
   }
-
 
 }

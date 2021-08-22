@@ -99,6 +99,8 @@ import { FormationListComponent } from './formation-list/formation-list.componen
 import { FormationDetailComponent } from './formation-detail/formation-detail.component';
 import { FormationCardComponent } from './formation-card/formation-card.component';
 import { FooterComponent } from './footer/footer.component';
+import { FormationByDomaineComponent } from './formation-by-domaine/formation-by-domaine.component';
+import { SplitPipe } from './pipes/split.pipe';
 
 @NgModule({
   declarations: [
@@ -143,6 +145,8 @@ import { FooterComponent } from './footer/footer.component';
     FormationDetailComponent,
     FormationCardComponent,
     FooterComponent,
+    FormationByDomaineComponent,
+    SplitPipe,
 
   ],
   imports: [

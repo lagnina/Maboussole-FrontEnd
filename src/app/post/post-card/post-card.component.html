@@ -8,19 +8,18 @@
    <img src="{{post.posterPhotoUrl }}" class="avatar" alt="No Avatar" /> 
 {{ post.title }}</mat-card-title>
 
-      <mat-card-subtitle style="color: black !important;">Created on:
-        {{
-          post.dateCreated  | date: "dd.MM.yyyy hh:mm:SS"
-        }}</mat-card-subtitle>
+      <mat-card-subtitle style="color: black !important;">Date de Création:
+        {{post.dateCreated  | date}}</mat-card-subtitle>
       <mat-card-subtitle style="color: black !important;">
-        Created by: {{ post.posterName }}</mat-card-subtitle>
+         by :{{ post.posterName }}</mat-card-subtitle>
 
     </mat-card-header>
     </div>
-    <img src="{{post.posterPhotoUrl }}" alt="aa"
-          class="card-img-top img-thumbnail"> 
+    
     <mat-card-content>
       <p>{{post.content}} </p>
+      <img src="{{post.photoUrl }}" class="postimage" alt="shered img" /> 
+
     </mat-card-content>
     <mat-card-actions class="action-btn" fxLayout fxLayoutAlign="space-between">
       <div class="like-dislike-btn">
@@ -79,7 +78,7 @@
                 </div>
 
             </div>
-        </div> --> -->
+        </div> --> 
     </mat-card-actions>
   </mat-card>
 

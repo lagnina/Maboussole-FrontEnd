@@ -12,9 +12,13 @@
     background-size: contain;
     display: flex;
     flex-direction: column;
+    box-sizing: inherit;
   }
   .line {
     flex: 1;
+  }
+  form{
+    background-color: rgb(255, 255, 255);
   }
   
   .text {
@@ -26,8 +30,8 @@
     border-radius: 0.5em;
     box-shadow: 0 0 1em gray;
     padding: 15px 26px;
-    background: white;
     opacity: 0.9;
+    width: 44%;
   }
   
   .btn-sign-up {
@@ -60,3 +64,8 @@
     width: 40%;
   }
   
+  .cover{
+    background-image:url("./../../assets/undraw_Wall_post_re_y78d.png");
+    background-size: contain;
+
+  }

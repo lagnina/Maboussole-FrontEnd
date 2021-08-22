@@ -1,6 +1,9 @@
+import { Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Formation } from '../_models/Formation';
+import { Member } from '../_models/member';
+import { User } from '../_models/user';
 import { FormationService } from '../_services/formation.service';
 
 @Component({
@@ -9,12 +12,18 @@ import { FormationService } from '../_services/formation.service';
   styleUrls: ['./formation-detail.component.css']
 })
 export class FormationDetailComponent implements OnInit {
-  formation:Formation;
+  model: any = {}
+  response: any = {}
+  @Input()formation:Formation;
+  formations:Formation[];
+
+  member: Member;
+  user: User;
 
   constructor(private formationService:FormationService ,private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    console.log(this.route.snapshot.params.id)
+    console.log(this.route.snapshot.params.name)
 
   
 
@@ -25,5 +34,8 @@ export class FormationDetailComponent implements OnInit {
   
   }
 
+  getAllFormations(){
+    
+  }
 
 }

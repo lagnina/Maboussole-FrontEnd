@@ -37,7 +37,10 @@ export class FormationCardComponent implements OnInit {
   getAllFormations(){
     
   }
-
+  hack(val) {
+    return Array.from(val);
+  }
+  
 
 
 }

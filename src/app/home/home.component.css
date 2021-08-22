@@ -87,3 +87,17 @@ html {
       }
     }
   }
+
+  .fh5co_latest_trading_img {
+    border-radius: 25% 10%;
+    height: 60px;
+  }
+  h2{
+    position: relative;
+    font-size: 124%;
+    text-align: center;
+    color: black;
+  }
+  ._ngcontent-olr-c81{
+    width: 80%;
+  }

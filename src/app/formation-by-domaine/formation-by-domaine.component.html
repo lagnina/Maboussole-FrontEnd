@@ -1,0 +1,26 @@
+
+<div class="container" style="left: 230px;">
+    <div class="row">
+    <div  *ngFor="let formation of formations">
+<app-formation-card  class="col-sm-2" style="width: 25%;"  [formation]="formation"></app-formation-card>
+<br>
+<br>
+
+    </div>
+</div>
+</div>
+
+
+
+    <div class="d-flex justify-content-center" *ngIf="pagination">
+        <pagination 
+            [boundaryLinks]="true" 
+            [totalItems]="pagination.totalItems"
+            [itemsPerPage]="pagination.itemsPerPage"
+            [(ngModel)]="pagination.currentPage"
+            (pageChanged)="pageChanged($event)"
+            previousText="&lsaquo;" 
+            nextText="&rsaquo;" 
+            firstText="&laquo;" 
+            lastText="&raquo;">
+    </pagination></div>

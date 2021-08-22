@@ -7,22 +7,19 @@
                     <a class="nav-link" routerLink='/Home' routerLinkActive='active' >Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"  routerLink='/Actuality' routerLinkActive='active'>Actuality</a>
+                    <a class="nav-link"  routerLink='/Filieres-Orientations' routerLinkActive='active'>Filieres & Orientations</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink='/Conseil-orientation' routerLinkActive='active' >Conseil & orientation</a>
-                </li>
+              
+                
                 <li class="nav-item">
                     <a class="nav-link" routerLink='/Formation' routerLinkActive='active' >Formation</a>
                 </li>
-                <li class="nav-item">
-
-                    <a class="nav-link" routerLink='/post/list'routerLinkActive='active' >Posts </a>
-                </li>
+             
 
                 <ng-container *ngIf="accountService.currentUser$ | async">
-
-
+                    <li *appHasRole='["Member"]' class="nav-item">
+                        <a class="nav-link" routerLink='/post/list'routerLinkActive='active' >Posts </a>
+                    </li>
                 <li *appHasRole='["Admin", "Moderator"]' class="nav-item">
                     <a class="nav-link" routerLink='/admin'routerLinkActive='active' >Admin</a>
                 </li>
@@ -43,8 +40,17 @@
             </div>
         </div>
 
-        <form *ngIf="(accountService.currentUser$ | async) === null" #loginForm="ngForm" class="form-inline mt-2 mt-md-0">
+        <form *ngIf="(accountService.currentUser$ | async) === null" #loginForm="ngForm" (ngSubmit)="onSubmit(buttonType)" class="form-inline mt-2 mt-md-0">
+            <div class="text-center" *ngIf="(accountService.currentUser$ | async) === null" >
 
+
+                <a href="Register" role="button">
+                    <button  class="btn btn-primary" (click)="onSubmit('register')" type="submit" style="    background-color: #1b52a5;">
+                        S'inscrire</button></a>
+                <a href="Login" role="button">
+                    <button class="btn btn-info my-2 my-sm-0" (click)="onSubmit('login')" type="submit">Login</button></a>
+    
+          </div>
 
         </form>
     </div>

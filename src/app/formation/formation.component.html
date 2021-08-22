@@ -1,15 +1,15 @@
     
 <div class="col-sm-4" style="position: absolute;    left: -30px;
 " > 
-    <div class="filtres-container formations"  > 
+    <div class="filtres-container formations" style="position: fixed;"  > 
         
         <br>
         <label style="margin-left: 50px;
-        ">Filter de recherche</label>
+        ">Filtres de recherches</label>
         
         
 <form  (ngSubmit)="Rechercher()" autocomplete="on"action="" method="post" id="ecoles_search_form" novalidate="true" data-toggle="validator"> 
-<div class="row form-group" style="margin-right: -400px;">
+<div class="row form-group" style="margin-right: -550px;">
 <div class="col-sm-4 mb-20" style=" background-color: #0275d8 ;border-radius: 25% 10%;" >
 <span class="select2-selection select2-selection--single" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-ecole_search_form_ville-container"><span class="select2-selection__rendered" id="select2-ecole_search_form_ville-container" title="Choisir une ville"></span>
 <span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span>
@@ -109,15 +109,18 @@
     <div class="d-flex justify-content-center" *ngIf="pagination">
         <pagination 
             [boundaryLinks]="true" 
-            [totalItems]="pagination.totalItems"
+            [totalItems]="50"
             [itemsPerPage]="pagination.itemsPerPage"
             [(ngModel)]="pagination.currentPage"
             (pageChanged)="pageChanged($event)"
             previousText="&lsaquo;" 
             nextText="&rsaquo;" 
             firstText="&laquo;" 
-            lastText="&raquo;">
-    </pagination></div>
+            lastText="&raquo;"
+            >
+    </pagination>
+
+</div>
 
 
 

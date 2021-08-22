@@ -33,12 +33,15 @@ import { FormationCardComponent } from './formation-card/formation-card.componen
 import { TestContainerComponent } from './test-container/test-container.component';
 import { FooterComponent } from './footer/footer.component';
 import { MemberCardComponent } from './members/member-card/member-card.component';
+import { FormationByDomaineComponent } from './formation-by-domaine/formation-by-domaine.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'Register', component: RegisterComponent},
-  {path:'Actuality',component:ActualityListComponent},
-  {path:'post/list',component: PostListComponent},
+  {path:'Filieres-Orientations',component:ActualityListComponent,children: [ 
+    {path: 'tag/:id',component:ActualityListComponent},]},
+      {path:'post/list',component: PostListComponent},
+      {path:'Filieres-Orientations/:id',component:ActualityDetailComponent},
   {path:'Conseil-orientation',component:ConseilListComponent,children: [ 
     {path: 'tag/:id',component:ConseilListComponent},
   
@@ -46,6 +49,9 @@ const routes: Routes = [
   {path:'Login',component:LoginComponent},
   {path:'Home', component:HomeComponent},
   {path:'Formation', component:FormationComponent},
+
+    {path:'Domaine/:DomaineName',component:FormationByDomaineComponent},
+  
   {path:'Test/1', component:TestContainerComponent},
   {path:'footer', component:FooterComponent},
   {
@@ -66,9 +72,9 @@ const routes: Routes = [
 
       {path: 'post/create',component:PostCreateComponent},
       {path:'post/list',component: PostListComponent},
-      {path:'Actuality/:id',component:ActualityDetailComponent},
+ 
       {path:'Conseil-Orientation/:id',component:ConseilDetailComponent},
-      {path:'Formation/detail', component:FormationDetailComponent},
+      {path:'Formation/detail/:name', component:FormationDetailComponent},
       {path:'Formation/card', component:FormationCardComponent},
 
 

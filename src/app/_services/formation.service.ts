@@ -47,6 +47,11 @@ console.log(params)
    getFormationByName(Name :string){
     return this.http.get<Formation>(this.baseUrl + 'formation/formations/'+Name);
 }
+getFormationByDomaine(Domaine :string){
+  return this.http.get<Formation>(this.baseUrl + 'formation/FormationsByDomaine'+Domaine);
+}
+
+
 
 
 }

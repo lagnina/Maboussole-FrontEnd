@@ -12,6 +12,8 @@ import { TagService } from 'src/app/_services/tag.service';
   styleUrls: ['./actuality-list.component.css']
 })
 export class ActualityListComponent implements OnInit {
+ 
+
   posts:Post[];
   tags:Tag[];
   model:any={};
@@ -19,17 +21,38 @@ export class ActualityListComponent implements OnInit {
   pagination: Pagination;
   constructor(private postService: PostService,private tagService :TagService,private router:Router) {
     this.postParams = this.postService.getParams();
+
    }
 
   ngOnInit(): void {
-   this.loadPosts();
- this.postService.getAllPosts('actualite').subscribe(response => {
-   console.log(response);
-  this.posts = response.result;
-})
-this.tagService.getTags().subscribe(response=>{
-  this.tags=response;
- })
+
+    if(this.router.url.includes('tag')){
+      this.postService.getAllPostsByTag( this.router.url.split('/').pop() ).subscribe(response => {
+       this.posts = response.result;
+       console.log(this.posts)
+     })
+     this.tagService.getTags().subscribe(response=>{
+      console.log(response);
+      this.tags=response;
+     })
+    }else{
+      this.loadPosts();
+      this.postService.getAllPosts('actualite').subscribe(response => {
+        console.log(response);
+       this.posts = response.result;
+       console.log(this.posts)
+     })
+       this.tagService.getTags().subscribe(response=>{
+         console.log(response);
+         this.tags=response;
+        })
+     
+
+    }
+    
+ 
+
+
 
   }
   loadPosts() {
@@ -39,7 +62,7 @@ this.tagService.getTags().subscribe(response=>{
       this.pagination = response.pagination;
     })
   }
-  
+
   pageChanged(event: any) {
     this.postParams.pageNumber = event.page;
     this.postService.setPostParams(this.postParams);
@@ -47,12 +70,20 @@ this.tagService.getTags().subscribe(response=>{
   }
 
   Post(){
-        this.model.Type = 'actualite'
+    // subscribe = moura matawsal response hachno dir
+        this.model.Type = 'Filieres-Orientations'
         this.postService.PostCreate(this.model).subscribe(response => {
           this.router.navigateByUrl('Actuality');
           window.location.reload();      })
       }
 
-}
+      reload(id:number){
+        console.log(id);
+        this.router.navigate(['Filieres-Orientations/tag/'+id])
+  .then(() => {
+    window.location.reload();
+  });   
+      }
 
+}
 

@@ -1,12 +1,20 @@
 <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
     <div *ngIf="formation.secteur?.includes('Public') " class="card-header" style="background-color: #556fff;"> {{formation.name}}</div>
     <div *ngIf="formation.secteur?.includes('Privé')  " class="card-header" style="background-color: #ff6055;">{{formation.name}}</div>
-    <div class="card-body">
-      <p class="card-text"><b>Ville :</b><br>{{formation.ville}}</p>
+    <div class="card-body" style="overflow-y: scroll; height:300px; overflow: auto">
+      <p class="card-text"><b>Ville :</b>{{formation.ville}}</p>
 
       <p class="card-title"><b>Secteur : </b>{{formation.secteur}}  </p>
-      <p class="card-text"><b>Etablissement :</b>{{formation.etablissement}}</p>
-      <p class="card-text"><b>Domaine :</b><br>{{formation.domaine}}</p>
+     
+      <p class="card-text" >
+     <b>Domaine :</b> {{formation.domaine}}<br>
+
+
+      <p class="card-text"><b>Site :  </b><a href= "{{formation.site}}">{{formation.site}}</a></p>
+      <p class="card-text"><b>Etablissement :</b><h4 *ngFor="let etablissement of hack(formation.etablissement | split)">
+        <ul><li>
+           {{etablissement}}</li>
+        </ul></h4>
 
     </div>
   </div>

@@ -1,0 +1,6 @@
+.row>* {
+    flex-shrink: 0;
+    width: 27%;
+    max-width: 34%;
+}
+

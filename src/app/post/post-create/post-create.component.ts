@@ -65,11 +65,9 @@ getAllTags(){
         this.postService.PostCreate(formData).subscribe(response => {
           this.toastr.success('Post Created Successfully');
           this.router.navigateByUrl('/post/list');
-          window.location.reload();    
         
         })}
-
-      toggleDisabled() {
+              toggleDisabled() {
         const tag: any = this.tags[1];
         tag.disabled = !tag.disabled;
     }

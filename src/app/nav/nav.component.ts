@@ -19,10 +19,17 @@ export class NavComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  login() {
-    this.accountService.login(this.model).subscribe(response => {
-      this.router.navigateByUrl('/Home');
-    })
+  onSubmit(buttonType) {
+    
+    if(buttonType === "login"){
+      this.router.navigateByUrl('/Login');
+    }
+    if(buttonType === "register"){
+      this.router.navigateByUrl('/Register');
+    }
+
+
+    
   }
 
   logout() {
