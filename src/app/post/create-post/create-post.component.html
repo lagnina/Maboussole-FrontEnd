@@ -1,0 +1,46 @@
+
+<span class="border ">
+
+   <form (ngSubmit)="Post()" autocomplete="on" style="display: inline-block;
+   margin-left: auto;
+   margin-right: auto;
+   text-align: left;
+   padding: 50px">
+       <label>Create post</label>
+        
+       <div class="form-group">
+           <select id="Type" placeholder="Titre" class="form-control"  [(ngModel)]="model.Type" name="Type">
+              
+              <option value="post">Post</option>
+   
+   
+            </select> </div>
+       <div class="form-group">
+        <input type="text"  class="form-control"  placeholder="Titre" [(ngModel)]="model.title" name="titre" required />
+       </div>
+   
+             
+             <div class="form-group">
+   
+          <input type="file"  class="form-control" 
+           id="file"
+           (change)="handleFileInput($event.target.files)">
+       </div>
+       
+       <quill-editor  [(ngModel)]="model.content" name="content" required [styles]="{height: '200px'}"></quill-editor>
+   
+   
+           
+   <!-- <div class="form-group">
+   
+       
+           <button type="button" class="btn btn-secondary btn-sm" (click)="toggleDisabled()">Toggle disabled</button>
+       </div>
+       <br>
+       -->
+      
+        <button class="btn btn-success my-2 my-sm-0" type="submit" >Create Post</button>
+   
+   
+     </form>
+     </span>

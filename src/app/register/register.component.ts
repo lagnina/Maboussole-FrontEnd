@@ -20,6 +20,7 @@ export class RegisterComponent implements OnInit {
   user: User;
   @Output() cancelRegister = new EventEmitter();
   registerForm: FormGroup;
+  fileToUpload: File | null = null;
 
   maxDate: Date;
   validationErrors: string[] = [];
@@ -59,13 +60,15 @@ export class RegisterComponent implements OnInit {
   register() {
     this.accountService.register(this.registerForm.value).subscribe(response => {
       console.log(response)
-      this.router.navigateByUrl('Acceuil');
+      this.router.navigateByUrl('Home');
     }, error => {
       this.validationErrors = error;
     })
   }
   
-
+  handleFileInput(files: FileList) {
+    this.fileToUpload = files.item(0);
+  }
   cancel() {
     this.cancelRegister.emit(false);
   }

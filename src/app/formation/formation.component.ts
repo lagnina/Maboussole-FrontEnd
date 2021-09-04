@@ -60,7 +60,7 @@ export class FormationComponent implements OnInit {
   }
 
   Rechercher(){
-    this.formationService.getAllFormations(this.formation.Domaine,this.formation.Secteur,this.formation.Etablissment,this.formation.Ville).subscribe(
+    this.formationService.getAllFormations(this.formation.Domaine,this.formation.Secteur,this.formation.Etablissement,this.formation.Ville).subscribe(
       response => {
         this.formations= response.result;
         this.pagination = response.pagination;
@@ -70,7 +70,7 @@ export class FormationComponent implements OnInit {
 
   LoadFormation(){
     this.formationService.setFormationParams(this.formationParams);
-    this.formationService.getAllFormations(this.formation.Domaine,this.formation.Secteur,this.formation.Etablissment,this.formation.ville).subscribe(response => {
+    this.formationService.getAllFormations(this.formation.Domaine,this.formation.Secteur,this.formation.Etablissement,this.formation.ville).subscribe(response => {
       this.formations = response.result;
 
     this.pagination = response.pagination;

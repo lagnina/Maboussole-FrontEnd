@@ -41,6 +41,7 @@ import { PostCreateComponent } from './post/post-create/post-create.component';
 import { MatSelectCountryModule } from '@angular-material-extensions/select-country';
 import { MatChipsModule } from '@angular/material/chips';
 
+
 import {
   MatSliderModule
 } from "@angular/material/slider";
@@ -101,6 +102,7 @@ import { FormationCardComponent } from './formation-card/formation-card.componen
 import { FooterComponent } from './footer/footer.component';
 import { FormationByDomaineComponent } from './formation-by-domaine/formation-by-domaine.component';
 import { SplitPipe } from './pipes/split.pipe';
+import { CreatePostComponent } from './post/create-post/create-post.component';
 
 @NgModule({
   declarations: [
@@ -147,6 +149,7 @@ import { SplitPipe } from './pipes/split.pipe';
     FooterComponent,
     FormationByDomaineComponent,
     SplitPipe,
+    CreatePostComponent,
 
   ],
   imports: [

@@ -35,12 +35,16 @@ import { FooterComponent } from './footer/footer.component';
 import { MemberCardComponent } from './members/member-card/member-card.component';
 import { FormationByDomaineComponent } from './formation-by-domaine/formation-by-domaine.component';
 
+import { CreatePostComponent } from './post/create-post/create-post.component';
+
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'Register', component: RegisterComponent},
   {path:'Filieres-Orientations',component:ActualityListComponent,children: [ 
     {path: 'tag/:id',component:ActualityListComponent},]},
-      {path:'post/list',component: PostListComponent},
+      {path:'post/list',component: PostListComponent} ,
+      
+      
       {path:'Filieres-Orientations/:id',component:ActualityDetailComponent},
   {path:'Conseil-orientation',component:ConseilListComponent,children: [ 
     {path: 'tag/:id',component:ConseilListComponent},
@@ -72,7 +76,8 @@ const routes: Routes = [
 
       {path: 'post/create',component:PostCreateComponent},
       {path:'post/list',component: PostListComponent},
- 
+      {path:'post/create2',component: CreatePostComponent},
+
       {path:'Conseil-Orientation/:id',component:ConseilDetailComponent},
       {path:'Formation/detail/:name', component:FormationDetailComponent},
       {path:'Formation/card', component:FormationCardComponent},

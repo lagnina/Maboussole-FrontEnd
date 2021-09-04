@@ -1,7 +1,7 @@
     
-<div class="col-sm-4" style="position: absolute;    left: -30px;
+<div class="col-sm-4" style="position: relative;    left: -30px;
 " > 
-    <div class="filtres-container formations" style="position: fixed;"  > 
+    <div class="filtres-container formations"   > 
         
         <br>
         <label style="margin-left: 50px;
@@ -37,24 +37,22 @@
         
         </select>                      
 
-<label for="formation">Type d'école</label>  
+<label for="formation">Etablissement </label>  
 
 <select [(ngModel)]="formation.Etablissement" style="width: 225px;" value="a" id="ecole_search_form_type_formation" name="ecole_search_form[type_formation]"style="width: 225px;" class="selecter form-control select2-hidden-accessible" tabindex="-1" aria-hidden="true">
-    
-        
-                       
-                       
-                       
+                   
         <option value="">Choisir le type </option>
         
-        <option value="BTS">BTS</option><option value="Business School">Business School</option><option value="1117">Classes Prépa MP</option><option value="11252">Classes prépa BCPST</option><option value="11253">Classes prépa ECS</option><option value="1116">Classes prépa ECT</option><option value="1115">Classes prépa HEC</option>
-        <option value="Classes prépa LSH">Classes prépa LSH</option><option value="11250">Classes prépa PSI</option><option value="11251">Classes prépa TSI</option><option value="1111">Classes préparatoires</option><option value="1391">Commerce, Gestion, Communication</option><option value="1404">Ecole d'Architecture</option><option value="1397">Ecoles Agroalimentaire</option>
+        <option value="BTS">BTS</option><option value="Business School">Business School</option><option value="1117">Classes Prépa MP</option><option value="11252">Classes prépa BCPST</option><option value="Classes">Classes prépa ECS</option><option value="Classes">Classes prépa ECT</option><option value="Classes">Classes prépa HEC</option>
+        <option value="Classes">Classes prépa LSH</option><option value="Classes">Classes prépa PSI</option><option value="Classes">Classes prépa TSI</option><option value="Classes">Classes préparatoires</option><option value="1391">Commerce, Gestion, Communication</option><option value="1404">Ecole d'Architecture</option><option value="1397">Ecoles Agroalimentaire</option>
         <option value="Ecoles Art Design">Ecoles Art Design</option><option value="1403">Ecoles Environnement &amp; Qualité</option><option value="1401">Ecoles Informatique &amp; Web</option><option value="1400">Ecoles Journalisme &amp; Média</option><option value="1402">Ecoles Paramédicales</option><option value="1389">Ecoles Spécialisées</option><option value="1394">Ecoles d'Ingenieur Informatique</option>
         <option value="Ecoles d'Optique">Ecoles d'Optique</option><option value="11327">Ecoles d'audiovisuel et de cinéma</option><option value="11284">Ecoles d'infographie</option><option value="1107">Ecoles d'ingénieurs</option><option value="1104">Ecoles de Communication</option><option value="1399">Ecoles de Kinésithérapie</option><option value="1103">Ecoles de Management</option><option value="1396">Ecoles de Tourisme</option>
-        <option value="Ecoles de Télécommunication">Ecoles de Télécommunication</option><option value="1101">Ecoles de commerce</option><option value="1114">Ecoles de gestion</option><option value="1102">Ecoles de marketing</option><option value="11283">Ecoles de photographie</option><option value="1407">Ecoles Électronique</option><option value="1388">Enseignement militaire</option><option value="1390">Facultés</option>
+        <option value="Ecoles de Télécommunication">Ecoles de Télécommunication</option><option value="Ecoles de commerce">Ecoles de commerce</option><option value="1114">Ecoles de gestion</option><option value="1102">Ecoles de marketing</option><option value="11283">Ecoles de photographie</option><option value="1407">Ecoles Électronique</option><option value="1388">Enseignement militaire</option>
+        <option value="Facultés">Facultés</option>
         <option value="Facultés d'économie">Facultés d'économie</option><option value="1108">Facultés de droit</option><option value="1121">Facultés de médecine</option><option value="1122">Facultés de médecine dentaire</option><option value="1110">Facultés de sciences juridiques</option><option value="11328">Facultés des langues et cultures</option><option value="1392">Facultés des lettres et des sciences humaines</option>
         <option value="Facultés des sciences appliquées">Facultés des sciences appliquées</option><option value="11325">Facultés des sciences de l'éducation</option><option value="11330">Facultés des sciences de la religion</option><option value="1412">Instituts Formation Administration</option><option value="1408">Instituts Maritimes</option><option value="1411">Instituts Techniques</option><option value="1413">Instituts de formation à l'enseignement</option>
-        <option value="Instituts des études religieuses">Instituts des études religieuses</option><option value="11303">faculté polydisciplinaire</option></select>
+        <option value="Instituts des études religieuses">Instituts des études religieuses</option><option value="11303">faculté polydisciplinaire</option>
+    </select>
 
                                             
 <label for="type_formation"style="width: 225px;">Domaine de formation</label>
@@ -93,10 +91,12 @@
    
 </div></div></form></div></div >
 
-<div class="container" style="left: 230px;">
+<div class="container" style="top: -483px;left: 230px;">
     <div class="row">
     <div  *ngFor="let formation of formations">
-<app-formation-card  class="col-sm-2" style="width: 25%;"  [formation]="formation"></app-formation-card>
+<app-formation-card  class="col-sm-2" style="width: 25%;"  [formation]="formation">
+</app-formation-card>
+ 
 <br>
 <br>
 
@@ -106,7 +106,8 @@
 
 
 
-    <div class="d-flex justify-content-center" *ngIf="pagination">
+    <div class="d-flex justify-content-center" *ngIf="pagination" style="
+    margin-top: -500px;" >
         <pagination 
             [boundaryLinks]="true" 
             [totalItems]="50"

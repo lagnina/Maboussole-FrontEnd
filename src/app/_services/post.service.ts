@@ -45,7 +45,17 @@ PostCreate(model: any){
   )
 }
 
+PostCreate2(model: any){
 
+  return this.http.post(this.baseUrl + 'post/create2', model).pipe(
+    map((response:Post ) =>{
+
+      console.log(response);
+
+
+    })
+  )
+}
 
 
 getAllPosts(type: string){

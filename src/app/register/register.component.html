@@ -40,6 +40,13 @@
         [label]='"City"'></app-text-input>
     <app-text-input [formControl]='registerForm.controls["country"]' 
         [label]='"Country"'></app-text-input>
+
+        <div class="form-group">
+
+            <input type="file"  class="form-control" 
+             id="file"
+             (change)="handleFileInput($event.target.files)">
+         </div>
    
     <div class="row" *ngIf="validationErrors.length > 0">
         <ul class="text-danger">

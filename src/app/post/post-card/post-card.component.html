@@ -5,20 +5,25 @@
   <div fxLayout>
     <mat-card-header>
       <mat-card-title>
-   <img src="{{post.posterPhotoUrl }}" class="avatar" alt="No Avatar" /> 
-{{ post.title }}</mat-card-title>
+   <img src="{{post.posterPhotoUrl }}" class="avatar" style="   content: ' ';
+   display: block;
+   width: 80px;
+height: 70px;
+background-size: cover;
+   background-image: url(./../../../assets/user.png);" /> 
+  
+{{ post.posterName }}</mat-card-title>
 
-      <mat-card-subtitle style="color: black !important;">Date de Création:
-        {{post.dateCreated  | date}}</mat-card-subtitle>
       <mat-card-subtitle style="color: black !important;">
-         by :{{ post.posterName }}</mat-card-subtitle>
+        {{post.dateCreated  | date:'medium' }}</mat-card-subtitle>
+      
 
     </mat-card-header>
     </div>
     
     <mat-card-content>
-      <p>{{post.content}} </p>
-      <img src="{{post.photoUrl }}" class="postimage" alt="shered img" /> 
+      <p [innerHTML]='post.content'>{{post.content}} </p>
+      <img src="{{post.photoUrl }}" class="ccc" alt="" /> 
 
     </mat-card-content>
     <mat-card-actions class="action-btn" fxLayout fxLayoutAlign="space-between">

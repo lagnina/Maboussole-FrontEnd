@@ -15,18 +15,19 @@
       
           {{post.posterName}} 
           {{post.dateCreated | date: "dd.MM.yyyy hh:mm:SS"}} </a>
-        <div class="fh5co_consectetur">
-            <p style="
-            width: 100%;
-            line-height: 1.2em;
-            height: 3.6em;
-            background-color: rgb(255, 255, 255);
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 3;"> {{post.content}}</p>
-          <a class="btn btn-primary" href="Filieres-Orientations/{{post.postId}}">ReadMore</a>
+        <div class="fh5co_consectetur" style="
+        width: 100%;
+        line-height: 1.2em;
+        height: 3.6em;
+        background-color: rgb(255, 255, 255);
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;"[innerHTML]='post.content'>{{post.content}}
         </div>
+        <a class="btn btn-primary" href="Filieres-Orientations/{{post.postId}}">ReadMore</a>
+</div>
+        
     </div>
 </div>
 

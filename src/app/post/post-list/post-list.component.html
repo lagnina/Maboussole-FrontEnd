@@ -5,11 +5,9 @@
   
               <div class="col-md-8 animate-box" data-animate-effect="fadeInLeft" *ngFor="let post of posts" >
                   
-                  <app-post-card [post]="post"></app-post-card>
-                    
-
+                  <app-post-card [post]="post"></app-post-card>                
               </div>
-             
+              
             <div class="d-flex justify-content-center" *ngIf="pagination">
                 <pagination 
                     [boundaryLinks]="true" 
@@ -23,25 +21,23 @@
                     lastText="&raquo;">
             </pagination></div>
 
-   <div class="col-md-3 animate-box" data-animate-effect="fadeInRight"  style="position: fixed; margin-left: 793px;">
-      <div>
+
+<!-- <app-create-post> </app-create-post> -->
+  
+
+<div class="col-md-3 animate-box" data-animate-effect="fadeInRight"  style="position:relative;margin-left: 793px;">
+      <div style="
+      width: 68px;
+      margin-top: -2799px">
           
       <div class="clearfix">
        
-<div class="row">
-
-
-<a href="post/create" role="button">
-<button  class="btn btn-primary" type="submit">Create Post</button>
-</a>
-
 
 </div>
+
+
       </div>
-      
-      
-  
-  
+     
   </div>
 </div></div></div>
 

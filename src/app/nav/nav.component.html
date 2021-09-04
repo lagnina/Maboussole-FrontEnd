@@ -17,7 +17,7 @@
              
 
                 <ng-container *ngIf="accountService.currentUser$ | async">
-                    <li *appHasRole='["Member"]' class="nav-item">
+                    <li *appHasRole='["Member","Admin", "Moderator"]' class="nav-item">
                         <a class="nav-link" routerLink='/post/list'routerLinkActive='active' >Posts </a>
                     </li>
                 <li *appHasRole='["Admin", "Moderator"]' class="nav-item">
