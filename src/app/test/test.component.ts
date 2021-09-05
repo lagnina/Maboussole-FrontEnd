@@ -5,7 +5,7 @@ import { Results, Value } from '../_models/Result';
 
 
 var surveyJSON ={
-  "title" : "page1",
+  "title" : "Quiz ",
  "pages": [
   {
    "name": "page3",
@@ -491,9 +491,13 @@ function sendDataToServer(survey) {
       var value = survey.data[key];
       var arr = findElement(surveyJSON.pages[0].elements,"name",key);
       arr.domaines.forEach(el=>{
-        var res = {name : "",
+        var res = {
+        
+        name : "",
         rating: 0,
         note : 0};
+
+        
         res.name = el.name;
         res.rating = el.rating;
         res.note =value * el.rating;

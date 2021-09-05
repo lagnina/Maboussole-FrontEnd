@@ -49,7 +49,9 @@
              "src/assets/css/style_1.css",
               "src/assets/css/media_query.css"
             ],
-            "scripts": []
+            "scripts": [
+             
+          ]
           },
           "configurations": {
             "production": {
