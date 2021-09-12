@@ -177,7 +177,6 @@ import { CreatePostComponent } from './post/create-post/create-post.component';
     MatSelectModule,
     MatCardModule,
     FormsModule,
-
     MatChipsModule,
     MatSelectCountryModule.forRoot('de'),
     QuillModule.forRoot({

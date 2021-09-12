@@ -1,7 +1,7 @@
 
 
+<div id="surveyElement" style="display:inline-block;width:100%;"></div>
 
-<div  id='surveyElement'></div>
 
 
 <div *ngIf="resultsVis && (filtersLoaded | async)" id ='surveyResult'>
@@ -17,7 +17,7 @@
       </tr>
 </div>
 
-<div id ='surveyResult2' style="display: none;"></div>
+<div id ='surveyResult' style="display: none;"></div>
 <br>
 <br>
 <button disabled id="confirm" class="btn btn-success" (click)="onSave()">confirm</button>

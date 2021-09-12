@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { ElementRef } from '@angular/core';
 import { ViewChild } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+
 declare var powerbi: any;
 
 
@@ -21,22 +22,6 @@ export class PowerBiComponent implements OnInit {
 
   ngOnInit(): void {
 
-  //   this.httpClient.get<any>(`${Constants.apiRoot}PowerBI/EmbedConfig`).subscribe(config => {
-  //     this.config = config;
-  //     const model = window['powerbi-client'].models;
-  //     const embedConfig = {
-  //         type: 'report',
-  //         tokenType: model.TokenType.Embed,
-  //         accessToken: config.token,
-  //         embedUrl: config.embedURL,
-  //         permissions: model.Permissions.All,
-  //         settings: {
-  //             filterPaneEnabled: true,
-  //             navContentPaneEnabled: true
-  //         }
-  //     };
-  //     powerbi.embed(this.embeddedReport.nativeElement, embedConfig);
-  // });
 
   }
 

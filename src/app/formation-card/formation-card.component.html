@@ -1,7 +1,7 @@
 <div class='flx'>
-<div class="card text-white bg-info mb-3" style="max-width: 18rem;">
-    <div *ngIf="formation.secteur?.includes('Public') " class="card-header" style="background-color: #556fff;"> {{formation.name}}</div>
-    <div *ngIf="formation.secteur?.includes('Privé')  " class="card-header" style="background-color: #ff6055;">{{formation.name}}</div>
+<div class="card text-white bg-info mb-3" >
+    <div *ngIf="formation.secteur?.includes('Public') " class="card-header" style="padding: 2px;height: 44px;background-color: #556fff;"> {{formation.name}}</div>
+    <div *ngIf="formation.secteur?.includes('Privé')  " class="card-header" style="padding: 2px;height: 44px;background-color: #1bc159bd;">{{formation.name}}</div>
     <!-- <div class="card-body" style="overflow-y: scroll; height:300px; overflow: auto"> -->
 
       <div class='demoScroll sc5'>

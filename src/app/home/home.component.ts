@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit {
       })
   }
   getpost() {
-    this.postService.getAllPosts('conseil').subscribe(response => {
+    this.postService.getAllPosts('actualite').subscribe(response => {
       console.log(response);
      this.posts = response.result;
      console.log(this.posts)

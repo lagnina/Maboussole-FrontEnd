@@ -54,17 +54,17 @@ var surveyJSON ={
       "type": "rating", "name": "Vous êtes désireux de travailler avec les nouvelles technologies ",
       "domaines":[
         {"name":"Genie Mecanique",
-          "rating": 5},
+          "rating": 3},
 
           {"name":"Informatique",
-            "rating": 5
+            "rating": 3
             },
             {"name":"Genie civil",
-              "rating":4},
+              "rating":1},
               {"name":"Genie Industriel",
-                "rating": 3},
+                "rating": 2},
                 {"name":"Biologie et environnement",
-                  "rating": 3},
+                  "rating": 1},
                   {"name": "Electricite electronique",
                     "rating": 5}]
 
@@ -88,24 +88,7 @@ var surveyJSON ={
                     "rating": 1}]
 
     },
-    {
-      "type": "rating", "name": "Vous êtes du type investigateur, chercheur, pour aller toujours plus loin dans vos découvertes scientifiques","domaines":[
-        {"name":"Genie Mecanique",
-          "rating": 5
-          },
-          {"name":"Informatique",
-            "rating": 3
-            },
-            {"name":"Genie civil",
-              "rating":3},
-              {"name":"Genie Industriel",
-                "rating": 3},
-                {"name":"Biologie et environnement",
-                  "rating": 5},
-                  {"name": "Electricite electronique",
-                    "rating": 5}]
-
-    },
+   
     {
       "type": "rating", "name": "Vous êtes prêt à réaliser des tâches administratives nécessitant la prise ou l’application de décisions dans le respect des règles établies    ","domaines":[
         {"name":"Genie Mecanique",
@@ -186,16 +169,33 @@ var surveyJSON ={
           "rating": 5
           },
           {"name":"Informatique",
-            "rating": 5
+            "rating": 3
             },
             {"name":"Genie civil",
-              "rating":3},
+              "rating":1},
               {"name":"Genie Industriel",
-                "rating": 3},
+                "rating": 2},
+                {"name":"Biologie et environnement",
+                  "rating": 2},
+                  {"name": "Electricite electronique",
+                    "rating": 5}]}
+    ,
+      {
+      "type": "rating", "name": "Est ce que t'es une personne du terrain qui aime travailler en dehors d'un environnement de bureau","domaines":[
+        {"name":"Genie Mecanique",
+          "rating": 5
+          },
+          {"name":"Informatique",
+            "rating": 0
+            },
+            {"name":"Genie civil",
+              "rating":5},
+              {"name":"Genie Industriel",
+                "rating": 4},
                 {"name":"Biologie et environnement",
                   "rating": 3},
                   {"name": "Electricite electronique",
-                    "rating": 5}]}
+                    "rating": 3}]}
     ,
     {
       "type": "rating", "name": "Vous êtes inspiré par les matériaux, les formes, les couleurs et les textures qui vous entourent    ",
@@ -222,12 +222,12 @@ var surveyJSON ={
           "rating": 5
           },
           {"name":"Informatique",
-            "rating": 2
+            "rating": 1
             },
             {"name":"Genie civil",
-              "rating":3},
+              "rating":1},
               {"name":"Genie Industriel",
-                "rating": 3},
+                "rating": 1},
                 {"name":"Biologie et environnement",
                   "rating": 5},
                   {"name": "Electricite electronique",
@@ -252,7 +252,8 @@ var surveyJSON ={
                     "rating": 3}]
 
     },
-    {
+   
+     {
       "type": "rating", "name": "Vous êtes préoccupé par la santé des êtres vivants et désireux de l’influencer professionnellement    ",
       "domaines":[
         {"name":"Genie Mecanique",
@@ -270,7 +271,64 @@ var surveyJSON ={
                   {"name": "Electricite electronique",
                     "rating": 2}]
 
+    }, {
+      "type": "rating", "name": "Vous etes une personne qui est impressionnée par l'energie eletrique et son utlisation",
+      "domaines":[
+        {"name":"Genie Mecanique",
+          "rating": 2
+          },
+          {"name":"Informatique",
+            "rating": 0
+            },
+            {"name":"Genie civil",
+              "rating":1},
+              {"name":"Genie Industriel",
+                "rating": 1},
+                {"name":"Biologie et environnement",
+                  "rating": 0},
+                  {"name": "Electricite electronique",
+                    "rating": 5}]
+
     },
+     {
+      "type": "rating", "name": "Etes vous une personne qui aimes bricoler, et  comprendre le fonctionnement des appareils de techologies",
+      "domaines":[
+        {"name":"Genie Mecanique",
+          "rating": 2
+          },
+          {"name":"Informatique",
+            "rating": 1
+            },
+            {"name":"Genie civil",
+              "rating":0},
+              {"name":"Genie Industriel",
+                "rating": 2},
+                {"name":"Biologie et environnement",
+                  "rating": 0},
+                  {"name": "Electricite electronique",
+                    "rating": 5}]
+
+    },
+{
+      "type": "rating", "name": "Vous etes une personne qui pren l'initiative pour faire des installations des appareils et la personne references en cas de panne et malfonctionnement",
+      "domaines":[
+        {"name":"Genie Mecanique",
+          "rating": 3
+          },
+          {"name":"Informatique",
+            "rating": 1
+            },
+            {"name":"Genie civil",
+              "rating":1},
+              {"name":"Genie Industriel",
+                "rating": 1},
+                {"name":"Biologie et environnement",
+                  "rating": 0},
+                  {"name": "Electricite electronique",
+                    "rating": 5}]
+
+    },
+
     {
       "type": "rating", "name": "Vous êtes désireux de développer des compétences dans l’organisation du travail ou la gérance de systèmes informatiques    ",
       "domaines":[
@@ -281,7 +339,7 @@ var surveyJSON ={
             "rating": 5
             },
             {"name":"Genie civil",
-              "rating":0},
+              "rating":2},
               {"name":"Genie Industriel",
                 "rating": 0},
                 {"name":"Biologie et environnement",
@@ -321,9 +379,9 @@ var surveyJSON ={
             {"name":"Genie civil",
               "rating":2},
               {"name":"Genie Industriel",
-                "rating": 4},
+                "rating": 2},
                 {"name":"Biologie et environnement",
-                  "rating": 5},
+                  "rating":5},
                   {"name": "Electricite electronique",
                     "rating": 5}]
 
@@ -335,12 +393,12 @@ var surveyJSON ={
           "rating": 1
           },
           {"name":"Informatique",
-            "rating": 1
+            "rating": 0
             },
             {"name":"Genie civil",
-              "rating":3},
+              "rating":0},
               {"name":"Genie Industriel",
-                "rating": 1},
+                "rating": 0},
                 {"name":"Biologie et environnement",
                   "rating": 5},
                   {"name": "Electricite electronique",
@@ -357,7 +415,7 @@ var surveyJSON ={
             "rating": 0
             },
             {"name":"Genie civil",
-              "rating":1},
+              "rating":5},
               {"name":"Genie Industriel",
                 "rating": 0},
                 {"name":"Biologie et environnement",
@@ -395,7 +453,7 @@ var surveyJSON ={
           {"name":"Informatique",
             "rating": 0 },
             {"name":"Genie civil",
-              "rating":5},
+              "rating":0},
               {"name":"Genie Industriel",
                 "rating": 0},
                 {"name":"Biologie et environnement",
@@ -411,19 +469,19 @@ var surveyJSON ={
           "rating": 3
           },
           {"name":"Informatique",
-            "rating": 1
+            "rating": 0
             },
             {"name":"Genie civil",
               "rating":0},
               {"name":"Genie Industriel",
-                "rating": 2},
+                "rating": 0},
                 {"name":"Biologie et environnement",
                   "rating": 5},
                   {"name": "Electricite electronique",
                     "rating": 3}]
                   },
     {
-      "type": "rating", "name": "J’aime faire des calculs avec ou sans ordinateur    ",
+      "type": "rating", "name": "J’aime faire des calculs avec un ordinateur    ",
       "domaines":[
         {"name":"Genie Mecanique",
           "rating": 5
@@ -432,7 +490,7 @@ var surveyJSON ={
             "rating": 5
             },
             {"name":"Genie civil",
-              "rating":2},
+              "rating":3},
               {"name":"Genie Industriel",
                 "rating": 3},
                 {"name":"Biologie et environnement",
@@ -451,7 +509,7 @@ var surveyJSON ={
             "rating": 3
             },
             {"name":"Genie civil",
-              "rating":3},
+              "rating":4},
               {"name":"Genie Industriel",
                 "rating": 4},
                 {"name":"Biologie et environnement",
@@ -460,6 +518,9 @@ var surveyJSON ={
                     "rating": 5}]
                   }]
                   }]};
+
+
+
 
 var results  = [
                     {"name":"Genie Mecanique",

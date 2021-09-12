@@ -36,6 +36,7 @@ import { MemberCardComponent } from './members/member-card/member-card.component
 import { FormationByDomaineComponent } from './formation-by-domaine/formation-by-domaine.component';
 
 import { CreatePostComponent } from './post/create-post/create-post.component';
+import { PowerBiComponent } from './power-bi/power-bi.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -53,6 +54,7 @@ const routes: Routes = [
   {path:'Login',component:LoginComponent},
   {path:'Home', component:HomeComponent},
   {path:'Formation', component:FormationComponent},
+  {path:'Geolocation', component:PowerBiComponent},
 
     {path:'Domaine/:DomaineName',component:FormationByDomaineComponent},
   
@@ -81,6 +83,7 @@ const routes: Routes = [
       {path:'Conseil-Orientation/:id',component:ConseilDetailComponent},
       {path:'Formation/detail/:name', component:FormationDetailComponent},
       {path:'Formation/card', component:FormationCardComponent},
+      {path:'Formation/detail', component:FormationDetailComponent},
 
 
 

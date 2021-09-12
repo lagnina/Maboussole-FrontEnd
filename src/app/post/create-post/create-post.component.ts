@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { NgSelectConfig } from '@ng-select/ng-select';
 import { ToastrService } from 'ngx-toastr';
 import { Post } from 'src/app/_models/Post';
+import { Tag } from 'src/app/_models/Tag';
 import { PostService } from 'src/app/_services/post.service';
 
 
@@ -17,7 +18,16 @@ export class CreatePostComponent implements OnInit {
   posts:Post[];
   fileToUpload: File | null = null;
 
-
+  Tags :string[]=['Education','Orientations','Learning','School',
+  'Motivation','Student'
+  ,'Knowledge','English','science','communication','learn','training','Success'];
+  
+  selectedTag: Tag[];
+  
+  
+  
+  selectedValue: any = "6-8";
+      tags:Tag[];
   constructor(private postService: PostService, private toastr: ToastrService,private config: NgSelectConfig,private router:Router) { 
 
   }
@@ -41,7 +51,7 @@ this.Post();
 
     formData.append("PostForm",JSON.stringify(this.model));
     console.log(this.model)
-        this.postService.PostCreate2(formData).subscribe(response => {
+        this.postService.PostCreate(formData).subscribe(response => {
           this.toastr.success('Post Created Successfully');
           this.router.navigateByUrl('post/list');
         

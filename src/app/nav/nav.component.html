@@ -12,14 +12,17 @@
               
                 
                 <li class="nav-item">
-                    <a class="nav-link" routerLink='/Formation' routerLinkActive='active' >Formation</a>
+                    <a class="nav-link" routerLink='/Formation' routerLinkActive='active' >Formations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink='/Geolocation' routerLinkActive='active' >Geolocation </a>
                 </li>
              
 
                 <ng-container *ngIf="accountService.currentUser$ | async">
-                    <li *appHasRole='["Member","Admin", "Moderator"]' class="nav-item">
+                    <!-- <li *appHasRole='["Member","Admin", "Moderator"]' class="nav-item">
                         <a class="nav-link" routerLink='/post/list'routerLinkActive='active' >Posts </a>
-                    </li>
+                    </li> -->
                 <li *appHasRole='["Admin", "Moderator"]' class="nav-item">
                     <a class="nav-link" routerLink='/admin'routerLinkActive='active' >Admin</a>
                 </li>
@@ -32,7 +35,7 @@
 
         <div class="dropdown" *ngIf="(accountService.currentUser$ | async) as user" dropdown>
             <img src="{{user.photoUrl || './assets/user.png'}}" alt="{{user.username}}">
-            <a class="dropdown-toggle text-light ml-2" dropdownToggle>Welcome {{user.knownAs || user.username | titlecase}}</a>
+            <a class="dropdown-toggle text-light ml-2" dropdownToggle>Bienvenu {{user.knownAs || user.username | titlecase}}</a>
             <div class="dropdown-menu mt-3" *dropdownMenu>
                 <a routerLink='{{"/members/" + user.username}}' class="dropdown-item">Mon Profile</a>
                 <div class="dropdown-divider"></div>
@@ -48,7 +51,7 @@
                     <button  class="btn btn-primary" (click)="onSubmit('register')" type="submit" style="    background-color: #1b52a5;">
                         S'inscrire</button></a>
                 <a href="Login" role="button">
-                    <button class="btn btn-info my-2 my-sm-0" (click)="onSubmit('login')" type="submit">Login</button></a>
+                    <button class="btn btn-info my-2 my-sm-0" (click)="onSubmit('login')" type="submit">Se connecter</button></a>
     
           </div>
 

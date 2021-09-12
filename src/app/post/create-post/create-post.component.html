@@ -1,46 +1,56 @@
 
 <span class="border ">
 
-   <form (ngSubmit)="Post()" autocomplete="on" style="display: inline-block;
-   margin-left: auto;
-   margin-right: auto;
-   text-align: left;
-   padding: 50px">
-       <label>Create post</label>
-        
-       <div class="form-group">
-           <select id="Type" placeholder="Titre" class="form-control"  [(ngModel)]="model.Type" name="Type">
+    <form (ngSubmit)="Post()" autocomplete="on" style="display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    padding: 50px;
+    position:absolute;
+    left:776px">
+        <label>Créer un post</label>
+         
+        <div class="form-group">
+            <select id="Type" placeholder="Post" class="form-control"  [(ngModel)]="model.Type" name="Type">
+               
+               <option value="post" selected>Post</option>
+    
+    
+             </select> </div>
+        <div class="form-group">
+         <input type="text"  class="form-control"  placeholder="Titre" [(ngModel)]="model.title" name="titre" required />
+        </div>
+    
               
-              <option value="post">Post</option>
-   
-   
-            </select> </div>
-       <div class="form-group">
-        <input type="text"  class="form-control"  placeholder="Titre" [(ngModel)]="model.title" name="titre" required />
-       </div>
-   
-             
-             <div class="form-group">
-   
-          <input type="file"  class="form-control" 
-           id="file"
-           (change)="handleFileInput($event.target.files)">
-       </div>
+              <div class="form-group">
+    
+           <input type="file"  class="form-control" 
+            id="file"
+            (change)="handleFileInput($event.target.files)">
+        </div>
+        <div class="form-group" >
+            <ng-select placeholder="Select Tags ..." [multiple]="true"[ngModelOptions]="{standalone: true}" [(ngModel)]="model.postTagsNames">
+              <ng-option *ngFor="let tag of tags" [value]="tag.name" name='postTags'  >{{tag.name}}</ng-option>
+              <ng-option [value]="'tags'">tags</ng-option>
+              </ng-select>
+              </div>
+        
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1"></label>
+            <textarea class="form-control" [(ngModel)]="model.content"  name="content" required id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+    
+            
+    <!-- <div class="form-group">
+    
+        
+            <button type="button" class="btn btn-secondary btn-sm" (click)="toggleDisabled()">Toggle disabled</button>
+        </div>
+        <br>
+        -->
        
-       <quill-editor  [(ngModel)]="model.content" name="content" required [styles]="{height: '200px'}"></quill-editor>
-   
-   
-           
-   <!-- <div class="form-group">
-   
-       
-           <button type="button" class="btn btn-secondary btn-sm" (click)="toggleDisabled()">Toggle disabled</button>
-       </div>
-       <br>
-       -->
-      
-        <button class="btn btn-success my-2 my-sm-0" type="submit" >Create Post</button>
-   
-   
-     </form>
-     </span>
+         <button class="btn btn-success my-2 my-sm-0" type="submit" >Create Post</button>
+    
+    
+      </form>
+      </span>

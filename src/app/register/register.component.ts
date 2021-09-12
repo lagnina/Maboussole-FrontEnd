@@ -18,6 +18,7 @@ export class RegisterComponent implements OnInit {
   @ViewChild('editForm') editForm: NgForm;
   member: Member;
   user: User;
+  model: any;
   @Output() cancelRegister = new EventEmitter();
   registerForm: FormGroup;
   fileToUpload: File | null = null;
@@ -39,14 +40,14 @@ export class RegisterComponent implements OnInit {
   intitializeForm() {
     this.registerForm = this.fb.group({
      gender: ['male'],
-      username: ['', Validators.required],
-     email: ['', Validators.required],
-     dateOfBirth: ['', Validators.required],
-     city: ['', Validators.required],
-      country: ['', Validators.required],
-      password: ['', [Validators.required, 
+      username: ['Le nom d\'utilisateur', Validators.required],
+     email: ['Email', Validators.required],
+     dateOfBirth: ['01/01/2000', Validators.required],
+     city: ['Ville', Validators.required],
+      country: ['Pays', Validators.required],
+      password: ['\Mot de passe', [Validators.required, 
         Validators.minLength(4), Validators.maxLength(8)]],
-      confirmPassword: ['', [Validators.required, this.matchValues('password')]]
+      confirmPassword: ['Confirmation de mot de passe', [Validators.required, this.matchValues('password')]]
     })
   }
 

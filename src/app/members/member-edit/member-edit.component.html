@@ -1,10 +1,10 @@
 <div class="row" *ngIf="member">
     <div class="col-4">
-        <h1>Your profile</h1>
+        <h1>Mon profile</h1>
     </div>
     <div class="col-8">
         <div class="alert alert-info" *ngIf="editForm.dirty">
-            <strong>Information: </strong> You have made changes.  Any unsaved changes will be lost
+            <strong>Information: </strong>
         </div>
     </div>
     <div class="col-4">
@@ -25,7 +25,7 @@
                     <p>{{member.lastActive | timeago}}</p>
                 </div>
                 <div>
-                    <strong>Member since:</strong>
+                    <strong>Member Depuis:</strong>
                     <p>{{member.created | date: 'dd MMM yyyy'}}</p>
                 </div>
             </div>
@@ -39,17 +39,17 @@
         <tabset class="member-tabset">
             <tab heading='About {{member.knownAs}}'>
                 <form #editForm="ngForm" id="editForm" (ngSubmit)="updateMember()">
-                    <h4>School</h4>
+                    <h4>Ecole</h4>
                     <input  [(ngModel)]="member.school" type="text" name="School"  class="form-control mx-2" >
-                    <h4 class="mt-2">Degree</h4>
+                    <h4 class="mt-2">Niveau d'etudes :</h4>
                     <input [(ngModel)]="member.degree" type="text" name="Degree" class="form-control mx-2" >
-                    <h4 class="mt-2">Speciality</h4>
+                    <h4 class="mt-2">Specialite :</h4>
                     <input [(ngModel)]="member.speciality" type="text" name="Speciality" class="form-control mx-2" >
-                    <h4 class="mt-2">Location Details: </h4>
+                    <h4 class="mt-2">Emplacement: </h4>
                     <div class="form-inline">
-                        <label for="city">City: </label>
+                        <label for="city">Pays: </label>
                         <input [(ngModel)]="member.city" type="text" name="city" class="form-control mx-2">
-                        <label for="city">Country: </label>
+                        <label for="city">Ville: </label>
                         <input [(ngModel)]="member.Country" type="text" name="Country" class="form-control mx-2">
                     </div>
                 </form>
