@@ -118,7 +118,7 @@ pageChanged(event: any) {
       console.log(this.model)
           this.postService.PostCreate(formData).subscribe(response => {
             this.toastr.success('Post Created Successfully');
-            this.router.navigateByUrl('/post/list');
+            window.location.reload();  
           
           })}
                 

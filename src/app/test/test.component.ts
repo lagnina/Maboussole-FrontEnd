@@ -54,19 +54,19 @@ var surveyJSON ={
       "type": "rating", "name": "Vous êtes désireux de travailler avec les nouvelles technologies ",
       "domaines":[
         {"name":"Genie Mecanique",
-          "rating": 3},
+          "rating": 2},
 
           {"name":"Informatique",
-            "rating": 3
+            "rating": 5
             },
             {"name":"Genie civil",
               "rating":1},
               {"name":"Genie Industriel",
-                "rating": 2},
+                "rating": 3},
                 {"name":"Biologie et environnement",
                   "rating": 1},
                   {"name": "Electricite electronique",
-                    "rating": 5}]
+                    "rating": 3}]
 
     },
     {
@@ -352,13 +352,13 @@ var surveyJSON ={
       "type": "rating", "name": "Je me retrouve bien dans un laboratoire à suivre un protocole détaillé et des normes pour réaliser une expérience    ",
       "domaines":[
         {"name":"Genie Mecanique",
-          "rating": 3
+          "rating": 0
           },
           {"name":"Informatique",
             "rating": 0
             },
             {"name":"Genie civil",
-              "rating":2},
+              "rating":0},
               {"name":"Genie Industriel",
                 "rating": 2},
                 {"name":"Biologie et environnement",
@@ -371,7 +371,7 @@ var surveyJSON ={
       "type": "rating", "name": "Je rêve de faire un jour des découvertes scientifiques qui contribueront à la progression de la science et à l’amélioration de la qualité de vie des gens    ",
       "domaines":[
         {"name":"Genie Mecanique",
-          "rating": 5
+          "rating": 4
           },
           {"name":"Informatique",
             "rating": 2
